@@ -1,0 +1,69 @@
+
+
+.activeNavLink{
+    text-decoration:none;
+    text-align:center;
+    margin-right:40px;
+    color:#5A48FA;
+    font-size:14px;
+    border-bottom: 2px solid #5A48FA;
+    padding-bottom: 10px;
+}
+.navLink{
+    text-decoration:none;
+    text-align:center;
+    margin-right:40px;
+    color:#73779F;
+    font-size:14px;
+    padding-bottom: 10px;
+}
+.never{
+    color: white;
+    background-color: red;
+    z-index: 3;
+}
+.firstView{
+    height:100vh;
+    margin-top: 7vh;
+}
+.secondView{
+    padding-top: 10vh;
+    padding-left: 10vh;
+    margin-top:10vh;
+    height: 120vh;
+    background-image: url('./assets/backgroundPath.svg');
+    background-repeat: no-repeat;
+}
+.thirdView{
+    margin-top:10vh;
+    padding: 0 10vh;
+    height: 100vh;
+    background-image: url('./assets/backgroundPath2.svg');
+    background-repeat: no-repeat;
+}
+.FourthView{
+    margin-top:4vh;
+    height: fit-content;
+    background-image: url('./assets/backgroundPath3.svg');
+    background-repeat: no-repeat;
+}
+.video{
+    margin-top: 4vh;
+    display: flex;
+    justify-content: center;
+}
+.FithView{
+    margin:0vh;
+    height: fit-content;
+}
+.fithViewHalfCircle{
+    width: 100vh;
+    height: 100vh;
+    background-image: url('./assets/halfCircle.svg');
+    background-size: 90vh;
+    background-repeat: no-repeat;
+}
+.center{
+    padding: 5vh;
+    margin:10vh;
+}

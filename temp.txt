@@ -1,0 +1,9 @@
+ <Box>
+                <h1>HOHOHOH</h1>
+            </Box>
+            <Box>
+              <NavLink href='/'>Home</NavLink>
+              <NavLink href='/MarketPlace'>MarketPlace</NavLink>
+              <NavLink href='/Developper'>Developper</NavLink>
+              <NavLink href='/Help'>Help</NavLink>
+              </Box>
