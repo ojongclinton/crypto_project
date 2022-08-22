@@ -12,8 +12,8 @@ import { Item } from '../GlobalStyles'
 export const FirstView =()=>{
   return(
       <div className='firstView'>
-          <Grid container spacing={1}>{/*Separates Text on the left and Form on the right*/}
-            <Grid item xs={7}>     {/*Text on Left Grid*/}
+          <Grid container style={{margin:'0px'}}>
+          <Grid item md={12} lg={8}>     {/*Text on Left Grid*/}
                 <div css={styles.shape1}>shape1</div>
                 <div css={styles.shape2}>shape2</div>
                 <div css={styles.shape3}>shape3</div>
@@ -21,7 +21,7 @@ export const FirstView =()=>{
                 <div css={styles.thegradientText}> <span css={styles.never}>Never</span> <span>buy or sell without using OnlineP2P</span></div>
               </div>
           </Grid>
-          <Grid item xs ={4}> {/*Form on Right Grid*/}
+          <Grid item md={12} lg={4} style={{marginLeft:'auto',marginRight:'auto'}} > {/*Form on Right Grid*/}
             <form css={styles.formDiv}>
                     <div>
                       <img src={bitcoin} alt='bitcoinimage' css={styles.bitcoinImage} />
@@ -32,10 +32,10 @@ export const FirstView =()=>{
                     <div>
                       <img src={etherum} alt='binanceimage' css={styles.etherumImage} />
                     </div>
-                <Item elevation={3} css={styles.formCss}>
-                      <Grid container spacing={0}> {/*Separates 'Im selling input from domain, nane input'*/}
-                        <Grid item xs={4}>
-                          <FormControl fullWidth sx={{ ml: 0, minWidth: '18.95vh' }}> {/*Input: 'Im Selling?*/}
+                <Item elevation={3} css={styles.formCss} >
+                      <Grid container spacing={1} > {/*Separates 'Im selling input from domain, nane input'*/}
+                        <Grid item lg={4} xs={12}>
+                        <FormControl css={styles.formControl1}> {/*Input: 'Im Selling?*/}
                               <InputLabel style={{color:'#04063D'}}>i'm selling</InputLabel>
                                 <Select label='im selling'>
                                   <MenuItem value=""><em>None</em></MenuItem>
@@ -45,20 +45,20 @@ export const FirstView =()=>{
                               </Select>
                           </FormControl>
                         </Grid>
-                        <Grid item xs={8} >
-                          <FormControl variant="standard" sx={{ ml: 1, minWidth: '39.49vh' }}> {/*Input: 'Domain, name, etc?'*/}
+                        <Grid item lg={8} xs={12} >
+                        <FormControl variant="standard" css={styles.formControl1}> {/*Input: 'Domain, name, etc?'*/}
                               <TextField id="outlined-basic" label="Domian name,vehicles..." variant="outlined" />
                           </FormControl>
                       </Grid>
                     </Grid>
-                    <Grid container spacing={0}>
-                      <Grid item xs={8}>
-                        <FormControl variant="standard" sx={{ mt:2, minWidth: '39.49vh' }}> {/*Input: 'Domain, name, etc?'*/}
+                    <Grid container spacing={1}>
+                      <Grid item lg={8} xs={6}>
+                        <FormControl  css={styles.formControl1}> {/*Input: 'Domain, name, etc?'*/}
                           <TextField id="outlined-basic" label="For $" variant="outlined" />
                         </FormControl>
                       </Grid>
-                        <Grid item xs={4}>
-                          <FormControl sx={{minWidth: '18.95vh',mt:2, ml:1 }}> {/*Input: 'Im Selling?*/}
+                        <Grid item lg={4} xs={6}>
+                          <FormControl css={styles.formControl1}> {/*Input: 'Im Selling?*/}
                             <InputLabel style={{color:'#04063D'}}>USD</InputLabel>
                               <Select label='USD' autoWidth>
                                 <MenuItem value=""><em>None</em></MenuItem>

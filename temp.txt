@@ -1,9 +1,29 @@
- <Box>
-                <h1>HOHOHOH</h1>
-            </Box>
-            <Box>
-              <NavLink href='/'>Home</NavLink>
-              <NavLink href='/MarketPlace'>MarketPlace</NavLink>
-              <NavLink href='/Developper'>Developper</NavLink>
-              <NavLink href='/Help'>Help</NavLink>
-              </Box>
+            <Grid item md={12} lg={8}>     {/*Text on Left Grid*/}
+                <div css={styles.shape1}>shape1</div>
+                <div css={styles.shape2}>shape2</div>
+                <div css={styles.shape3}>shape3</div>
+              <div>
+                <div css={styles.thegradientText}> <span css={styles.never}>Never</span> <span>buy or sell without using OnlineP2P</span></div>
+              </div>
+          </Grid>
+
+
+
+                    <div css={styles.shape4}></div>
+          <div css={styles.shape5}></div>
+          <div css={styles.shape6}></div>
+
+
+
+          <Slider {...settings}>
+                {
+                  process.map(item=>{
+                    return(
+                      <div>
+                        <img src={boxstep} css={styles.boxStep}/>
+                        <p>OKAAAAA</p>
+                      </div>
+                    )
+                  })
+                }
+              </Slider>

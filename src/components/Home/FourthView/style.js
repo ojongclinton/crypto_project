@@ -1,4 +1,5 @@
 import { css,Global } from '@emotion/react'
+import { mq } from '../GlobalStyles'
 
 const blurryBack2 =css`
 width: 30.5vh;
@@ -24,6 +25,9 @@ background: #4DE6FC;
 left: 100.26vh;
 top: 360vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const shape11=css`
 ${blurryBack2};
@@ -31,6 +35,9 @@ background:#AA80F9;
 left: 100.26vh;
 top: 360vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const shape12=css`
 ${blurryBack2};
@@ -38,6 +45,9 @@ background:#5A48FA;
 left: 100.26vh;
 top: 360vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const whoWeAre= css({
 display:'flex',

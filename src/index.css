@@ -16,6 +16,25 @@
     color:#73779F;
     font-size:14px;
     padding-bottom: 10px;
+    width: fit-content;
+}
+.MobilenavLink{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    color:#73779F;
+    padding-bottom: 10px;
+}
+.MobileactiveNavLink{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    color:#5A48FA;
+    padding-bottom: 10px;
+    font-weight: bold;
+    
 }
 .never{
     color: white;
@@ -36,19 +55,19 @@
 }
 .thirdView{
     margin-top:10vh;
-    padding: 0 10vh;
-    height: 100vh;
+    padding:0vh;
+    height: fit-content;
     background-image: url('./assets/backgroundPath2.svg');
     background-repeat: no-repeat;
 }
 .FourthView{
-    margin-top:4vh;
+    margin-top:5vh;
     height: fit-content;
     background-image: url('./assets/backgroundPath3.svg');
     background-repeat: no-repeat;
 }
 .video{
-    margin-top: 4vh;
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
 }
@@ -67,3 +86,56 @@
     padding: 5vh;
     margin:10vh;
 }
+.Mcenter{
+    padding: 1vh;
+    margin: 3.5vh;
+}
+.mobile{
+    padding: 5vh;
+    margin: 3vh;
+    text-align: center;
+}
+.mobile img{
+    display: flex;
+    text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+    .secondView{
+        margin:0vh;
+        padding: 5vh;
+        padding-bottom: 0px;
+        padding-top: 5vh;
+        height: fit-content;
+    }
+    .firstView{
+        height:fit-content;
+    }
+    .thirdView{
+        padding: 2vh;
+        height: 100%;
+        background-color: red;
+    }
+    .FourthView{
+        padding: 0px;
+        height: fit-content;
+
+    }
+    .fithViewHalfCircle{
+        width: 100%;
+        height: 50vh;
+        background-image: url('./assets/halfCircle.svg');
+        background-repeat: no-repeat;
+    }
+  }
+  @media only screen and (max-width: 1024px){
+    .secondView{
+        padding: 0px;
+    }
+    .thirdView{
+        margin: 0px;
+        margin-top:10vh;
+        padding: 0px;
+        height: 100vh;
+    }
+  }

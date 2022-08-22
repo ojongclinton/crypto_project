@@ -3,11 +3,15 @@ import {Paper, styled} from '@mui/material'
 
 {/*This file contains styled components and styles used by all files in the home component.....be sure of the effect of your actions*/}
 
+const breakpoints = [576, 768, 992, 1200]
+export const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)
+
 export const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
     height: 'fit-content',
-    width:'100vh',
+    width:'fit-content',
     padding:'4vh',
+    
   }));
 export const H11 = styled('h1')({
     color: '#04063D',

@@ -15,6 +15,7 @@ import More from '../../../assets/More.svg'
 import Slider from "react-slick";
 import { H11, H33,H22 } from '../GlobalStyles'
 import * as styles from './style'
+import { useMediaQuery } from 'react-responsive'
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
@@ -26,6 +27,7 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 
 
 export const FithView =()=>{
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
 const testimonials =[
   {
     name:"Jane Cooper",
@@ -53,11 +55,11 @@ const testimonials =[
   }
 ]
 var settings = {
-  className:'center',
+  className:isMobile?'Mcenter':'center',
   dots:false,
   infinite:true,
   speed:1000,
-  slidesToShow:2,
+  slidesToShow:isMobile?1:2,
   slidesToScroll:1,
   prevArrow:<SlickArrowLeft/>,
   nextArrow:<SlickArrowRight/>,
@@ -65,41 +67,41 @@ var settings = {
 
   return(
     <div className="FithView">
-      <div css={styles.whoWeAre} style={{margin:'10vh'}}>
+      <div css={isMobile?styles.MWhoweAre:styles.whoWeAre}>
         <div >
           <Chip label="Payment" style={{color:'#5A48FA',backgroundColor:'#dcfbff',   marginBottom:'15px'}}/>
-          <H11 style={{width:'70.30vh'}}>We accept these different cryptos</H11>
-          <p css={styles.plainText} style={{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
+          <H11 style={isMobile?{width:'100%',textAlign:'center'}:{width:'70.30vh'}}>We accept these different cryptos</H11>
+          <p css={styles.plainText} style={isMobile?{width:'100%',textAlign:'center'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
         </div>
         <div className='fithViewHalfCircle'>
-          <div>
-          <img src={bitcoin} alt="bitcoinIMG" css={styles.bitcoinImage} />
-          <img src={binance} alt="bitcoinIMG" css={styles.binanceImage} />
-          <img src={etherum} alt="bitcoinIMG" css={styles.etherumImage} />
-          <img src={TeTher} alt="bitcoinIMG" css={styles.tetherImage} />
+          <div style={isMobile?{display:'flex',justifyContent:'space-around'}:{}}>
+          <img src={bitcoin} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.bitcoinImage} />
+          <img src={binance} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.binanceImage} />
+          <img src={etherum} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.etherumImage} />
+          <img src={TeTher} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.tetherImage} />
           </div>
-          <div>
-          <img src={Payeer} alt="bitcoinIMG" css={styles.payeerImage} />
-                    <img src={BlockIo} alt="bitcoinIMG" css={styles.blockImage} />
-          <img src={More} alt="bitcoinIMG" css={styles.moreImage} />
+          <div style={isMobile?{display:'flex',justifyContent:'space-around',padding:'5vh'}:{}}>
+          <img src={Payeer} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.payeerImage} />
+                    <img src={BlockIo} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.blockImage} />
+          <img src={More} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.moreImage} />
           </div>
         </div>
       </div>
       <div css={styles.testimonials}>
       
         <div  style={{height:'10vh',display:'flex',justifyContent:'space-around'}}>
-        <H11 style={{color:'white',marginLeft:'60vh',marginTop:'10vh'}}>Testimonial</H11>
-            <img src={quotes} alt='quoteIMG' css={styles.quoteImage}/>
+        <H11 style={isMobile?{marginLeft:'auto',marginRight:'auto',marginTop:'6vh',color:"white",}:{color:'white',marginLeft:'60vh',marginTop:'10vh'}}>Testimonial</H11>
+            <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>
         </div>
         <Slider {...settings}>
           {testimonials.map(testimony=>{
             return(
               <div>
-                <div style={{backgroundColor:'white',margin:'5vh',padding:'10px',textAlign:'center',height:'30vh',borderRadius:'10px'}}>
+                <div style={{backgroundColor:'white',margin:'5vh',padding:'10px',textAlign:'center',height:'max-content',borderRadius:'10px'}}>
                   <H33>{testimony.title}</H33>
                   <p css={styles.plainText} style={{fontSize:'14px'}}>{testimony.comment}</p>
                 </div>
-                <div style={{display:'flex',justifyContent:'center',margin:'0px'}}>
+                <div style={{display:'flex',justifyContent:'center',margin:'0px',padding:'0px'}}>
                     <Avatar src={bitcoin} alt={testimony.name} sx={{ width: 50, height: 50,m:1}}/>
                     <div>
                     <Typography variant='h6' style={{color:'white'}}>{testimony.name}</Typography>

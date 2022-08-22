@@ -1,6 +1,9 @@
 import { css,Global } from '@emotion/react'
 import {styled} from '@mui/material'
 
+const breakpoints = [576, 768, 992, 1200]
+const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)
+
 export const plainText = css({
 color:'#282D6C',
 font:'Montserrat',
@@ -15,7 +18,11 @@ padding:'0px'
 export const whoWeAre= css({
 display:'flex',
 justifyContent:'space-between',
-height:'50vh'
+height:'50vh',
+margin:'10vh'
+})
+export const MWhoweAre = css({
+    display:'block'
 })
 
 const currencies =css({
@@ -25,10 +32,16 @@ position:'relative',
 top:'12vh',
 })
 
-const currencies2 =css({
+export const currencies2 =css({
     position:'relative',
     height:'17vh',
     width:'17vh',
+    top:'17vh'
+})
+export const currencies3 =css({
+    position:'relative',
+    height:'8vh',
+    width:'8vh',
     top:'17vh'
 })
 
@@ -62,7 +75,7 @@ left:29vh;
 `
 export const testimonials=css({
     backgroundColor:'#04063D',
-    height:'80vh',
+    height:'fitContent',
     width:'100%',
     margin:'0px'
 })
@@ -71,6 +84,13 @@ export const quoteImage=css({
     height:'30vh',
     color:'white',
     left:'20vh'
+})
+export const MqouteImage=css({
+    position:'relative',
+    height:'10vh',
+    color:'white',
+    right:'0vh',
+    top:'2vh'
 })
 
 export const halfCircle= css({

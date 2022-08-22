@@ -22,7 +22,7 @@ function App() {
               <Route path='*' element={<NotFound/>}></Route>
             </Routes>
         </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

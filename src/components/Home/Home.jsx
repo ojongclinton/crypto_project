@@ -12,10 +12,10 @@ function Home() {
   return (
     <div>
         <FirstView/>
-        <SecondView/>
+         <SecondView/>
         <ThirdView/>
-        <FourthView/>
-        <FithView/>
+       <FourthView/>
+       <FithView/> 
     </div>
   )
 }

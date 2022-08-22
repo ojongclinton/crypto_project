@@ -1,5 +1,6 @@
 import { css,Global } from '@emotion/react'
 import {styled} from '@mui/material'
+import { mq } from '../GlobalStyles'
 
 const blurryBack2 =css`
 width: 30.5vh;
@@ -28,7 +29,8 @@ export const reasonBox =css({
     justifyContent:'space-around',
     height:'52vh',
     width:'90%',
-    margin:'0 10vh',
+    marginLeft:'auto',
+    marginRight:'auto',
     paddingTop:'0vh'
 })
 export const viewMore =css({
@@ -47,12 +49,23 @@ export const FviewMore =css({
     margin:'0px',
     color:'white',
 })
+export const MviewMore =css({
+    paddingTop:'1vh',
+    display:'flex',
+    justifyContent:"left",
+    fontSize:'18px',
+    margin:'0px',
+    color:'inherit',
+})
 export const shape7=css`
 ${blurryBack2};
 background: #4DE6FC;
 left: 90.26vh;
 top: 250vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh
+}
 `
 export const shape8=css`
 ${blurryBack2};
@@ -60,6 +73,9 @@ background:#AA80F9;
 left: 90.26vh;
 top: 250vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh
+}
 `
 export const shape9=css`
 ${blurryBack2};
@@ -67,4 +83,7 @@ background:#5A48FA;
 left: 90.26vh;
 top: 250vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh
+}
 `

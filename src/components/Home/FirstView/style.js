@@ -1,5 +1,6 @@
 import { css,Global } from '@emotion/react'
-import { blurryBack } from '../GlobalStyles'
+import { blurryBack, mq } from '../GlobalStyles'
+
 
 export const thegradientText =css`
 width:90vh;
@@ -13,9 +14,19 @@ background:linear-gradient(rgba(90, 73, 250, 1),rgba(4, 6, 61, 1));
 background-clip: text;
 text-fill-color: transparent;
 display: inline-block;
-z-index:10;
 border-right:1px solid #b3b3b3;
-padding-bottom:50px
+padding-bottom:50px;
+
+${mq[0]}{
+width:100%;
+margin-left:0px;
+text-align:center;
+padding:0px;
+border:none;
+margin-right:0px;
+margin-top:10vh;
+font-size:7vh;
+}
 `
 export const shape1=css`
 ${blurryBack};
@@ -24,6 +35,9 @@ background: #4DE6FC;
 left: 43.26vh;
 top: 22.59vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const shape2=css`
 ${blurryBack};
@@ -32,6 +46,9 @@ background:#AA80F9;
 left:52.44vh;
 top:47.55vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const shape3=css`
 ${blurryBack};
@@ -40,6 +57,9 @@ background:#5A48FA;
 left: 24.80vh;
 top: 38.81vh;
 z-index:-1;
+${mq[0]}{
+    left:7vh;
+}
 `
 export const never =css`
 text-fill-color: white;
@@ -59,26 +79,51 @@ height:'7vh',
 width:'7vh',
 left:'103vh',
 top:'50vh',
+[mq[0]]:{
+   display:'none'
+}
 })
 
 export const formCss =css({
+marginRight:'0px',
 marginTop:'22vh',
 })
 export const formDiv =css({
-display:'flex',
-justifyContent:'space-between',
+    display:'flex',
+[mq[0]]:{
+    display:'block',
+    width:'100%',
+    margin:'0px',
+    margin:'0px'
+ }
 })
+export const formControl1=css({
+    margin:'2vh',
+    width:'100%',
+    [mq[0]]:{
+    width:'100%',
+    margin:'1vh'
+     }
+
+})
+
 export const bitcoinImage =css({
 position:'absolute',
 height:'7vh',
 width:'7vh',
 right:'15vh',
-top:'20vh'
+top:'20vh',
+[mq[0]]:{
+    display:'none'
+ }
 })
 export const binanceImage =css({
 position:'absolute',
 height:'7vh',
 width:'7vh',
 right:'50vh',
-bottom:'5vh'
+bottom:'5vh',
+[mq[0]]:{
+    display:'none'
+ }
 })
