@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css,keyframes } from '@emotion/react'
 import React from 'react'
-import { H33,plainText,H22,H11,blurryBack } from '../Home/GlobalStyles'
+import { H33,plainText,H22,H11} from '../Home/GlobalStyles'
 import { Button, InputBase } from '@mui/material';
 import { NavLink, useNavigate } from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -14,6 +14,7 @@ height: 30.5vh;
 opacity: 0.5;
 filter: blur(140px);
 position:absolute;
+z-index:-10;
 `
 const shape1=css`
 ${blurryBac3};
@@ -105,7 +106,7 @@ function Footer() {
               <div>
               <NavLink to='/aboutUS' css={footerLink}>Contact</NavLink>
               <NavLink to='/aboutUS' css={footerLink}>Privacy</NavLink>
-              <NavLink to='/aboutUS' css={footerLink}>Terms amd Comditions</NavLink>
+              <NavLink to='/aboutUS' css={footerLink}>Terms and Comditions</NavLink>
               </div>
             </div>
             <div css={footerContainer}>
@@ -134,9 +135,9 @@ Nkoulouloun, DLA 94105</NavLink>
       <div style={{display:'flex',justifyContent:'space-around',gap:'50vh',marginTop:'5vh'}}>
         <p css={plainText}>© Copyright 2021. All Rights Reserved.</p>
         <div style={{display:'flex',justifyContent:'space-around'}}>
-          <a href="" css={footerIcon}><LinkedInIcon/></a>
-          <a href="" css={footerIcon}><FacebookIcon/></a>
-          <a href="" css={footerIcon}><TwitterIcon/></a>
+          <a href="https://www.google.com" css={footerIcon}><LinkedInIcon/></a>
+          <a href="https://www.google.com" css={footerIcon}><FacebookIcon/></a>
+          <a href="https://www.google.com" css={footerIcon}><TwitterIcon/></a>
         </div>
       </div>
     </div>
