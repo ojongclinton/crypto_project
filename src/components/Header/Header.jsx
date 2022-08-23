@@ -113,7 +113,7 @@ const toggleNav = ()=>{
       <div className='logo_name' css={logo}>
       {isMobile && <KeyboardArrowDownIcon style={{fontSize:'xx-large',color:'black'}} onClick={toggleNav}/>}
       {showNav && <MobileNav toggleNav={toggleNav}/>}
-      <div css={logoContainer} ></div>
+      <div css={logoContainer}></div>
         <Typography variant='h6' sx={{font:'Montserrat',fontWeight:'600',fontSize:'20px',lineHeight:'30px',color:'#4d3fde'}}>
           ONLINEP2P
           </Typography>
@@ -121,6 +121,7 @@ const toggleNav = ()=>{
       <div className='links' css={links}>
             <Box>
               <NavLink to='/' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Home</NavLink>
+              <NavLink to='/Dashboard' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Dashboard</NavLink>
               <NavLink to='/MarketPlace' className={({isActive})=>isActive?"activeNavLink":"navLink"}>MarketPlace</NavLink>
               <NavLink to='/Developper' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Developper</NavLink>
               <NavLink to='/Help' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Help</NavLink>

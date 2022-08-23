@@ -7,6 +7,8 @@ import Developper from './components/Developper/Developper';
 import Help from './components/Help/Help';
 import NotFound from './components/NotFound/NotFound';
 import { Outlet, Routes,Route} from 'react-router-dom'
+import { DashBoard } from './components/DashBoard/DashBoard';
+
 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
       <Header/>
         <div>
             <Routes>
+              <Route path='/Dashboard' element={<DashBoard/>}></Route>
               <Route path='/' element={<Home/>}></Route>
               <Route path='/Developper' element={<Developper/>}></Route>
               <Route path='/Help' element={<Help/>}></Route>

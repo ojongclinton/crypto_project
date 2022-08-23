@@ -1,5 +1,3 @@
-
-
 .activeNavLink{
     text-decoration:none;
     text-align:center;
@@ -106,7 +104,13 @@
     background-size: 80%;
     background-position: 30% 100% ;
 }
-
+.Footer{
+    height: 90vh;
+    margin-top: 10vh;
+    padding-top: 5vh;
+    background-image: url('./assets/backgroundPath5.svg');
+    background-repeat: no-repeat;
+}
 @media only screen and (max-width: 576px) {
     .secondView{
         margin:0vh;

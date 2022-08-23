@@ -69,7 +69,7 @@ const handleChange=(e)=>{
                 <SearchIcon css={styles.searchIcon}/><InputBase placeholder='Search' css={styles.searchInput} onInput={handleChange} value={searchTerm}/>
             </div>
         </div>
-        <div css={styles.shape1}></div>
+            <div css={styles.shape1}></div>
             <div css={styles.shape2}></div>
             <div css={styles.shape3}></div>
         <div css={styles.searchAnswers}>
