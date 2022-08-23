@@ -99,6 +99,13 @@
     display: flex;
     text-align: center;
 }
+.sixthView{
+    height: 100vh;
+    background-image: url('./assets/backgroundPath4.svg');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 30% 100% ;
+}
 
 @media only screen and (max-width: 576px) {
     .secondView{
