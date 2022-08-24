@@ -9,10 +9,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 const blurryBac3 = css`
-width: 100.5vh;
+width: 80.5vh;
 height: 30.5vh;
 opacity: 0.5;
-filter: blur(140px);
+filter: blur(110px);
 position:absolute;
 z-index:-10;
 `

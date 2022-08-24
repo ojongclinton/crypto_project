@@ -46,9 +46,9 @@ filter: blur(200px);
 `
 export const plainText = css({
 color:'#282D6C',
-font:'Montserrat',
+fontFamily:'SF Pro Display',
 fontWeight:400,
-fontSize:'18px',
+fontSize:'16px',
 lineHeight:'160%',
 fontStyle:'normal',
 margin:'0px',

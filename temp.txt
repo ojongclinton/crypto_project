@@ -27,3 +27,23 @@
                   })
                 }
               </Slider>
+
+<html>
+  <head>
+    <title>The title of the document</title>
+    <style>
+      div {
+        padding: 10px;
+        border: 1px solid rgba(255, 0, 0);
+        border-top: 2px solid rgb(246, 176, 177);
+        border-top: 2px solid rgba(255, 0, 0, .2);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Example</h2>
+    <div>Set a border opacity with CSS</div>
+  </body>
+</html>

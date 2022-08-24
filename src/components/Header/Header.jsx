@@ -34,12 +34,14 @@ const headerBoxCss =css({
   position:'fixed',
   top:0,
   display: 'flex', 
-  justifyContent: 'space-between',
+  justifyContent:'space-around',
+  alignItems:'center',
   paddingBottom:'15px',
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
   width:'100%',
   zIndex:10,
-  paddingTop:'20px',
+  paddingTop:'10px',
+  height:'10vh',
   [mq[0]]:{
     display:'block',
     float:'right'
