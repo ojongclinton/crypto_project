@@ -95,5 +95,7 @@ export const overviewThirdRow=css({
 export const smallWhiteDiv =css({
     height:'14vh',
     width:'25vh',
-    backgroundColor:'#ffffff'
+    backgroundColor:'#ffffff',
+    borderRadius: '0px 0px 9.32674px 9.32674px',
+    marginBottom:'2vh'
 })

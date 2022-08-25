@@ -107,18 +107,24 @@ e
           </div>
           <div css={styles.overviewThirdRow}>
             <div style={{backgroundColor:'#eeeeee',width:'25vh',}}>
-              <div style={{width:'25vh',height:'14vh',marginBottom:'2vh',backgroundColor:'#ffffff'}}> {/*Top sales1*/}
+              <div style={{marginBottom:'2vh'}} css={styles.smallWhiteDiv}> {/*Top sales1*/}
                 Top sales1
-              </div>
-              <div> {/*Top sales2*/}
+              </div >
+              <div css={styles.smallWhiteDiv} style={{height:'29vh'}}> {/*Top sales2*/}
               Top sales2
               </div>
-              <div> {/*Ads Records*/}
+              <div css={styles.smallWhiteDiv} style={{height:'30.50vh'}}> {/*Ads Records*/}
               Ads records
               </div>
             </div>
-            <div style={{backgroundColor:'#ffffff',width:'57.50vh'}}>
+            <div style={{backgroundColor:'#ffffff',width:'57.50vh',height:'61.61vh'}}>
+              <div style={{height:'61.61vh'}}>
               Total contracs
+              </div>
+              <div style={{display:'flex',justifyContent:'space-between'}}>
+                <div css={styles.smallWhiteDiv} style={{margin:'0px',marginTop:'2vh',backgroundColor:'#ffeeee',borderTop:'3px solid #FF6A55'}}>one</div>
+                <div css={styles.smallWhiteDiv} style={{margin:'0px',marginTop:'2vh',borderTop:'3px solid #ACA3FC80'}}>two</div>
+              </div>
             </div>
             <div style={{backgroundColor:'#ffffff',width:'57.50vh'}}>
 feedback 
