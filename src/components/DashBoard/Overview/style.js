@@ -68,10 +68,14 @@ export const overviewFirstRow =css({
 })
 export const overviewRow1 =css({
     width:'50.40vh',
-    height:'30.18vh',
+    height:'fit-content',
     backgroundColor:'#ffffff',
     borderRadius:'10px',
-    margin:'2vh'
+    margin:'2vh',
+    paddingLeft:'3vh',
+    paddingTop:'5vh',
+    display:'flex',
+    justifyContent:'space-between'
 })
 export const overviewSecondRow =css({
     display:'flex',
@@ -83,9 +87,13 @@ export const overviewSecondRow =css({
 })
 export const overviewRow2 =css({
     width:'25vh',
-    height:'13vh',
+    height:'fit-content',
     backgroundColor:'#ffffff',
-    borderRadius: '0px 0px 9.32674px 9.32674px'
+    borderRadius: '0px 0px 9.32674px 9.32674px',
+    display:'flex',
+    justifyContent:'space-around',
+    padding:'5px',
+    paddingBottom:'0px'
 })
 export const overviewThirdRow=css({
     display:'flex',
@@ -97,5 +105,57 @@ export const smallWhiteDiv =css({
     width:'25vh',
     backgroundColor:'#ffffff',
     borderRadius: '0px 0px 9.32674px 9.32674px',
+    padding:'1vh',
     marginBottom:'2vh'
+})
+export const dataChip =css({
+    color:'#8E59FF',
+    fontWeight:700,
+    fontSize:'12px',
+    display:'flex',
+    backgroundColor:'#efedff',
+    width:'fit-content',
+    textAlign:'center',
+    padding:'5px',
+    borderRadius:'5px'
+})
+export const arrowChip =css({
+    margin:'0px',
+    marginRight:'0vh'
+})
+
+export const spanText =css({
+    marginTop:'auto',
+    marginBottom:'auto'
+})
+export const OviconStyle =css({
+    color:'#5a48fb',
+    backgroundColor:'#e6e7ff',
+    padding:'15px',
+    borderRadius:'1000px',
+    paddingTop:'auto',
+    display:'flex',
+    justifyContent:'left',
+    width:'fit-content',
+})
+export const OviconStyle2 =css({
+    color:'#5a48fb',
+    backgroundColor:'#e6e7ff',
+    padding:'5px',
+    borderRadius:'1000px',
+    paddingTop:'auto',
+    display:'flex',
+    margin:'0px',
+    marginTop:'3vh',
+    marginBottom:'auto'
+})
+export const bigTitle =css({
+    padding:'0px',
+    margin:'0px',
+    lineHeight:'6vh',
+    fontSize:'6.31vh'
+})
+export const smallTitle = css({
+    fontSize:'3.15vh',
+    fontWeight:500
 })
