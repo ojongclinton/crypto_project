@@ -41,12 +41,11 @@
 }
 .firstView{
     height:100vh;
-    margin-top: 7vh;
 }
 .secondView{
     padding-top: 10vh;
     padding-left: 10vh;
-    margin-top:10vh;
+    margin-top:5vh;
     height: 120vh;
     background-image: url('./assets/backgroundPath.svg');
     background-repeat: no-repeat;

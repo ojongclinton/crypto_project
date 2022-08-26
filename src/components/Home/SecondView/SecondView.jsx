@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { jsx } from '@emotion/react'
-import { css,Global } from '@emotion/react'
-import {Grid,styled,Chip} from '@mui/material'
+import {Grid,Chip} from '@mui/material'
 import boxstep from '../../../assets/boxStepper.svg'
-import { H22,H11,H33 } from '../GlobalStyles'
+import { H22,H11} from '../GlobalStyles'
 import { useMediaQuery } from 'react-responsive'
 import Slider from 'react-slick'
 import * as styles from './style'

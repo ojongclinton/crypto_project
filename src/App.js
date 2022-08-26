@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css,keyframes,Global } from '@emotion/react'
 import React from 'react'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -6,7 +8,7 @@ import Home from './components/Home/Home';
 import Developper from './components/Developper/Developper';
 import Help from './components/Help/Help';
 import NotFound from './components/NotFound/NotFound';
-import { Outlet, Routes,Route} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import { DashBoard } from './components/DashBoard/DashBoard';
 
 
@@ -14,6 +16,14 @@ import { DashBoard } from './components/DashBoard/DashBoard';
 function App() {
   return (
     <div>
+      {/*Emotion was the prefered styling use... The Global component here is to define global styles...such as the font family for the whole website as you can see here*/}
+      <Global
+      styles={css`
+        * {
+          font-family:'SF Pro Display'
+        }
+      `}
+    />
       <Header/>
         <div>
             <Routes>

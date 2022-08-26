@@ -32,9 +32,9 @@ const whyChooseusReasons =[
           <div css={styles.shape8}></div>
           <div css={styles.shape9}></div>
           <p css={styles.plainText}>We're not just an online escrow service, We're THE BEST online escrow service.</p>
-        {whyChooseusReasons.map(reason=>{
+        {whyChooseusReasons.map((reason,index)=>{
           return(
-            <div style={{marginTop:'2vh'}}>
+            <div style={{marginTop:'2vh'}} key={index}>
               <H22 style={{textDecoration:'underline',textAlign:'center'}}>{reason.title}</H22>
               <p css={styles.plainText}>{reason.body}</p>
               <p css={styles.MviewMore}>Learn More <span><KeyboardArrowRightIcon style={{color:'#00C0FF'}}/></span></p>

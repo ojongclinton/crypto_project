@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { jsx } from '@emotion/react'
 import { css,Global } from '@emotion/react'
-import {Chip,styled} from '@mui/material'
+import {Chip} from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ProtoTypes from "prop-types"
 import * as styles from './style'
@@ -27,13 +27,13 @@ YoutubeEmbed.prototypes = {
 }
 
 export const FourthView =()=>{
-  const isMobile = useMediaQuery({query:`(max-width:576px)`})
+  const isMobile = useMediaQuery({query:`(max-width:576px)`}) /*This is a query that checks is the user is viewing on mobile*/
   return(
     <div className='FourthView'>
           <div css={styles.shape10}></div>
           <div css={styles.shape11}></div>
           <div css={styles.shape12}></div>
-        {isMobile?(<div>
+        {isMobile?(<div>     {/*display this if isMobile returns true */}
           <Chip label="Who we are" style={{color:'#5A48FA',backgroundColor:'#dcfbff',   marginBottom:'15px'}}/>
           <H11 style={{textAlign:'center'}}>About Us</H11>
           <p css={styles.plainText} style={{textAlign:'center'}} >Welcome to People-Powered Technology</p>
@@ -42,7 +42,7 @@ export const FourthView =()=>{
           <div className="Mobilevideo">
         <YoutubeEmbed embedId="rokGy0huYEA" width='100%' height='250' /> {/*Get Original video ID and insert here*/}
       </div>
-        </div>):(<div>
+        </div>):(<div>   {/*else display this if isMobile returns false*/}
           <div css={styles.whoWeAre}>
         <div >
           <Chip label="Who we are" style={{color:'#5A48FA',backgroundColor:'#dcfbff',   marginBottom:'15px'}}/>

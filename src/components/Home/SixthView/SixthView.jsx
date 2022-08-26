@@ -77,8 +77,8 @@ const handleChange=(e)=>{
                 <Grid container spacing={1}>
 
                     {
-                        searchItem?.map(faq=>(
-                            <Grid item xs ={4}>
+                        searchItem?.map((faq,index)=>(
+                            <Grid item xs ={4} key={index}>
                                 <span css={styles.solutionIcon}>{faq.icon}</span>
                                 <H33 style={{marginLeft:'auto',marginRight:'auto',width:'55vh',textAlign:'center'}}>{faq.question}</H33>
                                 <p css={plainText} style={{textAlign:'center',fontSize:'15px'}}>{faq.solution}</p>

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { jsx } from '@emotion/react'
 import { css,Global } from '@emotion/react'
-import {styled,Chip, Avatar, Stack, Typography} from '@mui/material'
+import {Chip, Avatar,Typography} from '@mui/material'
 import letfArrow from '../../../assets/leftArrow.svg'
 import rightArrow from '../../../assets/rightArrow.svg'
 import bitcoin from '../../../assets/bitcoin-yellow.svg'
@@ -65,6 +65,8 @@ var settings = {
   nextArrow:<SlickArrowRight/>,
 }
 
+{/*On this pqge the Mobile views where changd using styles....for example if it is a mobile, use margin:0 else use margin 1..U Gerrit??!! This is just for testing Purpose though...mobile designs have not yet been sumbitted to me :-) */}
+
   return(
     <div className="FithView">
       <div css={isMobile?styles.MWhoweAre:styles.whoWeAre}>
@@ -94,9 +96,9 @@ var settings = {
             <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>
         </div>
         <Slider {...settings}>
-          {testimonials.map(testimony=>{
+          {testimonials.map((testimony,key)=>{
             return(
-              <div>
+              <div key={key}>
                 <div style={{backgroundColor:'white',margin:'5vh',padding:'10px',textAlign:'center',height:'max-content',borderRadius:'10px'}}>
                   <H33>{testimony.title}</H33>
                   <p css={styles.plainText} style={{fontSize:'14px'}}>{testimony.comment}</p>

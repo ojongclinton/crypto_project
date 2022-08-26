@@ -69,16 +69,18 @@ const footerContainer =css({
 })
 
 function Footer() {
+  const [email,setEmail] = React.useState("")
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    alert(`Email is : ${email}`)
+  }
   return (
     <div className='Footer'>
       <div >
         <H22 css={subCss}>Subscribe to our Newsletter and learn more about our updated services</H22>
         <div>
-          <form onSubmit={(e)=>{
-            e.preventDefault()
-            console.log('Form submitted')
-            }}  css={subDiv}>
-                <InputBase placeholder='YourEmail...' css={Emailbox}/>
+          <form onSubmit={handleSubmit}  css={subDiv}>
+                <InputBase placeholder='YourEmail...' css={Emailbox} value={email} type='email' onChange={(e)=>setEmail(e.target.value)}/>
                 <Button variant='contained'style={{backgroundColor:'#5A48FA'}} type='submit'>Submit</Button>
           </form>
             </div>

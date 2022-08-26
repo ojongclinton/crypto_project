@@ -9,6 +9,7 @@ import { SixthView } from './SixthView/SixthView'
 import { ThirdView } from './ThirdView/ThirdView'
 
 function Home() {
+  
   return (
     <div>
        <FirstView/>

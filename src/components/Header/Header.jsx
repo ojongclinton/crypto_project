@@ -31,10 +31,9 @@ font-size:14px;
 `
 const headerBoxCss =css({
   backgroundColor:'white',
-  position:'fixed',
   top:0,
   display: 'flex', 
-  justifyContent:'space-around',
+  justifyContent:'space-between',
   alignItems:'center',
   paddingBottom:'15px',
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
@@ -103,13 +102,6 @@ const toggleNav = ()=>{
 
   return (
     <div>
-      <Global
-        styles={css`
-          *{
-            font:SF Pro Display
-          }
-        `}
-      />
       <CssBaseline/>
     <div css={headerBoxCss}>
       <div className='logo_name' css={logo}>
@@ -121,7 +113,7 @@ const toggleNav = ()=>{
           </Typography>
       </div>
       <div className='links' css={links}>
-            <Box>
+            <Box style={{margin:'0px',padding:'0px'}}>
               <NavLink to='/' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Home</NavLink>
               <NavLink to='/Dashboard' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Dashboard</NavLink>
               <NavLink to='/MarketPlace' className={({isActive})=>isActive?"activeNavLink":"navLink"}>MarketPlace</NavLink>
@@ -133,7 +125,7 @@ const toggleNav = ()=>{
         <SearchIcon css={headerIcon} />
         <LanguageIcon css={headerIcon}/>
         <KeyboardArrowDownIcon css={headerIcon}/>
-        <PlainLink href='/333' >Sign In</PlainLink>
+        <PlainLink href='/333' onClick={()=>{alert('Hold On...Partner still to submit sign in and signUP Page')}}>Sign In</PlainLink>
         <Button variant='outlined'>Sign up</Button>
       </div>
     </div>

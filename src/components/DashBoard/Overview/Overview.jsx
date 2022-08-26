@@ -161,13 +161,7 @@ const OverviewRow3 =()=>{
 export const Overview=()=>{
   return (
     <div className='Overview'>
-      <Global
-      styles={css`
-        * {
-          font-family:'SF Pro Display'
-        }
-      `}
-    />
+
       <div >
        <Grid container spacing={2}>
         <Grid item xs={3} > 

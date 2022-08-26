@@ -83,35 +83,11 @@ top:'50vh',
    display:'none'
 }
 })
-
-export const formCss =css({
-marginRight:'0px',
-marginTop:'22vh',
-})
-export const formDiv =css({
-    display:'flex',
-[mq[0]]:{
-    display:'block',
-    width:'100%',
-    margin:'0px',
-    margin:'0px'
- }
-})
-export const formControl1=css({
-    margin:'2vh',
-    width:'100%',
-    [mq[0]]:{
-    width:'100%',
-    margin:'1vh'
-     }
-
-})
-
 export const bitcoinImage =css({
 position:'absolute',
 height:'7vh',
 width:'7vh',
-right:'15vh',
+left:'190vh',
 top:'20vh',
 [mq[0]]:{
     display:'none'
@@ -121,9 +97,35 @@ export const binanceImage =css({
 position:'absolute',
 height:'7vh',
 width:'7vh',
-right:'50vh',
+left:'150vh',
 bottom:'5vh',
 [mq[0]]:{
     display:'none'
  }
 })
+export const selectAction =css({
+    padding:'vh'
+})
+
+export const formCss =css({
+    marginRight:'0px',
+    marginTop:'22vh',
+    })
+    export const formDiv =css({
+        display:'flex',
+    [mq[0]]:{
+        display:'block',
+        width:'100%',
+        margin:'0px',
+        margin:'0px'
+     }
+    })
+    export const formControl1=css({
+        margin:'2vh',
+        width:'100%',
+        [mq[0]]:{
+        width:'100%',
+        margin:'1vh'
+         }
+    
+    })
