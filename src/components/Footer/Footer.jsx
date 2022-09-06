@@ -7,68 +7,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-
-const blurryBac3 = css`
-width: 80.5vh;
-height: 30.5vh;
-opacity: 0.5;
-filter: blur(110px);
-position:absolute;
-z-index:-10;
-`
-const shape1=css`
-${blurryBac3};
-background:#5A48FA;
-`
-const shape2=css`
-${blurryBac3};
-background:#4DE6FC;
-`
-const shape3=css`
-${blurryBac3};
-background:#AA80F9;
-`
-
-const subCss = css({
-  fontSize:'30px',
-  width:'100vh',
-  textAlign:'center',
-  marginLeft:'auto',
-  marginRight:'auto'
-})
-const subDiv =css({
-  display:'flex',
-  justifyContent:'center',
-  marginTop:'6vh',
-})
-const Emailbox =css({
-  marginRight:'3vh',
-  backgroundColor:'white',
-  padding:'5px',
-  border:'1px solid #d0d5dd',
-  borderRadius:'5px',
-  width:'50vh',
-})
-const footerLink =css({
-  display:'block',
-  textDecoration:'none',
-  color:'#282D6C',
-  width:'30vh',
-  fontSize:'15px',
-  paddingTop:'25px'
-})
-const footerIcon =css({
-  display:'block',
-  textDecoration:'none',
-  width:'8vh',
-  color:'#5A48FA',
-})
-
-const footerContainer =css({
-  marginRight:'5vh'
-})
+import * as Styles from './style'
+import { useMediaQuery } from 'react-responsive'
 
 function Footer() {
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const [email,setEmail] = React.useState("")
   const handleSubmit = (e)=>{
     e.preventDefault()
@@ -77,70 +20,62 @@ function Footer() {
   return (
     <div className='Footer'>
       <div >
-        <H22 css={subCss}>Subscribe to our Newsletter and learn more about our updated services</H22>
+        <H22 css={Styles.subCss}>Subscribe to our Newsletter and learn more about our updated services</H22>
         <div>
-          <form onSubmit={handleSubmit}  css={subDiv}>
-                <InputBase placeholder='YourEmail...' css={Emailbox} value={email} type='email' onChange={(e)=>setEmail(e.target.value)}/>
-                <Button variant='contained'style={{backgroundColor:'#5A48FA'}} type='submit'>Submit</Button>
+          <form onSubmit={handleSubmit}  css={Styles.subDiv}>
+                <InputBase placeholder='YourEmail...' css={Styles.Emailbox} value={email} type='email' onChange={(e)=>setEmail(e.target.value)}/>
+                <Button variant='contained'style={isMobile?{backgroundColor:'#5A48FA',width:'fit-content',margin:'auto',padding:'15px 30px'}:{backgroundColor:'#5A48FA'}} type='submit'>Submit</Button>
           </form>
             </div>
       </div>
-      <div style={{
-        display:'flex',
-        justifyContent:'space-around',
-        marginTop:'15vh',
-        borderBottom: '1px solid rgba(173, 173, 173, .5)',
-        marginRight:'auto',
-        marginLeft:'auto',
-        width:'fit-content'
-        }}>
-            <div css={footerContainer}>
+      <div css={Styles.footerContainer2}>
+            <div css={Styles.footerContainer}>
               <H33>OnlineP2P</H33>
               <div>
-              <NavLink to='/aboutUS' css={footerLink}>About Us</NavLink>
-              <NavLink to='/aboutUS' css={footerLink}>How are we different</NavLink>
-              <div css={shape1}></div>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>About Us</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>How are we different</NavLink>
+              <div css={Styles.shape1}></div>
               </div>
               
             </div>
-            <div css={footerContainer}>
+            <div css={Styles.footerContainer}>
             <H33>Useful Links</H33>
               <div>
-              <NavLink to='/aboutUS' css={footerLink}>Contact</NavLink>
-              <NavLink to='/aboutUS' css={footerLink}>Privacy</NavLink>
-              <NavLink to='/aboutUS' css={footerLink}>Terms and Comditions</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Contact</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Privacy</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Terms and Comditions</NavLink>
               </div>
             </div>
-            <div css={footerContainer}>
-            <div css={shape2}></div>
+            <div css={Styles.footerContainer}>
+            <div css={Styles.shape2}></div>
             <H33>Resources</H33>
               <div>
-              <NavLink to='/aboutUS' css={footerLink}>Blog</NavLink>
-              <NavLink to='/aboutUS' css={footerLink}>Case Studies</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Blog</NavLink>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Case Studies</NavLink>
               </div>
             </div>
-            <div css={footerContainer}>
+            <div css={Styles.footerContainer}>
             <H33>Support</H33>
               <div>
-              <NavLink to='/aboutUS' css={footerLink}>Help Center</NavLink>
-              <div css={shape3}></div>
+              <NavLink to='/aboutUS' css={Styles.footerLink}>Help Center</NavLink>
+              <div css={Styles.shape3}></div>
               </div>
             </div>
-            <div css={footerContainer}>
+            <div css={Styles.footerContainer}>
             <H33>Location</H33>
               <div>
-              <NavLink to='/aboutUS' css={footerLink}>360 Spear St Floor 4,
+              <NavLink to='/aboutUS' css={Styles.footerLink}>360 Spear St Floor 4,
 Nkoulouloun, DLA 94105</NavLink>
               </div>
             </div>
       </div>
       <div style={{display:'flex',justifyContent:'space-around',gap:'50vh',marginTop:'5vh'}}>
         <p css={plainText}>© Copyright 2021. All Rights Reserved.</p>
-        <div style={{display:'flex',justifyContent:'space-around'}}>
-          <a href="https://www.google.com" css={footerIcon}><LinkedInIcon/></a>
-          <a href="https://www.google.com" css={footerIcon}><FacebookIcon/></a>
-          <a href="https://www.google.com" css={footerIcon}><TwitterIcon/></a>
-        </div>
+        {!isMobile && <div style={{display:'flex',justifyContent:'space-around'}}>
+          <a href="https://www.google.com" css={Styles.footerIcon}><LinkedInIcon/></a>
+          <a href="https://www.google.com" css={Styles.footerIcon}><FacebookIcon/></a>
+          <a href="https://www.google.com" css={Styles.footerIcon}><TwitterIcon/></a>
+        </div>}
       </div>
     </div>
   )

@@ -11,7 +11,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import SearchIcon from '@mui/icons-material/Search';
-
+import { chipStyle } from '../SecondView/style'
+import { useMediaQuery } from 'react-responsive'
 
 export const SixthView=()=> {
     const faqs = [
@@ -58,29 +59,28 @@ const handleChange=(e)=>{
     setSearchTerm(e.target.value.toLowerCase())
     setSearch(faqs.filter(faq=>faq.question.toLowerCase().includes(searchTerm)))
 }
+const isMobile = useMediaQuery({query:`(max-width:576px)`})
   return (
-    <div className='sixthView'>
+    <div className='sixthView' >
             
         <div css={styles.faqSearch}>
-        <Chip label="FAQs" style={{color:'#5A48FA',backgroundColor:'#dcfbff'}}/>
+        <Chip label="FAQs" css={chipStyle}/>
             <H11>Frequently asked questions</H11>
             <p css={plainText}>Have questions? we're here to help</p>
             <div css={styles.searchBox}>
                 <SearchIcon css={styles.searchIcon}/><InputBase placeholder='Search' css={styles.searchInput} onInput={handleChange} value={searchTerm}/>
             </div>
         </div>
-            <div css={styles.shape1}></div>
-            <div css={styles.shape2}></div>
-            <div css={styles.shape3}></div>
+
         <div css={styles.searchAnswers}>
               <div>
-                <Grid container spacing={1}>
+                <Grid container spacing={isMobile?4:1}>
 
                     {
                         searchItem?.map((faq,index)=>(
-                            <Grid item xs ={4} key={index}>
+                            <Grid item lg={4} xs={12} key={index}>
                                 <span css={styles.solutionIcon}>{faq.icon}</span>
-                                <H33 style={{marginLeft:'auto',marginRight:'auto',width:'55vh',textAlign:'center'}}>{faq.question}</H33>
+                                <H33 style={{marginLeft:'auto',marginRight:'auto',textAlign:'center'}}>{faq.question}</H33>
                                 <p css={plainText} style={{textAlign:'center',fontSize:'15px'}}>{faq.solution}</p>
                             </Grid>
                         ))

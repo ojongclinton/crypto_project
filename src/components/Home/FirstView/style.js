@@ -3,9 +3,10 @@ import { blurryBack, mq } from '../GlobalStyles'
 
 
 export const thegradientText =css`
-width:90vh;
+width:100%;
 margin-top:18vh;
-margin-left:17vh;
+padding-left:10%;
+margin-right:auto;
 height: fit-content;
 font-weight: bold;
 font-size: 10vh;
@@ -36,6 +37,7 @@ left: 43.26vh;
 top: 22.59vh;
 z-index:-1;
 ${mq[0]}{
+    top:15vh;
     left:7vh;
 }
 `
@@ -48,6 +50,7 @@ top:47.55vh;
 z-index:-1;
 ${mq[0]}{
     left:7vh;
+    top:30vh;
 }
 `
 export const shape3=css`
@@ -59,6 +62,7 @@ top: 38.81vh;
 z-index:-1;
 ${mq[0]}{
     left:7vh;
+    top:30vh;
 }
 `
 export const never =css`
@@ -108,8 +112,15 @@ export const selectAction =css({
 })
 
 export const formCss =css({
-    marginRight:'0px',
     marginTop:'22vh',
+    marginLeft:'auto',
+    marginRight:'auto',
+    color:'red',
+    [mq[0]]:{
+        marginTop:'10vh',
+        backgroundColor:'unset',
+        boxShadow: "none"
+    }
     })
     export const formDiv =css({
         display:'flex',
@@ -117,7 +128,7 @@ export const formCss =css({
         display:'block',
         width:'100%',
         margin:'0px',
-        margin:'0px'
+        margin:'0px',
      }
     })
     export const formControl1=css({
@@ -127,5 +138,17 @@ export const formCss =css({
         width:'100%',
         margin:'1vh'
          }
-    
+    })
+    export const sbBtn=css({
+        marginTop:'3vh', 
+        backgroundColor:'#5A48FA',
+        padding:'10px',
+        [mq[0]]:{
+            marginTop:'4vh'
+             }
+    })
+    export const selectFont=css({
+        color:'#04063D',
+        fontSize:'18px',
+        fontWeight:500
     })

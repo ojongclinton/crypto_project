@@ -7,7 +7,8 @@ import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import ClearIcon from '@mui/icons-material/Clear';
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
-
+import millify from 'millify';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 {/*Algorithm below calculates the change in balance,total deposit and total payout...meant to compare results of last week and current week and return a sting as to if user has made a percentage loss or a gain*/}
 const trendCalc = (data_before,data_after) =>{
@@ -33,7 +34,14 @@ export const user ={
       {label:'Mar',amount:'300000'},
       {label:'Apr',amount:'400000'},
       {label:'May',amount:'400000'},
-    ]
+    ],
+    topSales:[
+          {label:'Week 22',amount:75000},
+          {label:'Week 23',amount:37000},
+          {label:'Week 24',amount:56000},
+    ],
+    disputedAmt:100200,
+    resolvedPay:95500
   }
   export const ovRow1Data =[
     {
@@ -95,4 +103,25 @@ export const user ={
       icon:<ShowChartIcon style={{fontSize:'3vh'}}/>,
       bColor:'3px solid #ACA3FC80'     
     },
+    {
+      name:'Post items',  
+      amount:12,
+      icon: <CloudUploadIcon style={{fontSize:'3vh'}}/>,
+      bColor:'3px solid #ACA3FC80'
+    }
   ]
+
+export const feedBack =[
+  {name:'Ethel',username:'@ethel',title:'Ferrari Fort',comment:'Great work 😍😍',fedTime:'1h'},
+  {name:'Alex',username:'@Alex_Designs',title:'FordJT 96',comment:'Nees you for some work dude... contact me on 623578926',fedTime:'1h'},
+  {name:'Ernest',username:'@EnestoTech',title:'Avensis-cyamon',comment:'hello,i saw one of your work you did for my friend....could you help a brother out? thanks in advance',fedTime:'1h'},
+  {name:'Tackang',username:'@brandon',title:'Binance',comment:'WOW...this designs are incredible mate...shapo!!',fedTime:'1h'},
+]
+
+export const transactions=[
+  {name:'Ethel',username:'@ethel',amount:'$384',item:'Domain name',email:'chelsie@ui8.net'},
+  {name:'Alex',username:'@Alex_Designs',amount:'$376',item:'100" screen',email:'fahey.designer@robot.co'},
+  {name:'Ernest',username:'@EnestoTech',amount:'$645',item:'Playstation 5',email:'orion88@yahoo.com'},
+  {name:'Tackang',username:'@brandon',amount:'$229',item:'Ferrari ford JT',email:'brown.be@gmail.com'},
+  {name:'Ojong',username:'@ojong',amount:'$929',item:'fufu and egousi',email:'heyEnoh123@gmail.com'},
+]

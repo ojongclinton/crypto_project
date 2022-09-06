@@ -1,0 +1,20 @@
+.signUp,signIn {
+    animation: linear;
+    animation-name: run;
+    animation-duration: 2s;
+    font-size: large;
+  }
+@keyframes run {
+    0% {
+      opacity: 0;
+      font-size: small;
+    }
+    50% {
+     opacity: 0.5;
+     font-size: large;
+    }
+    100% {
+      opacity: 1;
+      font-size: large;
+    }
+  }

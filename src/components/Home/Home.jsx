@@ -7,17 +7,21 @@ import { FourthView } from './FourthView/FourthView'
 import { SecondView } from './SecondView/SecondView'
 import { SixthView } from './SixthView/SixthView'
 import { ThirdView } from './ThirdView/ThirdView'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ScrollButton from './handleScroll'
+
 
 function Home() {
   
   return (
     <div>
-       <FirstView/>
-       <SecondView/>
-       <ThirdView/>
-       <FourthView/>
-       <FithView/> 
-       <SixthView/>
+      <ScrollButton/> 
+      <FirstView/>
+      <SecondView/>
+      <ThirdView/>
+      <FourthView/>
+      <FithView/> 
+      <SixthView/> 
     </div>
   )
 }

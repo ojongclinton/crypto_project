@@ -1,6 +1,7 @@
 import { css,Global } from '@emotion/react'
 import {styled} from '@mui/material'
 import { mq } from '../GlobalStyles'
+import { chipStyle } from '../SecondView/style'
 
 const blurryBack2 =css`
 width: 30.5vh;
@@ -17,7 +18,15 @@ fontSize:'18px',
 lineHeight:'160%',
 fontStyle:'normal',
 margin:'0px',
-padding:'0px'
+padding:'0px',
+width:'80vh',
+[mq[0]]:{
+    fontFamily:'Montserrat',
+    fontStyle:'normal',
+    width:'fit-content',
+    margin:'0px 30px 30px 30px',
+    fontSize:'16px'
+}
 })
 export const whyChoose =css({
     textAlign:'center',
@@ -31,7 +40,11 @@ export const reasonBox =css({
     width:'90%',
     marginLeft:'auto',
     marginRight:'auto',
-    paddingTop:'0vh'
+    paddingTop:'0vh',
+    [mq[0]]:{
+        display:'block',
+        height:'fit-content'
+    }
 })
 export const viewMore =css({
     color:'#8B8BFD',

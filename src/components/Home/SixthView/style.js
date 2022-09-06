@@ -15,6 +15,10 @@ export const searchBox =css({
     paddingTop:'0px',
     border:'1px solid #d0d5dd',
     borderRadius:'10px',
+    [mq[0]]:{
+        width:'80%',
+        textAlign:'left'
+    }
 })
 export const searchIcon=css({
 color:'#667085',
@@ -27,6 +31,7 @@ right:'3px'
 })
 export const searchInput=css({
     margin:'0px',
+
     backgroundColor:'white',
     '&:focus-within':{
         borderBottom:'2px solid #667085'
@@ -43,7 +48,11 @@ export const solutionIcon =css({
     justifyContent:'center',
     width:'fit-content',
     marginLeft:'auto',
-    marginRight:'auto'
+    marginRight:'auto',
+    [mq[0]]:{
+        margin:'auto',
+        marginBottom:'3vh',
+    }
 
 })
 
@@ -72,5 +81,8 @@ background:#AA80F9;
 left:100vh;
 `
 export const searchAnswers =css({
-    margin:'10vh 6vh 5vh 4vh'
+    margin:'10vh 6vh 5vh 4vh',
+    [mq[0]]:{
+        margin:'1vh'
+    }
 })

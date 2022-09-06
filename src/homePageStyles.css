@@ -1,3 +1,6 @@
+html,body{
+    overflow-x: hidden;
+}
 .activeNavLink{
     text-decoration:none;
     text-align:center;
@@ -58,7 +61,7 @@
     background-repeat: no-repeat;
 }
 .FourthView{
-    margin-top:5vh;
+    margin-top:20vh;
     height: fit-content;
     background-image: url('./assets/backgroundPath3.svg');
     background-repeat: no-repeat;
@@ -70,7 +73,9 @@
 }
 .FithView{
     margin:0vh;
+    margin-top: 20vh;
     height: fit-content;
+    width: 100%;
 }
 .fithViewHalfCircle{
     width: 100vh;
@@ -102,6 +107,7 @@
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: 30% 100% ;
+    margin-top: 15vh;
 }
 .Footer{
     height: 90vh;
@@ -110,6 +116,7 @@
     background-image: url('./assets/backgroundPath5.svg');
     background-repeat: no-repeat;
 }
+
 @media only screen and (max-width: 576px) {
     .secondView{
         margin:0vh;
@@ -117,6 +124,7 @@
         padding-bottom: 0px;
         padding-top: 5vh;
         height: fit-content;
+        width: 100%;
     }
     .firstView{
         height:fit-content;
@@ -129,14 +137,55 @@
     .FourthView{
         padding: 0px;
         height: fit-content;
-
+        margin-top: 5vh;
     }
     .fithViewHalfCircle{
         width: 100%;
         height: 50vh;
-        background-image: url('./assets/halfCircle.svg');
+        background-image: url('./assets/mobileHalfCircle.svg');
         background-repeat: no-repeat;
+        background-size: 100%;
     }
+    .FithView{
+        margin:0vh;
+        height: fit-content;
+        width: 100%;
+    }
+    .video{
+        width: 100%;
+        height: 40vh;
+        margin-bottom:5vh;
+        background-color: inherit;
+    }
+    .slick-dot{
+        margin-top: 10%;
+    }
+    .sixthView{
+        height: 100%;
+        margin-top: 1vh;
+    }
+    .Footer{
+        height: fit-content;
+    }
+ #mobileNav{
+        padding: 0vh 3vh 0vh 3vh;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+
+        animation-name: runn;
+        animation-duration: .4s;
+    }
+    @keyframes runn {
+        0% {
+          width: 0%;
+        }
+        100% {
+         width: 100%;
+        }
+      }
+
   }
   @media only screen and (max-width: 1024px){
     .secondView{
@@ -148,4 +197,5 @@
         padding: 0px;
         height: 100vh;
     }
+    
   }

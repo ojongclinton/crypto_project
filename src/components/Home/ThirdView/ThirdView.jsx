@@ -3,13 +3,14 @@ import { jsx } from '@emotion/react'
 import {Paper,styled,Chip} from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import * as styles from './style'
-import { H11,H33,H22 } from '../GlobalStyles';
+import { H11,H33,H22, mq } from '../GlobalStyles';
 import { useMediaQuery } from 'react-responsive'
+import { chipStyle } from '../SecondView/style';
 
 
 export const ThirdView =()=>{
   const isMobile = useMediaQuery({query:`(max-width:576px)`})
-  const isLlaptop = useMediaQuery({query:`(max-width:1024px)`})
+
   const Reason = styled(Paper)(({ theme,index }) => ({
     color: index ==0?'white':theme.palette.text.secondary,
     background:index==0?'linear-gradient(rgba(78, 231, 255, 1),rgba(170, 128, 249, 1))':'',
@@ -17,6 +18,11 @@ export const ThirdView =()=>{
     width:'40vh',
     padding:'4vh',
     textAlign:'center',
+    [mq[0]]:{
+      width:'90%',
+      margin:'auto',
+      marginTop:'10vh'
+    }
   }));
 const whyChooseusReasons =[ 
   {title:"Pro services",body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada at faucibus vitae libero tellus enim eros, tristique. Lorem aliquet nunc bibendum."},
@@ -26,33 +32,16 @@ const whyChooseusReasons =[
 ]
   return(
     <div >
-      {isMobile? (<div>
-        <H11>Why choose us?</H11>
-        <div css={styles.shape7}></div>
-          <div css={styles.shape8}></div>
-          <div css={styles.shape9}></div>
-          <p css={styles.plainText}>We're not just an online escrow service, We're THE BEST online escrow service.</p>
-        {whyChooseusReasons.map((reason,index)=>{
-          return(
-            <div style={{marginTop:'2vh'}} key={index}>
-              <H22 style={{textDecoration:'underline',textAlign:'center'}}>{reason.title}</H22>
-              <p css={styles.plainText}>{reason.body}</p>
-              <p css={styles.MviewMore}>Learn More <span><KeyboardArrowRightIcon style={{color:'#00C0FF'}}/></span></p>
-            </div>
-          )
-        })}
-      </div>)
-      :
-      (
+      
         <div>
           <div css={styles.whyChoose}>
         <div>
           <div css={styles.shape7}></div>
           <div css={styles.shape8}></div>
           <div css={styles.shape9}></div>
-          <Chip label="We explain" style={{color:'#5A48FA',backgroundColor:'#dcfbff'}}/>
+          <Chip label="We explain" css={chipStyle}/>
           <H11>Why choose us?</H11>
-          <p css={styles.plainText} style={{width:'80vh'}}>We're not just an online escrow service, We're THE BEST online escrow service.</p>
+          <p css={styles.plainText} style={isMobile?{}:{margin:'5vh 0vh'}}>We're not just an online escrow service, We're THE BEST online escrow service.</p>
         </div>
       </div>
       <div css={styles.reasonBox}>
@@ -65,7 +54,6 @@ const whyChooseusReasons =[
           ))}
       </div>
         </div>
-      )}
     </div>
   )
 }

@@ -19,7 +19,12 @@ export const H11 = styled('h1')({
     fontSize: '48px',
     lineHeight: '64px',
     margin:'0px',
-    padding:'0px'
+    padding:'0px',
+    [mq[0]]:{
+      fontSize:'4vh',
+      lineHeight:'normal',
+      margin:'2vh'
+    }
   })
 export const H22 = styled('h2')({
     color: '#04063D',
@@ -28,6 +33,11 @@ export const H22 = styled('h2')({
     padding:'0px',
     margin:'0px',
     lineHeight: '34px',
+    [mq[0]]:{
+      fontSize:'16px',
+      lineHeight:'normal',
+      fontWeight:'600'
+    }
   })
  export const H33 = styled('h2')(({index})=>({
     color:index==0?'white':'#282D6C',
@@ -36,6 +46,11 @@ export const H22 = styled('h2')({
     padding:'0px',
     margin:'0px',
     lineHeight: '34px',
+    [mq[0]]:{
+      fontSize:'16px',
+      lineHeight:'normal',
+      fontWeight:'600'
+    }
   }))
 
 export const blurryBack =css`
@@ -43,16 +58,24 @@ width: 40.5vh;
 height: 40.5vh;
 opacity: 0.5;
 filter: blur(200px);
+${mq[0]}{
+width: 40.5vh;
+height: 40.5vh;
+  filter:blur(80px);
+}
 `
 export const plainText = css({
 color:'#282D6C',
-fontFamily:'SF Pro Display',
 fontWeight:400,
 fontSize:'16px',
 lineHeight:'160%',
 fontStyle:'normal',
 margin:'0px',
-padding:'0px'
+padding:'0px',
+[mq[0]]:{
+  fontFamily:'Montserrat',
+  fontStyle:'normal',
+}
 })
 
 export const whoWeAre= css({
@@ -60,17 +83,3 @@ display:'flex',
 justifyContent:'space-between',
 padding:'0 10vh'
 })
-
-{/*Instead put a scroll to top button!!!*/}
-//   export const moveDownIcon =css({
-//     position:'absolute',
-//     color:'#5A48FA',
-//     backgroundColor:'#FFFFFF',
-//     borderRadius:'100px',
-//     boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.15)',
-//     fontSize:'10vh',
-//     padding:'10px',
-//     left:'103vh',
-//     top:'80vh',
-//     '&: hover':{ cursor:'pointer'}
-//   })

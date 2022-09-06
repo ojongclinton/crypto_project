@@ -16,6 +16,8 @@ import Slider from "react-slick";
 import { H11, H33,H22 } from '../GlobalStyles'
 import * as styles from './style'
 import { useMediaQuery } from 'react-responsive'
+import { chipStyle } from '../SecondView/style'
+import React from 'react'
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
@@ -24,10 +26,6 @@ const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <img src={rightArrow} alt="nextArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
 );  
-
-
-export const FithView =()=>{
-  const isMobile = useMediaQuery({query:`(max-width:576px)`})
 const testimonials =[
   {
     name:"Jane Cooper",
@@ -54,43 +52,68 @@ const testimonials =[
     comment:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus natus illo itaque cumque id suscipit aperiam. Repudiandae quas ducimus corrupti nisi tempore nemo aspernatur necessitatibus ut. Fugit commodi expedita molestiae debitis quaerat ad porro amet, fugiat eaque quibusdam odio doloribus."
   }
 ]
+
+export const FithView =()=>{
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
+  const [currentSlide,setCurrentSlide] = React.useState(0)
 var settings = {
+  beforeChange:function(prev,next){
+    setCurrentSlide(next)
+  },
+  customPaging: function(pagi, i) {
+    const style={
+      height:'10px',
+      width:'10px',
+      borderRadius:'100px',
+      border:'2px solid #82839e'
+    }
+    const activeStyle={
+      height:'10px',
+      width:'10px',
+      borderRadius:'100px',
+      backgroundColor:'white'
+    }
+    return (
+      <div className='slick-dot' style={pagi===currentSlide?activeStyle:style}> </div>
+    );
+  },
   className:isMobile?'Mcenter':'center',
-  dots:false,
+  dots:true,
   infinite:true,
   speed:1000,
   slidesToShow:isMobile?1:2,
   slidesToScroll:1,
   prevArrow:<SlickArrowLeft/>,
   nextArrow:<SlickArrowRight/>,
+  arrows:isMobile?false:true,
+
 }
 
 {/*On this pqge the Mobile views where changd using styles....for example if it is a mobile, use margin:0 else use margin 1..U Gerrit??!! This is just for testing Purpose though...mobile designs have not yet been sumbitted to me :-) */}
 
   return(
-    <div className="FithView">
+    <div className="FithView" >
       <div css={isMobile?styles.MWhoweAre:styles.whoWeAre}>
-        <div >
-          <Chip label="Payment" style={{color:'#5A48FA',backgroundColor:'#dcfbff',   marginBottom:'15px'}}/>
-          <H11 style={isMobile?{width:'100%',textAlign:'center'}:{width:'70.30vh'}}>We accept these different cryptos</H11>
-          <p css={styles.plainText} style={isMobile?{width:'100%',textAlign:'center'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
+        <div style={isMobile?{display:'flex',flexDirection:'column',alignItems:'center'}:{}}>
+          <Chip label="Payment" css={chipStyle}/>
+          <H11 css={styles.heading}>We accept these different cryptos</H11>
+          <p css={styles.plainText} style={isMobile?{width:'80%',textAlign:'center',marginBottom:'10vh'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
         </div>
         <div className='fithViewHalfCircle'>
           <div style={isMobile?{display:'flex',justifyContent:'space-around'}:{}}>
-          <img src={bitcoin} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.bitcoinImage} />
-          <img src={binance} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.binanceImage} />
-          <img src={etherum} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.etherumImage} />
-          <img src={TeTher} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.tetherImage} />
+            <img src={bitcoin} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.bitcoinImage} />
+            <img src={binance} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.binanceImage} />
+            <img src={etherum} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.etherumImage} />
+            <img src={TeTher} alt="bitcoinIMG" css={ isMobile?styles.currencies3:styles.tetherImage} />
           </div>
           <div style={isMobile?{display:'flex',justifyContent:'space-around',padding:'5vh'}:{}}>
-          <img src={Payeer} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.payeerImage} />
-                    <img src={BlockIo} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.blockImage} />
-          <img src={More} alt="bitcoinIMG" css={isMobile?styles.currencies3:styles.moreImage} />
+            <img src={Payeer} alt="bitcoinIMG" css={isMobile?styles.currencies4:styles.payeerImage} />
+            <img src={BlockIo} alt="bitcoinIMG" css={isMobile?styles.currencies4:styles.blockImage} />
+            <img src={More} alt="bitcoinIMG" css={isMobile?styles.currencies4:styles.moreImage} />
           </div>
         </div>
       </div>
       <div css={styles.testimonials}>
-      
         <div  style={{height:'10vh',display:'flex',justifyContent:'space-around'}}>
         <H11 style={isMobile?{marginLeft:'auto',marginRight:'auto',marginTop:'6vh',color:"white",}:{color:'white',marginLeft:'60vh',marginTop:'10vh'}}>Testimonial</H11>
             <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>
@@ -99,7 +122,7 @@ var settings = {
           {testimonials.map((testimony,key)=>{
             return(
               <div key={key}>
-                <div style={{backgroundColor:'white',margin:'5vh',padding:'10px',textAlign:'center',height:'max-content',borderRadius:'10px'}}>
+                <div style={{backgroundColor:'white',margin:isMobile?'2vh':'5vh',padding:'10px',textAlign:'center',height:'max-content',borderRadius:'10px'}}>
                   <H33>{testimony.title}</H33>
                   <p css={styles.plainText} style={{fontSize:'14px'}}>{testimony.comment}</p>
                 </div>

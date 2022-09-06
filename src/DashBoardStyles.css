@@ -1,4 +1,22 @@
 .Overview{
-    margin:2vh 0 0 0;
+    margin:2vh 0px 0px 0px;
     background: #eeeeee;
+}
+table{
+    border-collapse: collapse;
+}
+tr{
+    border-radius: 200px;
+}
+td,th{
+    padding: 5vh 5vh 3vh 8vh;
+}
+tr:hover{
+    background-color: #efedff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+tr:hover .btn .lala{
+    background-color: #ff6a55;
+    color: white;
 }

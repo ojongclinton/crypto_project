@@ -10,6 +10,7 @@ import Help from './components/Help/Help';
 import NotFound from './components/NotFound/NotFound';
 import {Routes,Route} from 'react-router-dom'
 import { DashBoard } from './components/DashBoard/DashBoard';
+import { SignIn } from './components/SignIn/SignIn';
 
 
 
@@ -27,15 +28,16 @@ function App() {
       <Header/>
         <div>
             <Routes>
-              <Route path='/Dashboard' element={<DashBoard/>}></Route>
+               <Route path='/Dashboard' element={<DashBoard/>}></Route> 
               <Route path='/' element={<Home/>}></Route>
-              <Route path='/Developper' element={<Developper/>}></Route>
+              {/* <Route path='/Developper' element={<Developper/>}></Route>
               <Route path='/Help' element={<Help/>}></Route>
               <Route path='/MarketPlace' element={<MarketPlace/>}></Route>
-              <Route path='*' element={<NotFound/>}></Route>
+              <Route path='/signIn' element={<SignIn/>}></Route>
+              <Route path='*' element={<NotFound/>}></Route> */}
             </Routes>
         </div>
-      <Footer/>
+       <Footer/>
     </div>
   );
 }

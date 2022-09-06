@@ -12,7 +12,11 @@ fontSize:'18px',
 lineHeight:'160%',
 fontStyle:'normal',
 margin:'0px',
-padding:'0px'
+padding:'0px',
+[mq[0]]:{
+    fontFamily:'Montserrat',
+    fontStyle:'normal',
+}
 })
 
 export const whoWeAre= css({
@@ -40,11 +44,16 @@ export const currencies2 =css({
 })
 export const currencies3 =css({
     position:'relative',
-    height:'8vh',
-    width:'8vh',
-    top:'17vh'
+    height:'9vh',
+    width:'9vh',
+    top:'10vh'
 })
-
+export const currencies4 =css({
+    position:'relative',
+    height:'15vh',
+    width:'15vh',
+    top:'10vh'
+})
 export const bitcoinImage=css`
 ${currencies};
 left:15vh;
@@ -75,9 +84,15 @@ left:29vh;
 `
 export const testimonials=css({
     backgroundColor:'#04063D',
-    height:'fitContent',
+    height:'80vh',
     width:'100%',
-    margin:'0px'
+    margin:'0px',
+    padding:'0px',
+    [mq[0]]:{
+        margin:'0px',
+        width:'100%',
+        height:'100vh'
+    }
 })
 export const quoteImage=css({
     position:'relative',
@@ -92,7 +107,9 @@ export const MqouteImage=css({
     right:'0vh',
     top:'2vh'
 })
-
-export const halfCircle= css({
-
+export const heading=css({
+    [mq[0]]:{   
+        margin:'5vh 4vh',
+        textAlign:'center'
+    }
 })

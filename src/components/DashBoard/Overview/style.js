@@ -31,7 +31,7 @@ export const iconStyle=css({
     color:'#63738a',
 })
 export const userDataDiv =css({
-    margin:'0vh 4.7vh 0vh 4.7vh',//Top Right Bottom Left
+    margin:'0vh 0vh 0vh 4.7vh',//Top Right Bottom Left
     padding:'2vh',
     borderBottom:'1px solid #C4C2D3', 
     background:'#ffffff',
@@ -105,7 +105,7 @@ export const smallWhiteDiv =css({
     width:'25vh',
     backgroundColor:'#ffffff',
     borderRadius: '0px 0px 9.32674px 9.32674px',
-    padding:'1vh',
+    padding:'1vh',  //set to 1vh
     marginBottom:'2vh'
 })
 export const dataChip =css({
@@ -157,5 +157,63 @@ export const bigTitle =css({
 })
 export const smallTitle = css({
     fontSize:'3.15vh',
-    fontWeight:500
+    fontWeight:500,
+    color:'#1A1D1F'
+})
+export const exclamContainer = css({
+    backgroundColor:'#C4C2D3',
+    borderRadius:'1000px',
+    display:'flex',
+    padding:'1vh',
+    margin:'0.5vh',
+    height:'fit-content',
+    width:'fit-content',
+    '& :hover':{
+        backgroundColor:'blue',
+    }
+})
+export const exclamIcon = css({
+    transform:'rotate(180deg)',
+    color:"#FFFFFF",
+    fontSize:'x-small',
+    '& :hover':{
+        backgroundColor:'red'
+    }
+})
+export const barChart=css({
+    padding:'0'
+})
+export const smallIcon =css({
+    backgroundColor:'#efedff',
+    height:'fit-content',
+    color:'#5a48fb',
+    borderRadius:'1000px',
+    padding:'1.5vh',
+    display:'flex',
+    marginTop:'2vh'
+})
+export const userFeedback =css({
+    width:'100%',
+    display:'flex',
+    justifyContent:'left',
+    marginTop:'3vh'
+})
+export const feedImage=css({
+margin:'0vh',
+padding:'0px',
+height:'7vh',
+width:'7vh'
+})
+export const feedbackIcon =css({
+    color:"#9a9fa5",
+    fontSize:'large'
+})
+export const fedText =css({
+color:'#1A1D1F',
+fontWeight:400,
+fontSize:'15px',
+fontStyle:'normal',
+lineHeight:'24px',
+margin:'0px',
+padding:'0px'
 })

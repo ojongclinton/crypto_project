@@ -2,117 +2,110 @@
 import { jsx } from '@emotion/react'
 import { css,Global } from '@emotion/react'
 import Typography from '@mui/material/Typography'
-import {CssBaseline,Button,Box} from '@mui/material';
+import {CssBaseline,Button,Box, Accordion,AccordionSummary,AccordionDetails  } from '@mui/material';
 import { useMediaQuery } from 'react-responsive'
 import {NavLink} from 'react-router-dom'
-import styled from '@emotion/styled'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
+import { useNavigate} from "react-router-dom";
 import React from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import * as styles from './style'
+import { PlainLink } from './style';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Language from '../../assets/Language.svg'
+import Search from '../../assets/SearchIcon.svg'
+import Menu from '../../assets/Menu.svg'
+import HeaderDown from '../../assets/HeaderArrowDown.svg'
 
-const breakpoints = [576, 768, 992, 1200]
-const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)
-const headerIcon = css({
-  color:'#6F7FA7',
-  paddingRight:'10px',
-  fontSize:'6vh',
-  paddingTop:'10px',
-  [mq[0]]:{
-    paddingRight:'0px'
-  }
-})
-const PlainLink = styled.a`
-text-decoration:none;
-text-align:center;
-margin:10px;
-color:#73779F;
-font-size:14px;
-`
-const headerBoxCss =css({
-  backgroundColor:'white',
-  top:0,
-  display: 'flex', 
-  justifyContent:'space-between',
-  alignItems:'center',
-  paddingBottom:'15px',
-  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
-  width:'100%',
-  zIndex:10,
-  paddingTop:'10px',
-  height:'10vh',
-  [mq[0]]:{
-    display:'block',
-    float:'right'
-  }
+function Header() {
+const navigate =useNavigate()
+const isMobile = useMediaQuery({query:`(max-width:576px)`})
 
-})
-const logoContainer = css({
-width:'26px',
-  height:'30px',
-  background:'#5A48FA',
-  borderRadius:'1000px',
-  marginRight:'10px',
-  marginLeft:'20px',
-  [mq[0]]:{
-    display:'none'
-  }
-})
-const logo =css({
-  display:'flex',
-  marginLeft:'15vh',
-  [mq[0]]:{
-    marginLeft:'10px',
-    marginRight:'10px',
-    paddingTop:'10px',
-  }
-})
-const links=css({
-  [mq[0]]:{
-    display:'none'
-  }
-})
-const navv=css({
-  display:'flex',
-  justifyContent:'space-around',
-  marginRight:'20vh',
-  [mq[0]]:{
-    display:'none'
-  }
-})
+//###### MOBILE DISPLAY #########//
+const MobileDisplay=()=>{
+const [showNav,setShownav] = React.useState(false)
+const handleNav = ()=>{
+  setShownav(prev=>!prev)
+} 
+const MobileNav=()=>{
+    return(
+      <div id='mobileNav'>
+         <div style={{display:'flex',justifyContent:'flex-end'}}>
+            <HighlightOffOutlinedIcon style={{fontSize:'5vh',margin:'5%',color:'#6F7FA7'}} onClick={handleNav}/>
+         </div>
+         <div style={{display:'flex',justifyContent:'center'}}>
+         <Button variant='contained' css={styles.btnstyle}>Sign In</Button>
+         </div>
+         <div >
+          <NavLink to='/' css={styles.links}>Home</NavLink>
+          <NavLink to='/' css={styles.links}>Marketplace</NavLink>
+          <NavLink to='/' css={styles.links}>Dashboard</NavLink>
+          <Accordion css={styles.accordionStyle} elevation={0} disableGutters={true}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          style={{margin:'0px',padding:'0px'}}
+        >
+          <p css={styles.links} style={{margin:'0vh 0vh'}}>Developper</p>
+        </AccordionSummary>
+        <AccordionDetails style={{margin:'0px',padding:'0px'}}>
+        <NavLink to='/' css={styles.Smalllinks}>API Integration</NavLink>
+          <NavLink to='/' css={styles.Smalllinks}>API Documentation</NavLink>
+          <NavLink to='/' css={styles.Smalllinks}>Escrow pay</NavLink>
+        </AccordionDetails>
+      </Accordion>
 
-const MobileNav =({toggleNav})=>{
+
+          <Accordion css={styles.accordionStyle} elevation={0} disableGutters={true}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          style={{margin:'0px',padding:'0px'}}
+        >
+          <p css={styles.links} style={{margin:'0vh 0vh'}}>Help</p>
+        </AccordionSummary>
+        <AccordionDetails style={{margin:'0px',padding:'0px'}}>
+        <NavLink to='/' css={styles.Smalllinks}>Contact</NavLink>
+          <NavLink to='/' css={styles.Smalllinks}>About us</NavLink>
+          <NavLink to='/' css={styles.Smalllinks}>Help</NavLink>
+        </AccordionDetails>
+      </Accordion>
+         </div>
+      </div>
+    )
+}
+
   return(
-    <Box style={{position:'absolute',top:'13vh', width:'100%',backgroundColor:'white', borderBottom:'1px solid #4de5fb'}} >
-      <NavLink to='/' className={({isActive})=>isActive?"MobileactiveNavLink":"MobilenavLink"} onClick={toggleNav}>Home</NavLink>
-      <NavLink to='/MarketPlace' className={({isActive})=>isActive?"MobileactiveNavLink":"MobilenavLink"}  onClick={toggleNav}>MarketPlace</NavLink>
-      <NavLink to='/Developper' className={({isActive})=>isActive?"MobileactiveNavLink":"MobilenavLink"}  onClick={toggleNav}>Developper</NavLink>
-      <NavLink to='/Help' className={({isActive})=>isActive?"MobileactiveNavLink":"MobilenavLink"}  onClick={toggleNav}>Help</NavLink>
-    </Box>
+    <div css={styles.mobileHeader}>
+      <div style={{display:'flex',justifyContent:'space-around',alignItems:'center',width:'23%'}} onClick={handleNav}>
+        <img src={Menu} style={{height:'50%'}}/>
+        {/* <MenuIcon css={styles.mobileheaderIcon} onClick={handleNav}/> */}
+      </div>
+      <div css={styles.leftMenu}>
+        <img src={Search} style={{height:'30%'}}/>
+        <img src={Language} style={{height:'30%'}}/>
+        <img src={HeaderDown} style={{height:'30%'}}/>
+        
+      </div>
+      {showNav && <MobileNav/>}
+    </div>
   )
 }
 
-function Header() {
-const isMobile = useMediaQuery({query:`(max-width:576px)`})
-const [showNav,setShowNav] = React.useState(false)
-const toggleNav = ()=>{
-  setShowNav(prev=>!prev)
-
-}
-
-  return (
-    <div>
-      <CssBaseline/>
-    <div css={headerBoxCss}>
-      <div className='logo_name' css={logo}>
-      {isMobile && <KeyboardArrowDownIcon style={{fontSize:'xx-large',color:'black'}} onClick={toggleNav}/>}
-      {showNav && <MobileNav toggleNav={toggleNav}/>}
-      <div css={logoContainer}></div>
+//###### LAPTOP DISPLAY #########//
+const LaptopDisplay = ()=>{
+  return(
+       
+    <div css={styles.headerBoxCss}>
+      <div className='logo_name' css={styles.logo}>
+      <div css={styles.logoContainer}></div>
         <Typography variant='h6' sx={{font:'Montserrat',fontWeight:'600',fontSize:'20px',lineHeight:'30px',color:'#4d3fde'}}>
           ONLINEP2P
           </Typography>
       </div>
-      <div className='links' css={links}>
+      <div className='links' css={styles.links}>
             <Box style={{margin:'0px',padding:'0px'}}>
               <NavLink to='/' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Home</NavLink>
               <NavLink to='/Dashboard' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Dashboard</NavLink>
@@ -121,14 +114,21 @@ const toggleNav = ()=>{
               <NavLink to='/Help' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Help</NavLink>
               </Box>
       </div>
-      <div className='navvv' css={navv}>
-        <SearchIcon css={headerIcon} />
-        <LanguageIcon css={headerIcon}/>
-        <KeyboardArrowDownIcon css={headerIcon}/>
-        <PlainLink href='/333' onClick={()=>{alert('Hold On...Partner still to submit sign in and signUP Page')}}>Sign In</PlainLink>
+      <div className='navvv' css={styles.navv}>
+        <SearchIcon css={styles.headerIcon} />
+        <LanguageIcon css={styles.headerIcon}/>
+        <KeyboardArrowDownIcon css={styles.headerIcon}/>
+        <PlainLink href='/signIn' >Sign In</PlainLink>
         <Button variant='outlined'>Sign up</Button>
       </div>
     </div>
+  )
+}
+
+  return(
+    <div>
+      <CssBaseline/>
+      {isMobile?<MobileDisplay/>:<LaptopDisplay/>}
     </div>
   )
 }

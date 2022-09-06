@@ -3,12 +3,13 @@ import React from 'react'
 import * as styles from './style'
 import millify from 'millify';
 import { css,keyframes,Global } from '@emotion/react'
-import { Avatar,Grid,Button,Chip } from '@mui/material'
+import { Avatar,Grid,Button,Chip, FormControlLabel, Switch,CssBaseline } from '@mui/material'
 //Everything Below are just icons and styles
 import bitcoin from '../../../assets/bitcoin-yellow.svg'
 import tropphyBadge from '../../../assets/trophyBadge.svg'
 import raieIcon from '../../../assets/rateIcon.svg'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import NoteIcon from '@mui/icons-material/Note';
 import MessageIcon from '@mui/icons-material/Message';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -21,9 +22,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import {plainText,H11,H22,H33} from '../../Home/GlobalStyles';
 import Rating from '@mui/material/Rating';
 import { LineChart,LineChart2 } from '../Charts/LineChart';
+import { BarChart } from '../Charts/BarChart';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+import { user,ovRow1Data,ovRow2Data,feedBack } from './StaticData';
+import TransactionsHistory from '../TransactionHistory/Transaction';
+  {/*API for static user data*/}
 
-import { user,ovRow1Data,ovRow2Data } from './StaticData'; {/*API for static user data*/}
+
+
 
 
 {/*Lots of data transmission would be going on here....all user data from last week,the current week last month,and the current month are supposed to be compared so the various icons for increase and decrease are diaplayed accordingly...Static data would be used for now since a backend is not yet set up*/}
@@ -35,7 +41,12 @@ const OverviewRow1 =()=>{
               return(
                 <div css={styles.overviewRow1}>
                   <div><span css={styles.OviconStyle}>{data.icon}</span>
-                    <H22 style={{fontSize:'18px'}}>{data.name}</H22>
+                  <div style={{display:'flex',justifyContent:"space-around"}}>
+                  <H22 style={{fontSize:'18px'}}>{data.name}</H22>
+                  <div css={styles.exclamContainer} onMouseEnter={()=>console.log('Mouse entered')} onMouseLeave={()=>console.log('Mouse leave')}>
+                  <PriorityHighIcon css={styles.exclamIcon}/>
+                  </div>
+                  </div>
                     <H11>{millify(data.amount)}</H11>
                       {data.trend}
                   </div>
@@ -115,6 +126,34 @@ const UserActions =()=>{
   )
 }
 
+const FeedBack =()=>{
+  
+  return(
+    <div>
+      {feedBack.slice(0,3).map((fed,index)=>
+        (
+          <div key={index} css={styles.userFeedback}>
+            <Avatar src={bitcoin} css={styles.feedImage}/>
+            <div style={{marginLeft:'3vh',width:'70%', borderBottom:'0.5px solid #EFEFEF'}}>
+              <div style={{display:'flex',justifyContent:'space-between'}}>
+              <p css={styles.fedText}><b>{fed.name}</b> <span style={{color:'#9A9FA5'}}>{fed.username}</span></p>
+              <p style={{color:'#9A9FA5',padding:'0px',margin:'0px'}}>{fed.fedTime}</p>
+              </div>
+              
+              <p css={styles.fedText}><span style={{color:'#9A9FA5'}}>On</span> <b>{fed.title}</b> </p>
+              <p css={styles.fedText}>{fed.comment}</p>
+              <div style={{display:'flex',justifyContent:'space-between',margin:'1.5vh auto 3vh auto'}}>
+                <MessageIcon css={styles.feedbackIcon}/>
+                <FavoriteBorderIcon css={styles.feedbackIcon}/>
+                <InsertLinkIcon css={styles.feedbackIcon}/>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  )
+}
+
 const OverviewRow3 =()=>{
   return(
     <div css={styles.overviewThirdRow}>
@@ -123,17 +162,20 @@ const OverviewRow3 =()=>{
                 <H22 css={styles.smallTitle}>Total sales</H22>
                 <H11 css={styles.bigTitle}>{millify(user.totalSales)}</H11>
               </div >
-              <div css={styles.smallWhiteDiv} style={{height:'29vh'}}> {/*Top sales2*/}
-                <H22 css={styles.smallTitle}>Top sales</H22>
+              <div css={styles.smallWhiteDiv} style={{height:'fit-content',padding:'0px'}}> {/*Top sales2*/}
+                <H22 css={styles.smallTitle} style={{paddingTop:'1vh',paddingLeft:'3vh',paddingBottom:'1vh'}}>Top sales</H22>
+                <div css={styles.barChart}>
+                  <BarChart theLabels={user.topSales.map(item=>item.label)} theData={user.topSales.map(item=>item.amount)} Color={['#37d493','#9efdd6','#9efdd6']} />
+                </div>
               </div>
-              <div css={styles.smallWhiteDiv} style={{height:'30.50vh',padding:'1vh'}}> {/*Ads Records*/}
-                  <H22 css={styles.smallTitle}>Ads Records</H22>
-                  <div style={{display:'flex'}}>
+              <div css={styles.smallWhiteDiv} style={{height:'fit-content',padding:'0px'}}> {/*Ads Records*/}
+                  <H22 css={styles.smallTitle} style={{paddingTop:'1vh',paddingLeft:'3vh',paddingBottom:'0px'}}>Ads Records</H22>
+                  <div style={{display:'flex',margin:'2vh'}}>
                     <H11 css={styles.bigTitle}>17</H11>
-                    <img src={tropphyBadge} style={{height:'6vh',marginTop:'0.5vh'}}/>
+                    <img src={tropphyBadge} style={{height:'5vh',marginTop:'0.5vh'}}/>
                   </div>
-                  <div>
-
+                  <div css={styles.barChart}>
+                  <BarChart theLabels={user.topSales.map(item=>item.label)} theData={user.topSales.map(item=>item.amount)} Color={['#ffaa2a','#ffe0b2','#ffe0b2']} />
                   </div>
               </div>
             </div>
@@ -145,12 +187,27 @@ const OverviewRow3 =()=>{
                 </div>
               </div>
               <div style={{display:'flex',justifyContent:'space-between'}}>
-                <div css={styles.smallWhiteDiv} style={{margin:'0px',marginTop:'2vh',backgroundColor:'#ffeeee',borderTop:'3px solid #FF6A55'}}>one</div>
-                <div css={styles.smallWhiteDiv} style={{margin:'0px',marginTop:'2vh',borderTop:'3px solid #ACA3FC80'}}>two</div>
+                <div css={styles.smallWhiteDiv} style={{margin:'0px',marginTop:'2vh',backgroundColor:'#ffeeee',borderTop:'3px solid #FF6A55',padding:'0px'}}>
+                  <div style={{display:'flex',justifyContent:'space-around',height:'8vh'}}>
+                  <H11 css={styles.smallTitle} style={{color:'#ff6a55',padding:'0px',margin:'0px'}}>
+                    {user.disputedAmt}
+                    </H11> <span css={styles.smallIcon} style={{color:'#ff6a55',backgroundColor:'white'}}><ShowChartIcon/></span>
+                  </div>
+                  <p style={{paddingLeft:'2vh',margin:'0px',fontSize:'1.7vh',color:'#ff6a55'}}>Disputed amount</p>
+                </div>
+                <div css={styles.smallWhiteDiv} style={{margin:'10px',marginTop:'2vh',borderTop:'3px solid #ACA3FC80',padding:'0px'}}>
+                  <div style={{display:'flex',justifyContent:'space-around',height:'8vh'}}>
+                  <H11 css={styles.smallTitle} style={{color:'#5a48fb',padding:'0px',margin:'0px'}}>
+                    {user.disputedAmt}
+                    </H11> <span css={styles.smallIcon}><ShowChartIcon/></span>
+                  </div>
+                  <p style={{paddingLeft:'2vh',margin:'0px',fontSize:'1.7vh',color:'#5a48fb'}}>Disputed amount</p>
+                </div>
               </div>
             </div>
-            <div style={{backgroundColor:'#ffffff',width:'57.50vh',padding:'2vh'}}>
+            <div style={{backgroundColor:'#ffffff',width:'57.50vh',padding:'2vh',borderRadius:'10px'}}>
                 <H22 css={styles.smallTitle}>FeedBack</H22>
+                <FeedBack/>
             </div>
           </div>
   )
@@ -161,18 +218,21 @@ const OverviewRow3 =()=>{
 export const Overview=()=>{
   return (
     <div className='Overview'>
-
+      <CssBaseline/>
       <div >
        <Grid container spacing={2}>
         <Grid item xs={3} > 
+        <div style={{position:'sticky',top:"10px"}}>
           <UserInfo />
           <UserActions />
+          </div>
         </Grid>
-        <Grid item xs={9} style={{backgroundColor:'#eeeeee',marginLeft:'0px'}}>
+        <Grid item xs={9} style={{backgroundColor:'#eeeeee',padding:'10px'}}>
           <H22>Overview</H22>
             <OverviewRow1 />
             <OverviewRow2 />
             <OverviewRow3/>
+            <TransactionsHistory />
         </Grid>
        </Grid>
       </div>
