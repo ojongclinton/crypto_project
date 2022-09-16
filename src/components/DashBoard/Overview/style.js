@@ -4,11 +4,11 @@ import { mq } from '../../Home/GlobalStyles'
 export const contractsGraph=css({
     height:'fit-content',
     padding:'2vh',
-    margin:'0px',
+    margin:'auto',
     backgroundColor:'#FFFFFF',
     marginBottom:'2vh',
     borderRadius:'10px',
-    width:'99%',
+    width:'fit-content',
     [mq[0]]:{
     boxShadow: '0px 5.89381px 5.85841px 5px #eeeeee',
     width:'90%',
@@ -16,6 +16,10 @@ export const contractsGraph=css({
     margin:'auto',
     marginTop:'3vh',
     marginBottom:'19px'
+},
+[mq[1,2,3]]:{
+    width:'100%',
+    marginRight:'1vh'
 }
 })
 
@@ -40,13 +44,13 @@ export const overviewFirstRow =css({
 }
 })
 export const overviewRow1 =css({
-    width:'50.40vh',
+    width:'40%',
     height:'fit-content',
     backgroundColor:'#ffffff',
     borderRadius:'10px',
     margin:'1vh',
     marginBottom:'0px',
-    paddingLeft:'3vh',
+    paddingLeft:'1%',
     paddingTop:'5vh',
     display:'flex',
     justifyContent:'space-between',
@@ -72,7 +76,7 @@ export const overviewSecondRow =css({
 
 })
 export const overviewRow2 =css({
-    width:'23vh',
+    width:'15%',
     height:'fit-content',
     backgroundColor:'#ffffff',
     borderRadius: '0px 0px 9.32674px 9.32674px',
@@ -177,6 +181,17 @@ export const smallerWhiteDiv =css({
     boxShadow: '0px 2.89381px 5.85841px 2px #eeeeee',
     paddingBottom:'3vh'
 }
+})
+
+export const feedBackContainer =css({
+    backgroundColor:'#ffffff',
+    width:'60%',
+    padding:'2vh',
+    borderRadius:'10px',
+    height:'93vh',
+    [mq[1,2,3]]:{
+        marginLeft:'1vh'
+    }
 })
 export const dataChip =css({
     color:'#8E59FF',

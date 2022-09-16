@@ -14,6 +14,9 @@ export const Item = styled(Paper)(({ theme }) => ({
     height: 'fit-content',
     width:'fit-content',
     padding:'4vh',
+    [mq[1,2,3]]:{
+      padding:'2vh'
+    }
     
   }));
   export const StyledBox = styled(Paper)(({ theme,index }) => ({

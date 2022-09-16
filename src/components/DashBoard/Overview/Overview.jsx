@@ -49,7 +49,6 @@ const OverviewRow1 =()=>{
 
 
 const OverviewRow2 =()=>{
-  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   return(
     <div css={styles.overviewSecondRow}> {/*Overview-SecondRow*/} 
             {ovRow2Data.map(data=>{{/*Mapping trough the second row of overview ie completed,pending,etc escrows*/}
@@ -176,7 +175,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
     ):
     (
       <div css={styles.overviewThirdRow}>
-  <div style={{backgroundColor:'#eeeeee',width:'19%'}}>
+  <div style={{backgroundColor:'#eeeeee',width:'19%',marginRight:'10px'}}>
       <TopSales_Tickets/>
       <TopSales_graph/>
       <AdsRecordsGraph/>
@@ -185,9 +184,9 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
     <TotalContracts/>
     <Dispu_Resolved/>
   </div>
-  <div style={{backgroundColor:'#ffffff',width:'57.50vh',padding:'2vh',borderRadius:'10px',height:'93vh'}}>
+  <div css={styles.feedBackContainer}>
     <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'4.5vh 0px 6vh 5px'}}>FeedBack</H22>
-    <FeedBack/>ddddssss
+    <FeedBack/>
   </div>
 </div>
     ) 
@@ -204,18 +203,18 @@ export const Overview=()=>{
       <CssBaseline/>
       <div >
        <Grid container spacing={2}>
-        <Grid item xs={3} > 
+        <Grid item xl={3} lg={2} md={3}> 
         <div style={{position:'sticky',top:"10px",marginBottom:'10px'}}>
          {!isMobile && [<UserInfo />, <UserActions />]}
           </div>
         </Grid>
-        <Grid item xs={12} lg={9} style={{backgroundColor:isMobile?'#ffffff':'#eeeeee'}}>
+        <Grid item xl={9} lg={10} md={9} style={{backgroundColor:isMobile?'#ffffff':'#eeeeee'}}>
           <H22 style={isMobile?{fontFamily:'Inter',marginTop:'8vh',fontSize:'20px',marginLeft:'14px'}:{}}>Overview</H22>
             <OverviewRow1 />
             <OverviewRow2 />
             <OverviewRow3/>
              <TransactionsHistory />
-             {isMobile && <FeedBack/>}
+             {/* {isMobile && <FeedBack/>} */}
              {isMobile && <LocationStats/>}
         </Grid>
        </Grid>

@@ -27,7 +27,7 @@ const LaptopDisplay = ()=>{
           OnlineP2P
           </Typography>
       </div>
-      <div className='links' css={styles.links}>
+      <div className='links' css={styles.links1}>
         <Box style={{margin:'0px',padding:'0px'}}>
           <NavLink to='/' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Home</NavLink>
           <NavLink to='/Dashboard' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Dashboard</NavLink>

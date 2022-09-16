@@ -13,6 +13,9 @@ export const feedContainer =css({
         boxShadow: '0px 3.85586px 3.85586px rgba(0, 0, 0, 0.05)',
         paddingLeft:'3vh',
         height:'fit-content'
+    },
+    [mq[1,2,3]]:{
+        
     }
 })
 

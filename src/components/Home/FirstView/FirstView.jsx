@@ -35,10 +35,10 @@ return(
 
     {/*Text on Left Grid*/}
 
-    <Grid item md={12} lg={6} >
-      <div css={styles.shape1}>shape1</div>
+    <Grid item xl={6} md={6} lg>
+      {/* <div css={styles.shape1}>shape1</div>
       <div css={styles.shape2}>shape2</div>
-      <div css={styles.shape3}>shape3</div>
+      <div css={styles.shape3}>shape3</div> */}
       <div >
       <div css={styles.thegradientText}> <span css={styles.never}>Never</span> <span>buy or sell without using OnlineP2P</span></div>
       </div>
@@ -46,17 +46,17 @@ return(
 
     {/*Form on Right Grid*/}
 
-    <Grid item lg={6} md={12}>
+    <Grid item xl={6} md={6} lg>
       <form css={styles.formDiv} onSubmit={handleFormSubmit}>
-        <div>   
+        {/* <div>   
           <img src={bitcoin} alt='bitcoinimage' className='coinImgAnimT' css={styles.bitcoinImage} id='coinImg' onAnim ationEnd={console.log('ended')}/>
-        </div>         
+        </div>          */}
         <Item elevation={1} css={styles.formCss} >
 
           {/*Separates 'Im selling input from domain, nane input'*/}
 
           <Grid container spacing={1} > 
-            <Grid item lg={5} xs={12}>
+            <Grid item xl={5} xs={12} md={5}>
 
               {/*Input: 'Im Selling?*/}
 
@@ -68,7 +68,7 @@ return(
                   </Select>    
               </FormControl>
             </Grid>
-            <Grid item lg={7} xs={12} >
+            <Grid item xl={7} xs={12} md={7}>
 
               {/*Input: 'Domain, name, etc?'*/}
 
@@ -83,7 +83,7 @@ return(
             </Grid>
           </Grid>
           <Grid container spacing={1}>
-            <Grid item lg={8} xs={12}>
+            <Grid item xl={8} xs={12} md={8}>
 
               {/*Input: 'Domain, name, etc?'*/}
 
@@ -95,7 +95,7 @@ return(
                 css={styles.inptField}/>
               </FormControl>
             </Grid>
-            <Grid item lg={4} xs={12}>
+            <Grid item xl={4} xs={12} md={4}>
 
             {/*Input: 'Im Selling?*/}
 
