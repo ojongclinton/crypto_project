@@ -1,33 +1,7 @@
 import { css,Global } from '@emotion/react'
 import {styled} from '@mui/material'
 import { mq } from '../GlobalStyles'
-import { chipStyle } from '../SecondView/style'
 
-const blurryBack2 =css`
-width: 30.5vh;
-height: 30.5vh;
-opacity: 0.5;
-filter: blur(200px);
-position:absolute;
-`
-export const plainText = css({
-color:'#282D6C',
-font:'Montserrat',
-fontWeight:400,
-fontSize:'18px',
-lineHeight:'160%',
-fontStyle:'normal',
-margin:'0px',
-padding:'0px',
-width:'80vh',
-[mq[0]]:{
-    fontFamily:'Montserrat',
-    fontStyle:'normal',
-    width:'fit-content',
-    margin:'0px 30px 30px 30px',
-    fontSize:'16px'
-}
-})
 export const whyChoose =css({
     textAlign:'center',
     display:'flex',
@@ -43,7 +17,7 @@ export const reasonBox =css({
     paddingTop:'0vh',
     [mq[0]]:{
         display:'block',
-        height:'fit-content'
+        height:'fit-content',
     }
 })
 export const viewMore =css({
@@ -52,7 +26,10 @@ export const viewMore =css({
     display:'flex',
     justifyContent:"center",
     fontSize:'18px',
-    margin:'0px'
+    margin:'0px',
+    [mq[0]]:{
+        paddingTop:'1vh'
+    }
 })
 export const FviewMore =css({
     paddingTop:'4vh',
@@ -70,6 +47,18 @@ export const MviewMore =css({
     margin:'0px',
     color:'inherit',
 })
+const blurryBack2 =css`
+width: 30.5vh;
+height: 30.5vh;
+opacity: 0.5;
+filter: blur(200px);
+position:absolute;
+${mq[0]}{
+    width: 25vh;
+    height: 25vh;
+    filter:blur(100px);
+}
+`
 export const shape7=css`
 ${blurryBack2};
 background: #4DE6FC;
@@ -77,7 +66,8 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    left:7vh
+    top:320vh;
+    left:20%;
 }
 `
 export const shape8=css`
@@ -87,7 +77,8 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    left:7vh
+    top:320vh;
+    left:20%;
 }
 `
 export const shape9=css`
@@ -97,6 +88,7 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    left:7vh
+    top:320vh;
+    left:20%;
 }
 `

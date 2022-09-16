@@ -3,7 +3,10 @@ import { border, borderRadius } from "@mui/system";
 import { mq } from '../GlobalStyles'
 
 export const faqSearch = css({
-    textAlign:'center'
+    textAlign:'center',
+    [mq[0]]:{
+        marginBottom:'42px'
+    }
 })
 export const searchBox =css({
     marginTop:'6vh',

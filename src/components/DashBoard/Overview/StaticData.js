@@ -30,10 +30,11 @@ const trendCalc = (data_before,data_after) =>{
 export const user ={
     name:"Brice Fongang", title:'FINANCIAL EXPERT', followers:200, following:432,escrowSaved:2,imagePath:'#####',rating:3,ThisWeekBalance:120000,LastWeekbalance:100000,ThisWeekPayout:512,LastWeekPayout:782,ThisWeekDeposit:64000,LastWeekDeposit:31000,completedEscrows:78,pendindEscrows:214,rejectedEscrows:93,onHoldPayments:12,releasedEscrows:12,totalSales:177000,contracts:[
       {label:'Jan',amount:'100000'},
-      {label:'Feb',amount:'200000'},
-      {label:'Mar',amount:'300000'},
+      {label:'Feb',amount:'40000'},
+      {label:'Mar',amount:'190000'},
       {label:'Apr',amount:'400000'},
-      {label:'May',amount:'400000'},
+      {label:'May',amount:'250000'},
+
     ],
     topSales:[
           {label:'Week 22',amount:75000},

@@ -1,23 +1,6 @@
 import { css,Global } from '@emotion/react'
 import {styled} from '@mui/material'
-
-const breakpoints = [576, 768, 992, 1200]
-const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)
-
-export const plainText = css({
-color:'#282D6C',
-font:'Montserrat',
-fontWeight:400,
-fontSize:'18px',
-lineHeight:'160%',
-fontStyle:'normal',
-margin:'0px',
-padding:'0px',
-[mq[0]]:{
-    fontFamily:'Montserrat',
-    fontStyle:'normal',
-}
-})
+import { mq } from '../GlobalStyles'
 
 export const whoWeAre= css({
 display:'flex',
@@ -44,15 +27,15 @@ export const currencies2 =css({
 })
 export const currencies3 =css({
     position:'relative',
-    height:'9vh',
-    width:'9vh',
-    top:'10vh'
+    height:'6vh',
+    width:'6vh',
+    top:'2vh'
 })
 export const currencies4 =css({
     position:'relative',
-    height:'15vh',
-    width:'15vh',
-    top:'10vh'
+    height:'10vh',
+    width:'10vh',
+    top:'1vh'
 })
 export const bitcoinImage=css`
 ${currencies};
@@ -84,14 +67,14 @@ left:29vh;
 `
 export const testimonials=css({
     backgroundColor:'#04063D',
-    height:'80vh',
+    height:'85vh',
     width:'100%',
     margin:'0px',
     padding:'0px',
     [mq[0]]:{
         margin:'0px',
         width:'100%',
-        height:'100vh'
+        height:'calc(fit-content + 10vh)'
     }
 })
 export const quoteImage=css({
@@ -112,4 +95,32 @@ export const heading=css({
         margin:'5vh 4vh',
         textAlign:'center'
     }
+})
+export const cusH1=css({
+    color:'white',
+    marginLeft:'60vh',
+    marginTop:'10vh',
+    [mq[0]]:{
+        marginLeft:'auto',
+        marginRight:'auto',
+        marginTop:'6vh',
+        color:"white",
+    }
+})
+export const testiDiv = css({
+    backgroundColor:'white',
+    margin:'5vh',padding:'10px',
+    textAlign:'center',
+    height:'max-content',
+    borderRadius:'10px',
+    [mq[0]]:{
+        margin:'2vh',
+        padding:'20px'
+    }
+})
+export const userInfocont=css({
+    display:'flex',
+    justifyContent:'center',
+    margin:'0px',
+    padding:'0px'
 })

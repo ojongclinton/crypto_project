@@ -1,6 +1,19 @@
 import { css,Global } from '@emotion/react'
 import { blurryBack, mq } from '../GlobalStyles'
+import bitcoin from '../../../assets/bitcoin-yellow.svg'
+import binance from '../../../assets/binance-yellow.svg'
+import etherum from '../../../assets/crypto-etherum.svg'
+const allImgs = [bitcoin,binance,etherum]
 
+
+window.addEventListener('load',()=>{
+    let i = 0;
+    const doc = document.querySelector('#coinImg')
+    setInterval(()=>{
+        i = Math.floor(Math.random()*(2-0 + 1) + 0);
+        doc.src=allImgs[i];
+    },10000)
+})
 
 export const thegradientText =css`
 width:100%;
@@ -15,18 +28,20 @@ background:linear-gradient(rgba(90, 73, 250, 1),rgba(4, 6, 61, 1));
 background-clip: text;
 text-fill-color: transparent;
 display: inline-block;
-border-right:1px solid #b3b3b3;
-padding-bottom:50px;
 
 ${mq[0]}{
 width:100%;
 margin-left:0px;
-text-align:center;
-padding:0px;
+text-align:left;
+padding:0px 20px;
 border:none;
 margin-right:0px;
 margin-top:10vh;
-font-size:7vh;
+font-size:40px;
+line-height:125%;
+font-weight:600;
+padding-bottom:0px;
+height:20%;
 }
 `
 export const shape1=css`
@@ -34,10 +49,10 @@ ${blurryBack};
 position:absolute;
 background: #4DE6FC;
 left: 43.26vh;
-top: 22.59vh;
+top: 20.59vh;
 z-index:-1;
 ${mq[0]}{
-    top:15vh;
+    top:10vh;
     left:7vh;
 }
 `
@@ -50,7 +65,7 @@ top:47.55vh;
 z-index:-1;
 ${mq[0]}{
     left:7vh;
-    top:30vh;
+    top:20vh;
 }
 `
 export const shape3=css`
@@ -62,7 +77,7 @@ top: 38.81vh;
 z-index:-1;
 ${mq[0]}{
     left:7vh;
-    top:30vh;
+    top:20vh;
 }
 `
 export const never =css`
@@ -76,48 +91,37 @@ font-size: 10vh;
 line-height: 120%;
 display:inline-block;
 z-index:-1;
+
+${mq[0]}{
+    font-size:40px;
+    line-height:120%;
+    font-weight:600;
+    }
 `
-export const etherumImage =css({
-position:'absolute',
-height:'7vh',
-width:'7vh',
-left:'103vh',
-top:'50vh',
-[mq[0]]:{
-   display:'none'
-}
+export const inptField =css({
+    [mq[0]]:{
+        backgroundColor:'#ffffff'
+    }
 })
+
 export const bitcoinImage =css({
 position:'absolute',
 height:'7vh',
 width:'7vh',
-left:'190vh',
-top:'20vh',
+left:'100vh',
+top:'50vh',
+zIndex:'5',
 [mq[0]]:{
     display:'none'
  }
 })
-export const binanceImage =css({
-position:'absolute',
-height:'7vh',
-width:'7vh',
-left:'150vh',
-bottom:'5vh',
-[mq[0]]:{
-    display:'none'
- }
-})
-export const selectAction =css({
-    padding:'vh'
-})
-
 export const formCss =css({
     marginTop:'22vh',
     marginLeft:'auto',
     marginRight:'auto',
     color:'red',
     [mq[0]]:{
-        marginTop:'10vh',
+        margin:'0px',
         backgroundColor:'unset',
         boxShadow: "none"
     }
@@ -128,7 +132,6 @@ export const formCss =css({
         display:'block',
         width:'100%',
         margin:'0px',
-        margin:'0px',
      }
     })
     export const formControl1=css({
@@ -136,19 +139,26 @@ export const formCss =css({
         width:'100%',
         [mq[0]]:{
         width:'100%',
-        margin:'1vh'
+        margin:'0px',
+        marginTop:'9.7px'
          }
     })
     export const sbBtn=css({
         marginTop:'3vh', 
         backgroundColor:'#5A48FA',
         padding:'10px',
+        textTransform:'none',
         [mq[0]]:{
-            marginTop:'4vh'
+            marginTop:'4vh',
+            fontSize:'14px',
+            fontWeight:600
              }
     })
     export const selectFont=css({
         color:'#04063D',
         fontSize:'18px',
-        fontWeight:500
+        fontWeight:500,
+        [mq[0]]:{
+            backgroundColor:'#ffffff'
+        }
     })

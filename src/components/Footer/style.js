@@ -11,7 +11,9 @@ filter: blur(120px);
 position:absolute;
 z-index:-10;
 ${mq[0]}{
-  width:100%
+  width: 50.5vh;
+  height: 30.5vh;
+  width:90%
 }
 `
 export const shape1=css`

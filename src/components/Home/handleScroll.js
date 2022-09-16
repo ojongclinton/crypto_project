@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { useMediaQuery } from 'react-responsive'
+
 
 const ScrollButton = () =>{
-
+	
+const isMobile = useMediaQuery({query:`(max-width:576px)`})
 const [visible, setVisible] = useState(false)
 
 const toggleVisible = () => {
@@ -25,22 +28,19 @@ const scrollToTop = () =>{
 window.addEventListener('scroll', toggleVisible);
 
 return (
-<div style={{bottom:'0',
+<div style={{bottom:'0%',
 display:visible?'flex':'none',
-justifyContent:'center',
+justifyContent:'space-around',
+left:isMobile?'40%':'50%',
 position:'fixed',
-left:'50%',
-zIndex:'20',
+zIndex:'10',
 padding:'2vh',
-backgroundColor:'#a487f9',
-borderRadius:'10px',
+backgroundColor:'white',
+borderRadius:'100px',
 margin:'5px',
-cursor:'pointer'
-}}>
-<ArrowUpwardIcon onClick={scrollToTop}
-	style={{
-        color:"#FFFFFF"
-    }} />
+boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.15)'
+}} className='moveUpBtn'>
+<ArrowUpwardIcon onClick={scrollToTop}/>
 </div>
     
 	

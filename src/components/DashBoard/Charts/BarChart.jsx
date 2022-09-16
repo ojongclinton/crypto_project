@@ -2,8 +2,11 @@ import React from 'react'
 import Chart from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2'
 import millify from 'millify';
+import { useMediaQuery } from 'react-responsive'
 
 export const BarChart =({Color,theData,theLabels})=>{
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
+
     const options = {
         responsive: true,
         maintainAspectRatio:false,
@@ -22,6 +25,7 @@ export const BarChart =({Color,theData,theLabels})=>{
       scales:{
         x:{
             grid:{
+                drawBorder:false,
                 display:false
             },
             ticks:{
@@ -32,11 +36,11 @@ export const BarChart =({Color,theData,theLabels})=>{
         },
         y:{
             grid:{
-                display:false
+                display:false,
+                drawBorder:false
             },
             ticks:{
                 callback: function(datalaBel, index){
-                    console.log(datalaBel , index)
                     const label = millify(datalaBel)
                     return label
                 },
@@ -61,6 +65,8 @@ export const BarChart =({Color,theData,theLabels})=>{
         ]
       };
         return(
-        <Bar options={options} data={data} />
+          <div style={isMobile?{padding:'30px'}:{}}>
+            <Bar options={options} data={data} />
+          </div>
         )
     } 

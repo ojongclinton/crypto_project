@@ -3,6 +3,9 @@ import {Paper, styled} from '@mui/material'
 
 {/*This file contains styled components and styles used by all files in the home component.....be sure of the effect of your actions*/}
 
+//The different breakPoints to change styles on the different screens
+//E.G to target screens with a max sixw of 567px, use mq[0]
+
 const breakpoints = [576, 768, 992, 1200]
 export const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`)
 
@@ -12,6 +15,20 @@ export const Item = styled(Paper)(({ theme }) => ({
     width:'fit-content',
     padding:'4vh',
     
+  }));
+  export const StyledBox = styled(Paper)(({ theme,index }) => ({
+    color: index ==0?'white':theme.palette.text.secondary,
+    background:index==0?'linear-gradient(rgba(78, 231, 255, 1),rgba(170, 128, 249, 1))':'',
+    height: 'fit-content',
+    width:'40vh',
+    padding:'4vh',
+    textAlign:'center',
+    [mq[0]]:{
+      width:'90%',
+      margin:'auto',
+      marginTop:'42px',
+      height:'fit-content'
+    }
   }));
 export const H11 = styled('h1')({
     color: '#04063D',
@@ -59,9 +76,10 @@ height: 40.5vh;
 opacity: 0.5;
 filter: blur(200px);
 ${mq[0]}{
-width: 40.5vh;
-height: 40.5vh;
-  filter:blur(80px);
+width: 30.5vh;
+height: 20.5vh;
+border-radius:100px;
+  filter:blur(120px);
 }
 `
 export const plainText = css({
@@ -73,7 +91,7 @@ fontStyle:'normal',
 margin:'0px',
 padding:'0px',
 [mq[0]]:{
-  fontFamily:'Montserrat',
+  fontFamily:'Montserrat Alternates',
   fontStyle:'normal',
 }
 })
@@ -82,4 +100,16 @@ export const whoWeAre= css({
 display:'flex',
 justifyContent:'space-between',
 padding:'0 10vh'
+})
+
+export const chipStyle=css({
+  color:'#5A48FA',
+  backgroundColor:'#dcfbff',
+  width:'fit-content',
+  [mq[0]]:{
+      color:'#4EE9FE ',
+      backgroundColor:'#4EE9FF33',
+      marginLeft:'auto',
+      marginRight:'auto'
+  }
 })

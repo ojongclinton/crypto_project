@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { CssBaseline, Grid,Chip,InputBase } from '@mui/material'
 import React,{useState,useEffect} from 'react'
-import { plainText,H11,H22,H33 } from '../GlobalStyles'
+import { plainText,H11,H22,H33,chipStyle } from '../GlobalStyles'
 import * as styles from './style'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CachedIcon from '@mui/icons-material/Cached';
@@ -11,7 +11,6 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import SearchIcon from '@mui/icons-material/Search';
-import { chipStyle } from '../SecondView/style'
 import { useMediaQuery } from 'react-responsive'
 
 export const SixthView=()=> {

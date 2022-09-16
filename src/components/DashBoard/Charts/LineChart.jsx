@@ -55,7 +55,7 @@ export const LineChart2 =({lineColor,theData,theLabels})=>{
         maintainAspectRatio:false,
       plugins: {
         datalabels: { //THis is for the different digits on the line points
-            display:true
+            display:false
           },
         title: {
           display: false,
@@ -69,12 +69,14 @@ export const LineChart2 =({lineColor,theData,theLabels})=>{
         x:{
             display:true,
             grid:{
+                drawBorder:false,
                 display:false
             }
         },
         y:{
             stacked:true,
             grid:{
+              drawBorder:false,
                 borderDash:[10,10]
             },
             ticks:{
@@ -91,15 +93,17 @@ export const LineChart2 =({lineColor,theData,theLabels})=>{
             label: 'Dataset 1',
             data: theData,
             borderColor: lineColor, //This is for the color of the Line
-            tension:0.5,
+            tension:0.7,
             pointRadius:5, //This is for the size of the points on the line
-            borderWidth:7,
+            borderWidth:6,
             
           },
       
         ]
       };
         return(
-        <Line options={options} data={data} />
+          <div style={{height:'100%',width:'fit-content'}}>
+            <Line options={options} data={data} />
+          </div>
         )
     }

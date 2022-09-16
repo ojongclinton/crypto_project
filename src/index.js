@@ -1,16 +1,12 @@
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider} from '@mui/material/styles';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import "./homePageStyles.css"
-import "./DashBoardStyles.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
-  Routes,
-  Route,
 } from "react-router-dom";
 
 

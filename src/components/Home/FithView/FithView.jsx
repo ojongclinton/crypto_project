@@ -13,16 +13,17 @@ import Payeer from '../../../assets/Payeer.svg'
 import BlockIo from '../../../assets/blockIO.svg'
 import More from '../../../assets/More.svg'
 import Slider from "react-slick";
-import { H11, H33,H22 } from '../GlobalStyles'
+import { H11, H33,H22,chipStyle,plainText } from '../GlobalStyles'
 import * as styles from './style'
 import { useMediaQuery } from 'react-responsive'
-import { chipStyle } from '../SecondView/style'
 import React from 'react'
 
+//React slick arrow to move left
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
 );
 
+//React slick arrow to move Right
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <img src={rightArrow} alt="nextArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
 );  
@@ -56,6 +57,8 @@ const testimonials =[
 export const FithView =()=>{
   const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const [currentSlide,setCurrentSlide] = React.useState(0)
+  
+//////////This is the options for the react slick component
 var settings = {
   beforeChange:function(prev,next){
     setCurrentSlide(next)
@@ -89,15 +92,13 @@ var settings = {
 
 }
 
-{/*On this pqge the Mobile views where changd using styles....for example if it is a mobile, use margin:0 else use margin 1..U Gerrit??!! This is just for testing Purpose though...mobile designs have not yet been sumbitted to me :-) */}
-
   return(
     <div className="FithView" >
       <div css={isMobile?styles.MWhoweAre:styles.whoWeAre}>
         <div style={isMobile?{display:'flex',flexDirection:'column',alignItems:'center'}:{}}>
           <Chip label="Payment" css={chipStyle}/>
           <H11 css={styles.heading}>We accept these different cryptos</H11>
-          <p css={styles.plainText} style={isMobile?{width:'80%',textAlign:'center',marginBottom:'10vh'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
+          <p css={plainText} style={isMobile?{width:'80%',textAlign:'center',marginBottom:'10vh'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
         </div>
         <div className='fithViewHalfCircle'>
           <div style={isMobile?{display:'flex',justifyContent:'space-around'}:{}}>
@@ -115,18 +116,18 @@ var settings = {
       </div>
       <div css={styles.testimonials}>
         <div  style={{height:'10vh',display:'flex',justifyContent:'space-around'}}>
-        <H11 style={isMobile?{marginLeft:'auto',marginRight:'auto',marginTop:'6vh',color:"white",}:{color:'white',marginLeft:'60vh',marginTop:'10vh'}}>Testimonial</H11>
-            <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>
+        <H11 css={styles.cusH1}>Testimonial</H11>
+            {!isMobile && <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>}
         </div>
         <Slider {...settings}>
           {testimonials.map((testimony,key)=>{
             return(
               <div key={key}>
-                <div style={{backgroundColor:'white',margin:isMobile?'2vh':'5vh',padding:'10px',textAlign:'center',height:'max-content',borderRadius:'10px'}}>
-                  <H33>{testimony.title}</H33>
-                  <p css={styles.plainText} style={{fontSize:'14px'}}>{testimony.comment}</p>
+                <div css={styles.testiDiv}>
+                  <H33 style={{margin:'1vh'}}>{testimony.title}</H33>
+                  <p css={plainText} style={{fontSize:'14px',lineHeight:isMobile?'25px':''}}>{testimony.comment}</p>
                 </div>
-                <div style={{display:'flex',justifyContent:'center',margin:'0px',padding:'0px'}}>
+                <div css={styles.userInfocont}>
                     <Avatar src={bitcoin} alt={testimony.name} sx={{ width: 50, height: 50,m:1}}/>
                     <div>
                     <Typography variant='h6' style={{color:'white'}}>{testimony.name}</Typography>

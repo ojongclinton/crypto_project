@@ -2,22 +2,12 @@
 import { jsx } from '@emotion/react'
 import {Grid,Chip} from '@mui/material'
 import boxstep from '../../../assets/boxStepper.svg'
-import { H22,H11, Item} from '../GlobalStyles'
+import { H22,H11, Item,plainText,chipStyle} from '../GlobalStyles'
 import { useMediaQuery } from 'react-responsive'
-import Slider from 'react-slick'
 import * as styles from './style'
-import letfArrow from '../../../assets/leftArrow.svg'
-import rightArrow from '../../../assets/rightArrow.svg'
-
-const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
-);
-
-const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  <img src={rightArrow} alt="nextArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
-);  
 
 export const SecondView=()=>{
+//Query to check if current device being used is a mobile or a pc sho that the different styles should apply!...returns either true or false
 const isMobile = useMediaQuery({query:`(max-width:576px)`})
 
 const process = [
@@ -27,28 +17,21 @@ const process = [
   {title:"4. Complete",body:"We’ve helped over 2,500 job seekers to get into the most popular tech teams."},
   {title:"5. Repeat",body:"We’ve helped over 2,500 job seekers to get into the most popular tech teams."},
 ]
-var settings = {
-  className:'mobile',
-  dots:false,
-  infinite:true,
-  speed:500,
-  slidesToShow:1,
-  slidesToScroll:1,
-  prevArrow:<SlickArrowLeft/>,
-  nextArrow:<SlickArrowRight/>,
-}
-
   return(
     <div className='secondView'>
         <div style={{marginLeft:'auto',marginRight:'auto',display:'flex',flexDirection:'column'}}>
-        {isMobile && <Item elevation={3} css={styles.smallBox}><div css={styles.gradientText}>Learn about our story and our 
-mission statement</div> .</Item>}
-        <Chip label="Simple Step" css={styles.chipStyle}/>
+        {isMobile && 
+        <Item elevation={3} css={styles.smallBox}>
+            <div css={styles.gradientText}>
+              Learn about our story and our mission statement
+            </div>
+        </Item>}
+          <Chip label="Simple Step" css={chipStyle}/>
         </div>
       <Grid container spacing={3} >
-        <Grid item lg={5} md={12} >
+        <Grid item lg={5} xs={12} >
           <H11 css={styles.bigHeading}>How our onlinep2p solution works</H11>
-          <p css={styles.plainText} style={{textAlign:'center',margin:'10px'}}>A few simple, easy steps to make it easier for you</p>
+          <p css={plainText} style={{textAlign:isMobile?'center':'left',margin:'10px'}}>A few simple, easy steps to make it easier for you</p>
            <div css={styles.shape4}></div>
           <div css={styles.shape5}></div>
           <div css={styles.shape6}></div> 
@@ -57,7 +40,7 @@ mission statement</div> .</Item>}
           <Grid container spacing={3}>
             <Grid item lg={6} xs={12} css={styles.container}>
               {process.slice(0,3).map((process,index)=>(
-                <div style={{display:'flex',marginTop:'5vh'}} key={index}>
+                <div style={{display:'flex',marginTop:isMobile?'1vh':'5vh'}} key={index}>
                 <img src={boxstep} css={styles.boxStep}/>
                 <div>
                 <H22>{process.title}</H22>
