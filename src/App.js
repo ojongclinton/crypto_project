@@ -22,7 +22,7 @@ function App() {
       <Global
       styles={css`
         * {
-          font-family:'Inter'
+          font-family:'Roboto'
         }
       `}
     />
