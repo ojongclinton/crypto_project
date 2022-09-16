@@ -187,7 +187,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
   </div>
   <div style={{backgroundColor:'#ffffff',width:'57.50vh',padding:'2vh',borderRadius:'10px',height:'93vh'}}>
     <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'4.5vh 0px 6vh 5px'}}>FeedBack</H22>
-    <FeedBack/>
+    <FeedBack/>ddddssss
   </div>
 </div>
     ) 
