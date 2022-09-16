@@ -22,11 +22,11 @@ function Home() {
     <div>
       <ScrollButton/> 
       <FirstView/>
-      {/* <SecondView/> 
+      <SecondView/> 
       <ThirdView/>
       <FourthView/>
       <FithView/> 
-      <SixthView/> */}
+      <SixthView/>
     </div>
   )
 }
