@@ -1,0 +1,32 @@
+/* File made up of global styles such as background images. this file also contains the animations keyframes for bothe the mobile and desktop view....its complicated o achieve this with emotion thats why css was used! */
+
+li{
+    list-style-type: none;
+}
+#bestPlatForm{
+    background-image: url(./assets/circularBg.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 100%;
+    
+}
+#searchResults{
+    animation-name: searchDown;
+    animation-duration: 0.3s;
+    height: 40%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: all 1s;
+}
+#searchResults li{
+    padding: 1.5vh 2vh 2vh 2vh;
+    border-bottom: 1px solid blue;
+}
+@keyframes searchDown {
+    0%{
+        height: 0%;
+    }
+    100%{
+       height: 40%;
+    }
+}
