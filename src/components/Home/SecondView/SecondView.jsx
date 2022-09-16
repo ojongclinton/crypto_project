@@ -32,9 +32,9 @@ const process = [
         <Grid item lg={5} xs={12} >
           <H11 css={styles.bigHeading}>How our onlinep2p solution works</H11>
           <p css={plainText} style={{textAlign:isMobile?'center':'left',margin:'10px'}}>A few simple, easy steps to make it easier for you</p>
-           <div css={styles.shape4}></div>
+           {/* <div css={styles.shape4}></div>
           <div css={styles.shape5}></div>
-          <div css={styles.shape6}></div> 
+          <div css={styles.shape6}></div>  */}
         </Grid>
         <Grid item lg={7} xs={12}>
           <Grid container spacing={3}>

@@ -2,6 +2,8 @@
 import { jsx } from '@emotion/react'
 import { css,Global } from '@emotion/react'
 import styled from '@emotion/styled'
+import { mq } from '../Home/GlobalStyles'
+
 
 export const headerIcon = css({
     color:'#6F7FA7',
@@ -40,10 +42,13 @@ export const headerBoxCss =css({
     paddingBottom:'15px',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.09)',
     width:'100%',
-    zIndex:10,
     paddingTop:'10px',
     height:'75px',
-    margin:'0px'
+    margin:'0px',
+    [mq[1,2]]:{
+        width:'100%',
+        backgroundColor:'yellow',
+    }
 })
 export const logoContainer = css({ //ThE Logo
     width:'26px',
@@ -65,6 +70,9 @@ export const links=css({
     margin:'4vh 3vh',
     fontWeight:'500',
     fontSize:'16',
+    [mq[1,2]]:{
+        margin:'1vh'
+    }
 })
 export const Smalllinks=css({
     display:'block',
@@ -79,6 +87,11 @@ export const navv=css({
     justifyContent:'space-between',
     marginRight:'auto',
     marginLeft:'auto',
+    [mq[1,2]]:{
+        width:'100%',
+        margin:'0px',
+        backgroundColor:'orange'
+    }
 })
 
 export const arrowIcon = css({

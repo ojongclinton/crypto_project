@@ -4,7 +4,7 @@ import { mq } from '../../Home/GlobalStyles'
 export const userActionsContainer = css({
     margin:'0px 4.7vh 0px 4.7vh',
     background:'#ffffff',
-    width:'45vh',
+    width:'90%',
     [mq[0]]:{
         margin:'0px',
         width:'100%',
@@ -38,7 +38,7 @@ export const userDataDiv =css({
     padding:'2vh',
     borderBottom:'1px solid #C4C2D3', 
     background:'#ffffff',
-    width:'45vh'
+    width:'90%'
 })
 export const userChip =css({
     color:'#5a48fa',
@@ -52,7 +52,7 @@ export const userChip =css({
 export const actionButton =css({
     textTransform:'initial',
     marginTop:'2vh',
-    padding:'10px'
+    padding:'auto'
     
 })
 export const foloContainer = css({

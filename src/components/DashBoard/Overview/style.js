@@ -40,13 +40,13 @@ export const overviewFirstRow =css({
 }
 })
 export const overviewRow1 =css({
-    width:'50.40vh',
+    width:'40%',
     height:'fit-content',
     backgroundColor:'#ffffff',
     borderRadius:'10px',
     margin:'1vh',
     marginBottom:'0px',
-    paddingLeft:'3vh',
+    paddingLeft:'2vh',
     paddingTop:'5vh',
     display:'flex',
     justifyContent:'space-between',

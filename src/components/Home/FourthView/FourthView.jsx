@@ -32,9 +32,9 @@ export const FourthView =()=>{
   return(
     <div className='FourthView' >
       <CssBaseline/>
-          <div css={styles.shape10}></div>
+          {/* <div css={styles.shape10}></div>
           <div css={styles.shape11}></div>
-          <div css={styles.shape12}></div>
+          <div css={styles.shape12}></div> */}
         <div>
           <div css={styles.whoWeAre}>
         <div css={styles.ChipBox}>

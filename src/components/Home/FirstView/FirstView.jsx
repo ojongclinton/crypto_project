@@ -36,9 +36,9 @@ return(
     {/*Text on Left Grid*/}
 
     <Grid item md={12} lg={6} >
-      <div css={styles.shape1}>shape1</div>
+      {/* <div css={styles.shape1}>shape1</div>
       <div css={styles.shape2}>shape2</div>
-      <div css={styles.shape3}>shape3</div>
+      <div css={styles.shape3}>shape3</div> */}
       <div >
       <div css={styles.thegradientText}> <span css={styles.never}>Never</span> <span>buy or sell without using OnlineP2P</span></div>
       </div>
@@ -48,9 +48,9 @@ return(
 
     <Grid item lg={6} md={12}>
       <form css={styles.formDiv} onSubmit={handleFormSubmit}>
-        <div>   
+        {/* <div>   
           <img src={bitcoin} alt='bitcoinimage' className='coinImgAnimT' css={styles.bitcoinImage} id='coinImg' onAnim ationEnd={console.log('ended')}/>
-        </div>         
+        </div>          */}
         <Item elevation={1} css={styles.formCss} >
 
           {/*Separates 'Im selling input from domain, nane input'*/}

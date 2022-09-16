@@ -13,6 +13,9 @@ import { DashBoard } from './components/DashBoard/DashBoard';
 import { SignIn } from './components/SignIn/SignIn';
 
 
+window.addEventListener("resize",()=>{
+  console.log('Width is:',window.innerWidth)
+})
 
 function App() {
   return (
@@ -38,7 +41,7 @@ function App() {
               <Route path='*' element={<NotFound/>}></Route> */}
             </Routes>
         </div>
-       <Footer/>
+       {/* <Footer/> */}
     </div>
   );
 }

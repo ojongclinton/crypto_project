@@ -163,7 +163,7 @@ const Dispu_Resolved =()=>{
 
 const OverviewRow3 =()=>{
 const isMobile = useMediaQuery({query:`(max-width:576px)`})
-{/*Beacuse the component alignment of the mobile and destop versions are not same....this arranges them to their asigned alignments*/}
+{/*Beacuse the component alignment of the mobile and desktop versions are not same....this arranges them to their asigned alignments*/}
   return(
     isMobile?(
       <div css={styles.overviewThirdRow}>

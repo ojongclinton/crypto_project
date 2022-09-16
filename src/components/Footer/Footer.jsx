@@ -34,7 +34,7 @@ function Footer() {
               <div>
               <NavLink to='/aboutUS' css={Styles.footerLink}>About Us</NavLink>
               <NavLink to='/aboutUS' css={Styles.footerLink}>How are we different</NavLink>
-              <div css={Styles.shape1}></div>
+              {/* <div css={Styles.shape1}></div> */}
               </div>
               
             </div>
@@ -47,7 +47,7 @@ function Footer() {
               </div>
             </div>
             <div css={Styles.footerContainer}>
-            <div css={Styles.shape2}></div>
+            {/* <div css={Styles.shape2}></div> */}
             <H33>Resources</H33>
               <div>
               <NavLink to='/aboutUS' css={Styles.footerLink}>Blog</NavLink>
@@ -58,7 +58,7 @@ function Footer() {
             <H33>Support</H33>
               <div>
               <NavLink to='/aboutUS' css={Styles.footerLink}>Help Center</NavLink>
-              <div css={Styles.shape3}></div>
+              {/* <div css={Styles.shape3}></div> */}
               </div>
             </div>
             <div css={Styles.footerContainer}>
