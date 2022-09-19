@@ -18,7 +18,7 @@ setShow(prev=>prev+1)
 
 return (
 
-isMobile?(
+isMobile?( //IF the current device is a mobile device, return this
     <div css={styles.transacContainer}>
         <h1 css={smallTitle} >Transaction history</h1>
         <div style={{padding:'5px'}}>
@@ -52,7 +52,7 @@ isMobile?(
             
         </div>
     </div>
-):(
+):( //Else if the current device is a desktop ro laptop, Return this instead!
     <div css={styles.transacContainer}>
     <h1 css={smallTitle} style={{fontWeight:600,paddingLeft:'7vh'}}>Transaction history</h1>
     <div style={{width:'fit-content'}}>

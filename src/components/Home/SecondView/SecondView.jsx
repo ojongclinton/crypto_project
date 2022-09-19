@@ -29,18 +29,18 @@ const process = [
           <Chip label="Simple Step" css={chipStyle}/>
         </div>
       <Grid container spacing={3} >
-        <Grid item lg={5} xs={12} >
+        <Grid item xl={5} xs={12} md={5} >
           <H11 css={styles.bigHeading}>How our onlinep2p solution works</H11>
           <p css={plainText} style={{textAlign:isMobile?'center':'left',margin:'10px'}}>A few simple, easy steps to make it easier for you</p>
            {/* <div css={styles.shape4}></div>
           <div css={styles.shape5}></div>
           <div css={styles.shape6}></div>  */}
         </Grid>
-        <Grid item lg={7} xs={12}>
-          <Grid container spacing={3}>
-            <Grid item lg={6} xs={12} css={styles.container}>
+        <Grid item xl={7} xs={12} md={7}>
+          <Grid container spacing={0}>
+            <Grid item xl={6} xs={12} md={6} css={styles.container}>
               {process.slice(0,3).map((process,index)=>(
-                <div style={{display:'flex',marginTop:isMobile?'1vh':'5vh'}} key={index}>
+                <div style={{display:'flex',marginTop:isMobile?'1vh':'0vh'}} key={index}>
                 <img src={boxstep} css={styles.boxStep}/>
                 <div>
                 <H22>{process.title}</H22>
@@ -49,7 +49,7 @@ const process = [
                 </div>
                 ))}
             </Grid>
-            <Grid item lg={6} xs={12} css={styles.container}>
+            <Grid item xl={6} xs={12} md={6} css={styles.container}>
               {process.slice(3,5).map((process,index)=>(
                   <div css={styles.boxStep2} key={index}>
                   <img src={boxstep} css={styles.boxStep}/>

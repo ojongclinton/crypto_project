@@ -29,6 +29,18 @@ background-clip: text;
 text-fill-color: transparent;
 display: inline-block;
 
+${mq[1,2,3]}{
+    font-size:40px;
+    font-weight:600;
+    height:20%;
+    padding:0px;
+    margin:0px;
+    width:100%;
+    text-align:left;
+    margin-top:10vh;
+    margin-left:5%;
+}
+
 ${mq[0]}{
 width:100%;
 margin-left:0px;
@@ -42,7 +54,9 @@ line-height:125%;
 font-weight:600;
 padding-bottom:0px;
 height:20%;
-}
+};
+
+
 `
 export const shape1=css`
 ${blurryBack};
@@ -51,6 +65,7 @@ background: #4DE6FC;
 left: 43.26vh;
 top: 20.59vh;
 z-index:-1;
+
 ${mq[0]}{
     top:10vh;
     left:7vh;
@@ -63,6 +78,10 @@ background:#AA80F9;
 left:52.44vh;
 top:47.55vh;
 z-index:-1;
+${mq[1,2,3]}{
+    left:4%;
+    top:10%;
+}
 ${mq[0]}{
     left:7vh;
     top:20vh;
@@ -75,6 +94,10 @@ background:#5A48FA;
 left: 24.80vh;
 top: 38.81vh;
 z-index:-1;
+${mq[1,2,3]}{
+    left:4%;
+    top:10%;
+}
 ${mq[0]}{
     left:7vh;
     top:20vh;
@@ -91,6 +114,12 @@ font-size: 10vh;
 line-height: 120%;
 display:inline-block;
 z-index:-1;
+
+${mq[1,2,3]}{
+    font-size:40px;
+    line-height:120%;
+    font-weight:600;
+}
 
 ${mq[0]}{
     font-size:40px;
@@ -119,12 +148,16 @@ export const formCss =css({
     marginTop:'22vh',
     marginLeft:'auto',
     marginRight:'auto',
-    color:'red',
+    [mq[1,2,3]]:{
+        marginTop:'10vh',
+        width:'fit-content',
+        height:'fit-content',
+    },
     [mq[0]]:{
         margin:'0px',
         backgroundColor:'unset',
         boxShadow: "none"
-    }
+    },
     })
     export const formDiv =css({
         display:'flex',
@@ -137,6 +170,9 @@ export const formCss =css({
     export const formControl1=css({
         margin:'2vh',
         width:'100%',
+        [mq[1,2,3]]:{
+            margin:'0.5vh'
+        },
         [mq[0]]:{
         width:'100%',
         margin:'0px',
@@ -148,6 +184,9 @@ export const formCss =css({
         backgroundColor:'#5A48FA',
         padding:'10px',
         textTransform:'none',
+        [mq[1,2,3]]:{
+        marginTop:'5px'
+        },
         [mq[0]]:{
             marginTop:'4vh',
             fontSize:'14px',

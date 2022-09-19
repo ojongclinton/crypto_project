@@ -21,21 +21,21 @@ import { UserActions,UserInfo } from '../UserActions/User';
 
 
 const OverviewRow1 =()=>{
-  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   return(
     <div css={styles.overviewFirstRow} >
       {ovRow1Data.map(data=>{  {/*Mapping trough the first row of overview ie Balance,total Deposit,ets*/}
               return(
                 <div css={styles.overviewRow1}>
-                  <div><span css={styles.OviconStyle}>{data.icon}</span>
-                  <div style={{display:'flex',justifyContent:"space-around"}}>
-                  <H22 style={{fontSize:isMobile?'16px':'18px',fontFamily:'Inter'}}>{data.name}</H22>
-                  <div css={styles.exclamContainer}>
-                  <PriorityHighIcon css={styles.exclamIcon}/>
-                  </div>
-                  </div>
-                    <H11 css={styles.Hcss}>{millify(data.amount)}</H11>
-                      {data.trend}
+                  <div>
+                    <span css={styles.OviconStyle}>{data.icon}</span>
+                    <div css={styles.nameDiv}>
+                      <H22>{data.name}</H22>
+                      <div css={styles.exclamContainer}>
+                      <PriorityHighIcon css={styles.exclamIcon}/>
+                      </div>
+                    </div>
+                      <H11 css={styles.Hcss}>{millify(data.amount)}</H11>
+                        {data.trend}
                   </div>
                   <div css={styles.lineChartDiv}>
                     <LineChart lineColor={data.lineColor} theData ={data.data} theLabels={data.labels}/>
@@ -49,15 +49,14 @@ const OverviewRow1 =()=>{
 
 
 const OverviewRow2 =()=>{
-  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   return(
     <div css={styles.overviewSecondRow}> {/*Overview-SecondRow*/} 
             {ovRow2Data.map(data=>{{/*Mapping trough the second row of overview ie completed,pending,etc escrows*/}
               return(  
               <div css={styles.overviewRow2} style={{borderTop:data.bColor}}>
                   <div>
-                    <H22 style={{color:'#64748B',fontSize:'4.26vh',marginLeft:'1.5vh'}}>{data.amount}</H22>
-                    <p style={{fontSize:'1.6vh',marginLeft:'1vh',width:'100%'}}>{data.name}</p>
+                    <H22 css={styles.ovAmtStyle}>{data.amount}</H22>
+                    <p css={styles.ovNameStyle}>{data.name}</p>
                   </div>
                   <div>
                     <span css={styles.OviconStyle2}>{data.icon}</span>
@@ -76,11 +75,11 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
     <div css={styles.topSales}> {/*Total sales1*/}
         <div css={styles.smallerWhiteDiv}>
           <H22 css={styles.smallerTitle}>Total sales</H22>
-          <H11 css={styles.bigTitle} style={isMobile?{fontSize:'41px',marginLeft:'9px'}:{}}>{millify(user.totalSales)}</H11>
+          <H11 css={styles.bigTitle}>{millify(user.totalSales)}</H11>
         </div>
         <div css={styles.smallerWhiteDiv}>
           <H22 css={styles.smallerTitle}>Support tickets</H22>
-          <H11 css={styles.bigTitle} style={isMobile?{fontSize:'41px',marginLeft:'9px'}:{}}>24</H11>
+          <H11 css={styles.bigTitle}>24</H11>
         </div>
     </div>
   )
@@ -101,9 +100,9 @@ const AdsRecordsGraph =()=>{
   return(
     <div css={styles.smallWhiteDiv} style={isMobile?{marginTop:'4vh'}:{}}>
     <H22 css={[styles.smallTitle,styles.cusSmallTitle2]}>Ads Records</H22>
-    <div style={{display:'flex',justifyContent:'left',paddingLeft:'10px',marginBottom:'2vh',marginTop:'1vh'}}>
+    <div style={{display:'flex',justifyContent:'left',paddingLeft:'10px',marginBottom:'1vh',marginTop:'1vh'}}>
       <H11 css={styles.bigTitle} style={isMobile?{fontSize:'82px',padding:'1vh 0px 0px 10px'}:{fontSize:'40px'}}>17</H11>
-      <img src={tropphyBadge} style={isMobile?{margin:'0px',height:'8vh',marginTop:'-9px'}:{height:'5vh',marginTop:'0.5vh'}}/>
+      <img src={tropphyBadge} css={styles.trophy}/>
     </div>
     <div css={styles.barChart}>
       <BarChart theLabels={user.topSales.map(item=>item.label)} theData={user.topSales.map(item=>item.amount)} Color={['#ffaa2a','#ffe0b2','#ffe0b2']} />
@@ -117,8 +116,8 @@ const TotalContracts = ()=>{
 
   return(
     <div css={styles.contractsGraph}>
-      <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'4.5vh 0px 0vh 5px'}}>Total contracts</H22>
-      <div style={{width:'100%',height:'60vh',padding:'3vh',margin:'0px',overflow:'auto'}}>
+      <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'0.5vh 0px 0vh 5px'}}>Total contracts</H22>
+      <div css={styles.graphContainer}>
         <LineChart2 lineColor='#37d694' theData={user.contracts.map(data=>data.amount)} theLabels={user.contracts.map(data=>data.label)} />    
       </div>
     </div>
@@ -133,12 +132,12 @@ const Dispu_Resolved =()=>{
     {/*Disputed Amounts*/}
  
       <div css={styles.smallWhiteDiv2} >
-        <div style={{height:'12vh'}}>
+        <div>
           <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'space-around'}}>
           <H11 css={styles.smallTitle} style={{color:'#ff6a55',padding:'0px',margin:'0px',fontWeight:600}}>
           {user.disputedAmt}
           </H11> 
-          <p style={{margin:'0px',fontSize:isMobile?'11px':'1.7vh',color:'#ff6a55'}}>Disputed amount</p>
+          <p style={{margin:'10px',fontSize:isMobile?'11px':'1.7vh',color:'#ff6a55'}}>Disputed amount</p>
           </div>
         </div>
         <span css={styles.smallIcon} style={{color:'#ff6a55',backgroundColor:'white'}}><ShowChartIcon/></span>
@@ -147,7 +146,7 @@ const Dispu_Resolved =()=>{
       {/*Resolved Payments*/}
 
       <div css={styles.smallWhiteDiv3} >
-        <div style={{height:'12vh'}}>
+        <div >
           <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'space-around'}}>
           <H11 css={styles.smallTitle} style={{color:'#5a48fb',padding:'0px',margin:'0px',fontWeight:600}}>
           {user.disputedAmt}
@@ -176,19 +175,22 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
     ):
     (
       <div css={styles.overviewThirdRow}>
-  <div style={{backgroundColor:'#eeeeee',width:'19%'}}>
+  <div style={{width:'19%'}}>
       <TopSales_Tickets/>
       <TopSales_graph/>
       <AdsRecordsGraph/>
   </div>
-  <div style={{height:'100%'}}>
+  <Grid container style={{width:'80%',margin:'0px'}}>
+  <Grid item xl={6} md={12} >
     <TotalContracts/>
     <Dispu_Resolved/>
-  </div>
-  <div style={{backgroundColor:'#ffffff',width:'57.50vh',padding:'2vh',borderRadius:'10px',height:'93vh'}}>
-    <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'4.5vh 0px 6vh 5px'}}>FeedBack</H22>
+  </Grid>
+  <Grid item xl={6} md={12} css={styles.feedBackContainer}>
+    <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'.5vh 0px 1vh 5px'}}>FeedBack</H22>
     <FeedBack/>
-  </div>
+  </Grid>
+  </Grid>
+  
 </div>
     ) 
 
@@ -202,24 +204,22 @@ export const Overview=()=>{
   return (
     <div className='Overview'>
       <CssBaseline/>
-      <div >
-       <Grid container spacing={2}>
-        <Grid item xs={3} > 
+       <Grid container spacing={0}>
+        <Grid item xl={3} lg={3} md={3}> 
         <div style={{position:'sticky',top:"10px",marginBottom:'10px'}}>
          {!isMobile && [<UserInfo />, <UserActions />]}
           </div>
         </Grid>
-        <Grid item xs={12} lg={9} style={{backgroundColor:isMobile?'#ffffff':'#eeeeee'}}>
+        <Grid item xl={9} lg={9} md={9}>
           <H22 style={isMobile?{fontFamily:'Inter',marginTop:'8vh',fontSize:'20px',marginLeft:'14px'}:{}}>Overview</H22>
-            <OverviewRow1 />
-            <OverviewRow2 />
+          <OverviewRow1 />
+          <OverviewRow2 />
             <OverviewRow3/>
              <TransactionsHistory />
-             {isMobile && <FeedBack/>}
+              {isMobile && <FeedBack/>}
              {isMobile && <LocationStats/>}
         </Grid>
        </Grid>
-      </div>
     </div>
   )
 }

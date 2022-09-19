@@ -26,9 +26,9 @@ export const UserInfo =()=>{
               <p css={styles.userTitle}>{user.title}</p>
               <Rating value={user.rating} css={styles.userRating} max={4} readOnly/>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#5A48FA'}}>
-                <DashboardCustomizeIcon css={styles.icoBtn}/>Create new escrow</Button>
+                <DashboardCustomizeIcon css={styles.icoBtn}/>Create escrow</Button>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#04063D'}}>
-                <NoteIcon css={styles.icoBtn}/> Generate a report</Button>
+                <NoteIcon css={styles.icoBtn}/> Generate report</Button>
             </div>
     )
   }

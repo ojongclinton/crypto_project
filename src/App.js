@@ -32,10 +32,10 @@ function App() {
       <Header/>
         <div>
             <Routes>
-               <Route path='/Dashboard' element={<DashBoard/>}></Route> 
+              <Route path='/Dashboard' element={<DashBoard/>}></Route>
               <Route path='/' element={<Home/>}></Route>
-              <Route path='/MarketPlace' element={<MarketPlace/>}></Route>
-              {/* <Route path='/Developper' element={<Developper/>}></Route>
+              {/* <Route path='/MarketPlace' element={<MarketPlace/>}></Route>
+               <Route path='/Developper' element={<Developper/>}></Route>
               <Route path='/Help' element={<Help/>}></Route>
               <Route path='/signIn' element={<SignIn/>}></Route>
               <Route path='*' element={<NotFound/>}></Route> */}

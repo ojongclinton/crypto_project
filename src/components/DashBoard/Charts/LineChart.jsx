@@ -102,8 +102,6 @@ export const LineChart2 =({lineColor,theData,theLabels})=>{
         ]
       };
         return(
-          <div style={{height:'100%',width:'fit-content'}}>
             <Line options={options} data={data} />
-          </div>
         )
     }

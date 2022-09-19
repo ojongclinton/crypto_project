@@ -8,7 +8,7 @@ import ScrollButton from '../Home/handleScroll'
 
 export const DashBoard=()=>{
   return (
-    <div>
+    <div >
         <ScrollButton/>
         <Overview/>
     </div>

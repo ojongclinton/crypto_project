@@ -20,12 +20,12 @@ import React from 'react'
 
 //React slick arrow to move left
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
+  <img src={letfArrow} alt="prevArrow" {...props} style={{color:'red',height:'5vh',}}/>
 );
 
 //React slick arrow to move Right
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  <img src={rightArrow} alt="nextArrow" {...props} style={{color:'red',height:'5vh',width:'5vh'}}/>
+  <img src={rightArrow} alt="nextArrow" {...props} style={{color:'red',height:'5vh'}}/>
 );  
 const testimonials =[
   {
@@ -58,7 +58,7 @@ export const FithView =()=>{
   const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const [currentSlide,setCurrentSlide] = React.useState(0)
   
-//////////This is the options for the react slick component
+//////////This are the options for the react slick component
 var settings = {
   beforeChange:function(prev,next){
     setCurrentSlide(next)
@@ -89,16 +89,18 @@ var settings = {
   prevArrow:<SlickArrowLeft/>,
   nextArrow:<SlickArrowRight/>,
   arrows:isMobile?false:true,
+  autoplay:true,
+  autoplayspeed:400
 
 }
 
   return(
     <div className="FithView" >
       <div css={isMobile?styles.MWhoweAre:styles.whoWeAre}>
-        <div style={isMobile?{display:'flex',flexDirection:'column',alignItems:'center'}:{}}>
+        <div css={styles.iconContainer}>
           <Chip label="Payment" css={chipStyle}/>
           <H11 css={styles.heading}>We accept these different cryptos</H11>
-          <p css={plainText} style={isMobile?{width:'80%',textAlign:'center',marginBottom:'10vh'}:{width:'70.30vh'}}>Safely buy and sell products and services from $100 to $10 million or more</p>
+          <p css={[plainText,styles.titleText]}>Safely buy and sell products and services from $100 to $10 million or more</p>
         </div>
         <div className='fithViewHalfCircle'>
           <div style={isMobile?{display:'flex',justifyContent:'space-around'}:{}}>
@@ -115,11 +117,11 @@ var settings = {
         </div>
       </div>
       <div css={styles.testimonials}>
-        <div  style={{height:'10vh',display:'flex',justifyContent:'space-around'}}>
-        <H11 css={styles.cusH1}>Testimonial</H11>
-            {!isMobile && <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>}
+        <div  style={{height:'fit-content',display:'flex',justifyContent:'space-around'}}>
+        <H11>Testimonial</H11>
+            {/* {!isMobile && <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>} */}
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} css={styles.reactSlider}>
           {testimonials.map((testimony,key)=>{
             return(
               <div key={key}>

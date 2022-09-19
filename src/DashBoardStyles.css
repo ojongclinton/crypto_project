@@ -1,7 +1,10 @@
 /* File made up of global styles such as background images. this file also contains the animations keyframes for bothe the mobile and desktop view....its complicated o achieve this with emotion thats why css was used! */
-
+body{
+    margin: 0px;
+    padding: 0px;
+}
 .Overview{
-    margin:2vh 0px 0px 0px;
+    padding:2vh 0px 0px 0px;
     background: #eeeeee;
 }
 table{
@@ -21,4 +24,14 @@ tr:hover{
 tr:hover .btn .lala{
     background-color: #ff6a55;
     color: white;
+}
+@media only screen and (max-width: 576px) {
+.Overview{
+    background: #ffffff;
+}
+}
+@media only screen and (max-width: 1200px) and (min-width:576px){
+    td,th{
+        padding: 6vh 2vh 4vh 1vh;
+    }
 }

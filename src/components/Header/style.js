@@ -4,12 +4,17 @@ import { css,Global } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mq } from '../Home/GlobalStyles'
 
-
 export const headerIcon = css({
     color:'#6F7FA7',
     paddingRight:'30px',
     height:'10%',
     paddingTop:'10px',
+    [mq[2]]:{
+        paddingRight:'13px',
+    },
+    [mq[1]]:{
+        display:'none'
+    }
 })
 export const hdropDown=css({
     margin:'0px',
@@ -24,7 +29,16 @@ export const siteName=css({
     fontSize:'18px',
     lineHeight:'30px',
     letterSpacing:'-0.03rem',
-    color:'#000000'
+    color:'#000000',
+    [mq[3]]:{
+        display:'contents'
+    },
+    [mq[2]]:{
+        display:'contents'
+    },
+    [mq[1]]:{
+        display:'none'
+    }
 })
 export const PlainLink = styled.a`
     text-decoration:none;
@@ -62,6 +76,9 @@ export const logo =css({
     marginRight:'auto',
     justifyContent:'space-around',
     width:'140px',
+    [mq[1,2,3]]:{
+        width:'fit-content'
+    }
 })
 export const links=css({
     display:'flex',
@@ -72,6 +89,17 @@ export const links=css({
     fontSize:'16',
     [mq[1,2]]:{
         margin:'1vh'
+    }
+})
+export const links1=css({
+    display:'flex',
+    textDecoration:'none',
+    color:'#6F7FA7',
+    margin:'4vh 3vh',
+    fontWeight:'500',
+    fontSize:'16',
+    [mq[1,2,3]]:{
+        margin:'0vh 0px'
     }
 })
 export const Smalllinks=css({

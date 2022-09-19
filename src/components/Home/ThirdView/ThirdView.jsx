@@ -28,14 +28,14 @@ const whyChooseusReasons =[
           <div css={styles.shape9}></div> */}
           <Chip label="We explain" css={chipStyle}/>
           <H11>Why choose us?</H11>
-          <p css={plainText} style={isMobile?{marginBottom:'0px'}:{margin:'5vh 0vh'}}>We're not just an online escrow service, We're THE BEST online escrow service.</p>
+          <p css={[plainText,styles.whyTitle]} >We're not just an online escrow service, We're THE BEST online escrow service.</p>
         </div>
       </div>
       <div css={styles.reasonBox}>
           {whyChooseusReasons.map((reason,index)=>(
             <StyledBox elevation={3} key={index} index={index}>
               <H33 index={index}>{reason.title}</H33>
-              <p style={{height:isMobile?'fit-content':'20.53vh'}}>{reason.body}</p>
+              <p css={styles.reasonText}>{reason.body}</p>
               <p css={index==0?styles.FviewMore:styles.viewMore}>Learn More <span><KeyboardArrowRightIcon style={index==0?{color:'#04063d'}:{color:'#00C0FF'}}/></span></p>
             </StyledBox>
           ))}
