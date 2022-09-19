@@ -26,11 +26,19 @@ export const Item = styled(Paper)(({ theme }) => ({
     width:'40vh',
     padding:'4vh',
     textAlign:'center',
+    [mq[1,2,3]]:{
+      width:'fit-content',
+    padding:'5px',
+    height:'fit-content',
+    margin:'0px',
+    marginBottom:'10%'
+  },
     [mq[0]]:{
       width:'90%',
       margin:'auto',
       marginTop:'42px',
-      height:'fit-content'
+      height:'fit-content',
+      padding:'4vh'
     }
   }));
 export const H11 = styled('h1')({
@@ -40,6 +48,10 @@ export const H11 = styled('h1')({
     lineHeight: '64px',
     margin:'0px',
     padding:'0px',
+    [mq[1,2,3]]:{
+      fontSize:'35px',
+      lineHeight:'normal'
+    },
     [mq[0]]:{
       fontSize:'4vh',
       lineHeight:'normal',
@@ -48,11 +60,15 @@ export const H11 = styled('h1')({
   })
 export const H22 = styled('h2')({
     color: '#04063D',
-    fontWeight: '600px',
+    fontWeight: '600',
     fontSize: '20px',
     padding:'0px',
     margin:'0px',
     lineHeight: '34px',
+    [mq[1,2,3]]:{
+      fontSize:'15px',
+      lineHeight:'normal'
+    },
     [mq[0]]:{
       fontSize:'16px',
       lineHeight:'normal',
@@ -78,7 +94,11 @@ width: 40.5vh;
 height: 40.5vh;
 opacity: 0.5;
 filter: blur(200px);
+${mq[1,2,3]}{
+  display:none;
+}
 ${mq[0]}{
+  display:initial;
 width: 30.5vh;
 height: 20.5vh;
 border-radius:100px;
@@ -93,6 +113,9 @@ lineHeight:'160%',
 fontStyle:'normal',
 margin:'0px',
 padding:'0px',
+[mq[1,2,3]]:{
+  fontSize:'14px'
+},
 [mq[0]]:{
   fontFamily:'Montserrat Alternates',
   fontStyle:'normal',

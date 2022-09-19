@@ -11,6 +11,9 @@ export const headerIcon = css({
     paddingTop:'10px',
     [mq[2]]:{
         paddingRight:'13px',
+    },
+    [mq[1]]:{
+        display:'none'
     }
 })
 export const hdropDown=css({
@@ -27,8 +30,14 @@ export const siteName=css({
     lineHeight:'30px',
     letterSpacing:'-0.03rem',
     color:'#000000',
-    [mq[1,2,3]]:{
-        
+    [mq[3]]:{
+        display:'contents'
+    },
+    [mq[2]]:{
+        display:'contents'
+    },
+    [mq[1]]:{
+        display:'none'
     }
 })
 export const PlainLink = styled.a`

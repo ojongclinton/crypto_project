@@ -69,7 +69,7 @@ Nkoulouloun, DLA 94105</NavLink>
               </div>
             </div>
       </div>
-      <div style={{display:'flex',justifyContent:'space-around',gap:'50vh',marginTop:'5vh'}}>
+      <div style={{display:'flex',justifyContent:'space-around',gap:'5vh',marginTop:'5vh'}}>
         <p css={plainText}>© Copyright 2021. All Rights Reserved.</p>
         {!isMobile && <div style={{display:'flex',justifyContent:'space-around'}}>
           <a href="https://www.google.com" css={Styles.footerIcon}><LinkedInIcon/></a>

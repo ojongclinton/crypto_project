@@ -15,6 +15,12 @@ export const reasonBox =css({
     marginLeft:'auto',
     marginRight:'auto',
     paddingTop:'0vh',
+    [mq[1,2,3]]:{
+        display:'grid',
+        gridTemplateColumns:'1fr 1fr',
+        height:'fit-content',
+        gap:'20px'
+    },
     [mq[0]]:{
         display:'block',
         height:'fit-content',
@@ -53,10 +59,12 @@ height: 30.5vh;
 opacity: 0.5;
 filter: blur(200px);
 position:absolute;
+${mq[1,2,3]}{
+    display:none;
+}
 ${mq[0]}{
-    width: 25vh;
-    height: 25vh;
-    filter:blur(100px);
+    display:initial;
+    filter:blur(200px);
 }
 `
 export const shape7=css`
@@ -66,7 +74,7 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    top:320vh;
+    top:300vh;
     left:20%;
 }
 `
@@ -77,7 +85,7 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    top:320vh;
+    top:300vh;
     left:20%;
 }
 `
@@ -88,7 +96,32 @@ left: 90.26vh;
 top: 250vh;
 z-index:-1;
 ${mq[0]}{
-    top:320vh;
+    top:300vh;
     left:20%;
 }
 `
+export const whyTitle=css({
+    margin:'5vh 0vh',
+    [mq[1,2,3]]:{
+        margin:'1vh'
+    }
+    ,
+    [mq[0]]:{
+        marginBottom:'0px',
+    }
+})
+export const reasonText =css({
+    height:'22.53vh',
+    [mq[3]]:{
+        height:'fit-content'
+    },
+    [mq[2]]:{
+        height:'fit-content'
+    },
+    [mq[1]]:{
+        height:'fit-content'
+    },
+    [mq[0]]:{
+      height:'fit-content'
+    }
+})

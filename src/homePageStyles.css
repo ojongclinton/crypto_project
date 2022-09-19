@@ -54,8 +54,8 @@ input, select, textarea {
     background-image: url('./assets/backgroundPath.svg');
     background-repeat: no-repeat;
 }
-.thirdView{
-    margin-top:10vh;
+.ThirdView{
+    margin-top:5vh;
     padding:0vh;
     height: fit-content;
     background-image: url('./assets/backgroundPath2.svg');
@@ -168,7 +168,7 @@ input, select, textarea {
 @media only screen and (max-width: 576px) {
     .secondView{
         margin:0vh;
-        padding: 5vh;
+        padding: 0vh;
         padding-bottom: 0px;
         padding-top: 5vh;
         height: fit-content;
@@ -223,6 +223,7 @@ input, select, textarea {
         position: absolute;
         height: 100vh;
         width: 100%;
+        top: 0;
         background-color: white;
         animation-name: runn;
         animation-duration: .4s;
@@ -254,5 +255,46 @@ input, select, textarea {
         margin: 0px;
         margin-left: 1vh;
         margin-right: 1vh;
+    }
+    .firstView{
+        height: fit-content;
+        margin-bottom: 15vh;
+    }
+    .secondView{
+        margin: 0px;
+        padding: 0px 20px;
+        margin-top: 0vh;
+        height: fit-content;
+        margin-bottom: 15vh;
+    }
+    .ThirdView{
+        height: fit-content;
+        margin-bottom: 15vh;
+    }
+    .FourthView{
+        margin-top: 0vh;
+        margin-bottom: 15vh;
+    }
+    .FithView{
+        margin-top: 0px;
+        margin-bottom: 15vh;
+    }
+    .video{
+        margin-top: 5vh;
+    }
+    .fithViewHalfCircle{
+        margin: 0px;
+        padding: 0px;
+        background-size: contain;
+        height: 20em;
+    }
+    .sixthView{
+        height: fit-content;
+        margin-top: 0px;
+    }
+    .Footer{
+        width: fit-content;
+        height: fit-content;
+        margin: 10px;
     }
   }

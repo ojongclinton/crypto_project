@@ -10,10 +10,14 @@ opacity: 0.5;
 filter: blur(100px);
 position:absolute;
 border-radius:100px;
+${mq[1,2,3]}{
+display:none;
+};
 ${mq[0]}{
+display:initial;
 width: 25vh;
 height: 25vh;
-filter:blur(157px);
+filter:blur(200px);
 }
 `
 export const shape4=css`
@@ -54,6 +58,10 @@ marginRight:'15px',
 padding:'0px',
 height:'13vh',
 width:'13vh',
+[mq[1,2,3]]:{   
+    height:'20%',
+    width:'20%'
+},
 [mq[0]]:{
     height:'20%',
     width:'20%'
@@ -68,6 +76,10 @@ fontFamily:'Montserrat Alternates',
 fontStyle:'normal', 
 lineHeight:'28px',
 fontSize:'16px',
+[mq[1,2,3]]:{
+    fontSize:'smaller',
+    lineHeight:'20px'
+},
 [mq[0]]:{
     fontSize:'14px',
     lineHeight:'20px',
@@ -92,6 +104,12 @@ export const smallBox=css({
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.05)'
 })
 export const bigHeading =css({
+    [mq[1,2,3]]:{
+        fontSize:'35px',
+        textAlign:'Left',
+        lineHeight:'normal',
+        margin:'10px'
+    },
     [mq[0]]:{
         fontSize:'4vh',
         fontWeight:'700',
@@ -105,13 +123,20 @@ export const bigHeading =css({
     }
 })
 export const container=css({
+    [mq[1,2,3]]:{
+        margin:'0vh'
+    },
     [mq[0]]:{
         margin:'0vh 2vh 0vh 2vh'
     }
 })
 export const boxStep2 =css({
     display:'flex',
-    marginTop:'4vh',
+    marginTop:'0vh',
+    [mq[1,2,3]]:{
+        margin:'0px',
+        marginTop:'0vh'
+    },
     [mq[0]]:{
         marginTop:'1vh'
     }

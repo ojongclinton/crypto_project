@@ -7,6 +7,12 @@ export const transacContainer =css({
     borderRadius:'7px',
     margin:'3vh',
     padding:'3vh 3vh 3vh 3vh',
+    [mq[1,2,3]]:{
+        margin:'auto',
+        padding:'10px',
+        width:"fit-content",
+        marginRight:'20px'
+    },
     [mq[0]]:{
         border:'1px solid #DEDAFB',
         margin:'3vh 0vh 0vh 1vh',

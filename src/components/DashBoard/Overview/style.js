@@ -4,22 +4,48 @@ import { mq } from '../../Home/GlobalStyles'
 export const contractsGraph=css({
     height:'fit-content',
     padding:'2vh',
-    margin:'auto',
+    margin:'0vh',
     backgroundColor:'#FFFFFF',
     marginBottom:'2vh',
     borderRadius:'10px',
-    width:'fit-content',
+    width:'95%',
+    overflowX:'scroll',
+    overflowY:'hidden',
+    [mq[1,2,3]]:{
+        padding:'1vh',
+        width:'95%',
+        margin:'0px',
+        height:'fit-content',
+    overflowY:'hidden',
+        
+    },
     [mq[0]]:{
     boxShadow: '0px 5.89381px 5.85841px 5px #eeeeee',
-    width:'90%',
+    width:'95%',
+    padding:'2vh',
     overflow:'auto',
     margin:'auto',
     marginTop:'3vh',
-    marginBottom:'19px'
-},
+    marginBottom:'19px',
+    height:'fit-content',
+}
+})
+
+export const graphContainer =css({
+    width:'90vh',
+    height:'61vh',
+    padding:'1vh',
+    margin:'0px',
 [mq[1,2,3]]:{
     width:'100%',
-    marginRight:'1vh'
+    height:'40vh',
+    padding:'1vh',
+},
+[mq[0]]:{
+    width:'100%',
+    padding:'0vh',
+    height:'60vh',
+    padding:'0px'
 }
 })
 
@@ -38,6 +64,10 @@ export const overviewFirstRow =css({
     display:'flex',
     padding:'0px',
     justifyContent:'space-around',
+    [mq[1,2,3]]:{
+        display:'flex',
+        justifyContent:'space-between',
+    },
     [mq[0]]:{
     display:'block',
     marginBottom:'25px'
@@ -54,8 +84,16 @@ export const overviewRow1 =css({
     paddingTop:'5vh',
     display:'flex',
     justifyContent:'space-between',
+    [mq[1,2,3]]:{
+        width:'32%',
+        margin:'0px',
+        padding:'10px'
+    },
     [mq[0]]:{
+    paddingLeft:'4%',
+    paddingTop:'5vh',
     width:'96%',
+    margin:'1vh',
     marginTop:'10px',
     border: '1px solid #D5D0FD',
     boxShadow: '0px 2.89381px 5.85841px 2px #eeeeee',
@@ -66,12 +104,16 @@ export const overviewSecondRow =css({
     justifyContent:'space-between',
     padding:'0px',
     margin:'3vh 2vh',
+    [mq[1,2,3]]:{
+    margin:'0px',
+    marginTop:'10px'
+    },
     [mq[0]]:{
     display:'grid',
     gridTemplateColumns:'1fr 1fr',
     margin:'0vh 2.5vh',
     gap:'1.5vh',
-    marginBottom:'24px'   
+    marginBottom:'24px'  
 }
 
 })
@@ -81,27 +123,68 @@ export const overviewRow2 =css({
     backgroundColor:'#ffffff',
     borderRadius: '0px 0px 9.32674px 9.32674px',
     display:'flex',
-    justifyContent:'space-around',
+    justifyContent:'space-between',
     alignItems:'flex-start',
     paddingTop:'10px',
+    [mq[1,2,3]]:{
+        width:'fit-content',
+        marginTop:'10px',
+        padding:'5px',
+        marginRight:'5px'
+    },
     [mq[0]]:{
     boxShadow: '3px 5.45645px 5.4582px 2.4582px  #eeeeee',
-    width:'100%',
+    minWidth:'160px',
+    height:'76px',
+    padding:'10px',
 }
+})
+export const ovAmtStyle =css({
+    color:'#64748B',
+    fontSize:'4.26vh',
+    marginLeft:'1.5vh',
+    [mq[1,2,3]]:{
+        marginLeft:'5px'
+    },
+    [mq[0]]:{
+
+    }
+})
+export const ovNameStyle = css({
+    fontSize:'10px',
+    marginLeft:'1vh',
+    width:'100%',
+    [mq[1,2,3]]:{
+        margin:'1px',
+        padding:'0px',
+        fontSize:'10px',
+    },
+    [mq[0]]:{
+        marginTop:"10px",
+        fontSize:'12px'
+    }
 })
 export const overviewThirdRow=css({
     display:'flex',
     justifyContent:'space-between',
     margin:'2vh',
+[mq[1,2,3]]:{
+    margin:'2vh 0px'
+},
     [mq[0]]:{
     display:'block',
-    margin:'10px 0px',
+    margin:'0px 0px',
     backgroundColor:'#ffffff'
 }
 })
 export const resolvedBlock=css({
     display:'flex',
     justifyContent:'space-between',
+    [mq[1,2,3]]:{
+        padding:'0px',
+        margin:'0px',
+        justifyContent:'space-around',
+    },
     [mq[0]]:{
     width:'100%',
     display:'grid',
@@ -173,6 +256,9 @@ export const smallerWhiteDiv =css({
     borderRadius: '5px',
     padding:'1vh',  //set to 1vh
     margin:'0px',
+    [mq[1,2,3]]:{
+        padding:'0px'
+    },
     [mq[0]]:{
     width:'43%',
     height:'80%',
@@ -190,7 +276,11 @@ export const feedBackContainer =css({
     borderRadius:'10px',
     height:'93vh',
     [mq[1,2,3]]:{
-        marginLeft:'1vh'
+        width:'100%',
+        padding:'0px',
+        margin:'2vh 4vh',
+        marginLeft:'0px',
+        height:'fit-content',
     }
 })
 export const dataChip =css({
@@ -203,13 +293,19 @@ export const dataChip =css({
     textAlign:'center',
     padding:'5px',
     borderRadius:'5px',
+    [mq[1,2,3]]:{
+        textAlign:'center',
+        padding:'0px'
+    },
     [mq[0]]:{
-    marginTop:'0vh'
+    marginTop:'0vh',
+    textAlign:'center',
+    padding:'5px',
 }
 })
 export const arrowChip =css({
     margin:'0px',
-    marginRight:'0vh'
+
 })
 
 export const spanText =css({
@@ -228,7 +324,11 @@ export const OviconStyle =css({
     display:'flex',
     justifyContent:'left',
     width:'fit-content',
+    [mq[1,2,3]]:{
+        padding:'8px'
+    },
     [mq[0]]:{
+    padding:'15px',
     marginBottom:'2vh'
 }
 })
@@ -241,14 +341,25 @@ export const OviconStyle2 =css({
     display:'flex',
     margin:'0px',
     marginTop:'0.5vh',
-    marginRight:'1vh'
+    marginRight:'1vh',
+    [mq[1,2,3]]:{
+        padding:'3px',
+        margin:'0px',
+    },
+    [mq[0]]:{
+    
+    }
 })
 export const bigTitle =css({
     padding:'0px',
     margin:'0px',
     lineHeight:'6vh',
     fontSize:'20px',
+    [mq[1,2,3]]:{
+        fontSize:'15px'
+    },
     [mq[0]]:{
+    fontSize:'30px',
     lineHeight:'0px',
     color:'#04063D'
 }
@@ -287,12 +398,22 @@ export const smallerTitle = css({
     fontWeight:500,
     color:'#1A1D1F',
     lineHeight:'normal',
+    [mq[1,2,3]]:{
+        padding:'8px 0px'
+    },
     [mq[0]]:{
     color:'#04063D',
     fontSize:'16px',
     fontWeight:500,
     padding:'8px 10px'
 }
+})
+export const nameDiv=css({
+    display:'flex',
+    justifyContent:'space-around',
+    [mq[1,2,3]]:{
+        justifyContent:'flex-start'
+    }
 })
 export const exclamContainer = css({
     backgroundColor:'#C4C2D3',
@@ -302,7 +423,11 @@ export const exclamContainer = css({
     margin:'0.5vh',
     height:'fit-content',
     width:'fit-content',
+    [mq[1,2,3]]:{
+        display:'none'
+    },  
     [mq[0]]:{
+    display:'contents',
     margin:'-3px 10px',
     padding:'0px',
     height:'25px',
@@ -321,6 +446,22 @@ export const barChart=css({
     padding:'0px 0px 0px 10px',
     height:'50%',
     width:'100%',
+[mq[1,2,3]]:{
+    padding:'0px'
+},
+[mq[0]]:{
+    padding:'0px 0px 0px 10px',
+
+}
+})
+export const trophy =css({
+    height:'5vh',marginTop:'0.5vh',
+    [mq[1,2,3]]:{
+        height:'35px'
+    },
+    [mq[0]]:{
+        margin:'0px',height:'8vh',marginTop:'-9px',
+    }
 })
 export const smallIcon =css({
     backgroundColor:'#efedff',
@@ -330,13 +471,23 @@ export const smallIcon =css({
     padding:'1.5vh',
     display:'flex',
     marginTop:'4vh',
+[mq[1,2,3]]:{
+    padding:'1vh',
+    marginTop:'20px',
+    
+
+},
     [mq[0]]:{
     fontSize:'smaller',
     padding:'1vh',
+    marginTop:'4vh',
 }
 })
 
 export const Hcss=css({
+    [mq[1,2,3]]:{
+        fontSize:'30px'
+    },
     [mq[0]]:{
     fontSize:'48px',
     margin:'0px',
@@ -350,5 +501,16 @@ export const lineChartDiv=css({
     padding:'0px',
     marginTop:'auto',
     marginRight:'3vh',
-    marginBottom:'auto'
+    marginBottom:'auto',
+    [mq[1,2,3]]:{
+        width:'90px',
+        height:'90px',
+        margin:'auto',
+    },
+    [mq[0]]:{
+    height:'18vh',
+    width:'18vh',
+    margin:'auto'
+    }
+
 })

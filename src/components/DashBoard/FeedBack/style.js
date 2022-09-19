@@ -3,19 +3,46 @@ import { mq } from '../../Home/GlobalStyles'
 
 export const feedContainer =css({
     height:'10vh',
+    [mq[1,2,3]]:{
+        padding:'0px',
+        height:'fit-content',
+        marginTop:'2vh',
+        width:'100%t',
+    },
     [mq[0]]:{
-        width:'95%',
+        width:'90%',
         borderRadius:'5px',
         margin:'auto',
         padding:'10px',
         marginTop:'25px',
         border:'1px solid #DEDAF8',
         boxShadow: '0px 3.85586px 3.85586px rgba(0, 0, 0, 0.05)',
-        paddingLeft:'3vh',
+        paddingLeft:'1vh',
         height:'fit-content'
-    },
+    }
+})
+export const theComents =css({
+    height:'50vh',
     [mq[1,2,3]]:{
-        
+        height:'fit-content',
+        overflowX:'hidden',
+        overflowY:'scroll',
+    },
+    [mq[0]]:{
+        height:'fit-content'
+    }
+})
+export const contContainer = css({
+    marginLeft:'3vh',
+    width:'70%', 
+    borderBottom:'0.5px solid #EFEFEF',
+    [mq[1,2,3]]:{
+        width:'100%',
+        margin:'auto',
+        padding:'0px'
+    },
+    [mq[0]]:{
+        marginLeft:'1vh'
     }
 })
 
@@ -31,13 +58,26 @@ export const userFeedback =css({
     width:'100%',
     display:'flex',
     justifyContent:'left',
-    margin:'4vh 0vh 6vh 0vh'
+    margin:'4vh 0vh 6vh 0vh',
+[mq[1,2,3]]:{
+    width:'100%',
+    margin:'0px',
+    padding:'10px'
+},
+[mq[0]]:{
+    margin:'4vh 0vh 6vh 0vh',
+}
 })
 export const feedImage=css({
 margin:'0vh',
 padding:'0px',
 height:'7vh',
-width:'7vh'
+width:'7vh',
+[mq[0,1,2,3]]:{
+    padding:'5px',
+    height:'70px',
+    width:'70px'
+}
 })
 export const feedbackIcon =css({
     color:"#9a9fa5",

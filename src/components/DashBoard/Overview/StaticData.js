@@ -35,6 +35,7 @@ export const user ={
       {label:'Apr',amount:'400000'},
       {label:'May',amount:'250000'},
 
+
     ],
     topSales:[
           {label:'Week 22',amount:75000},
@@ -77,37 +78,37 @@ export const user ={
     {
       name:'Completed escrows',
       amount:user.completedEscrows,
-      icon:<CheckBoxOutlinedIcon style={{fontSize:'3vh'}}/>,
+      icon:<CheckBoxOutlinedIcon/>,
       bColor:'3px solid #43DC80'    
     },
     {
       name:'Pending escrows',
       amount:user.pendindEscrows,
-      icon:<RefreshIcon style={{fontSize:'3vh'}}/>,
+      icon:<RefreshIcon/>,
       bColor:'3px solid #FFB930'     
     },
     {
       name:'Rejected escrows',
       amount:user.rejectedEscrows,
-      icon:<ClearIcon style={{fontSize:'3vh'}}/>,
+      icon:<ClearIcon/>,
       bColor:'3px solid #FF3030'     
     },
     {
       name:'Payment on hold',
       amount:user.onHoldPayments,
-      icon:<AllInclusiveIcon style={{fontSize:'3vh'}}/>,
+      icon:<AllInclusiveIcon/>,
       bColor:'3px solid #4EE9FE'     
     },
     {
       name:'Released escrows',
       amount:user.releasedEscrows,
-      icon:<ShowChartIcon style={{fontSize:'3vh'}}/>,
+      icon:<ShowChartIcon/>,
       bColor:'3px solid #ACA3FC80'     
     },
     {
       name:'Post items',  
       amount:12,
-      icon: <CloudUploadIcon style={{fontSize:'3vh'}}/>,
+      icon: <CloudUploadIcon/>,
       bColor:'3px solid #ACA3FC80'
     }
   ]

@@ -64,7 +64,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
             
         <div css={styles.faqSearch}>
         <Chip label="FAQs" css={chipStyle}/>
-            <H11>Frequently asked questions</H11>
+            <H11 style={{margin:'0px'}}>Frequently asked questions</H11>
             <p css={plainText}>Have questions? we're here to help</p>
             <div css={styles.searchBox}>
                 <SearchIcon css={styles.searchIcon}/><InputBase placeholder='Search' css={styles.searchInput} onInput={handleChange} value={searchTerm}/>
@@ -77,7 +77,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
 
                     {
                         searchItem?.map((faq,index)=>(
-                            <Grid item lg={4} xs={12} key={index}>
+                            <Grid item xl={4} xs={12} md={4} key={index}>
                                 <span css={styles.solutionIcon}>{faq.icon}</span>
                                 <H33 style={{marginLeft:'auto',marginRight:'auto',textAlign:'center'}}>{faq.question}</H33>
                                 <p css={plainText} style={{textAlign:'center',fontSize:'15px'}}>{faq.solution}</p>

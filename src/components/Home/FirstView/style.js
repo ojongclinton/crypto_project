@@ -37,7 +37,7 @@ ${mq[1,2,3]}{
     margin:0px;
     width:100%;
     text-align:left;
-    margin-top:5%;
+    margin-top:10vh;
     margin-left:5%;
 }
 
@@ -65,6 +65,7 @@ background: #4DE6FC;
 left: 43.26vh;
 top: 20.59vh;
 z-index:-1;
+
 ${mq[0]}{
     top:10vh;
     left:7vh;
@@ -77,6 +78,10 @@ background:#AA80F9;
 left:52.44vh;
 top:47.55vh;
 z-index:-1;
+${mq[1,2,3]}{
+    left:4%;
+    top:10%;
+}
 ${mq[0]}{
     left:7vh;
     top:20vh;
@@ -89,6 +94,10 @@ background:#5A48FA;
 left: 24.80vh;
 top: 38.81vh;
 z-index:-1;
+${mq[1,2,3]}{
+    left:4%;
+    top:10%;
+}
 ${mq[0]}{
     left:7vh;
     top:20vh;
@@ -140,7 +149,7 @@ export const formCss =css({
     marginLeft:'auto',
     marginRight:'auto',
     [mq[1,2,3]]:{
-        marginTop:'1.5vh',
+        marginTop:'10vh',
         width:'fit-content',
         height:'fit-content',
     },

@@ -18,11 +18,12 @@ const navigate = useNavigate()
     return(
       <div css={styles.feedContainer}>
         {isMobile && <h2 css={styles.title}>Feedback</h2>}
+        <div css={styles.theComents}>
         {feedBack.slice(0,2).map((fed,index)=>
           (
             <div key={index} css={styles.userFeedback}>
               <Avatar src={bitcoin} css={styles.feedImage}/>
-              <div style={{marginLeft:isMobile?'1vh':'3vh',width:'70%', borderBottom:'0.5px solid #EFEFEF'}}>
+              <div css={styles.contContainer}>
                 <div style={{display:'flex',justifyContent:'space-between'}}>
                 <p css={styles.fedText}><b>{fed.name}</b> <span style={{color:'#9A9FA5'}}>{fed.username}</span></p>
                 <p style={{color:'#9A9FA5',padding:'0px',margin:'0px'}}>{fed.fedTime}</p>
@@ -38,7 +39,8 @@ const navigate = useNavigate()
               </div>
             </div>
           ))}
-          <div style={{width:'90%',margin:'auto'}}>
+          </div>
+          <div style={{width:'70%',margin:'auto'}}>
 
           <Button variant='outlined' fullWidth css={styles.btnStyle} onClick={()=>navigate('/')}>View all</Button>
           </div>

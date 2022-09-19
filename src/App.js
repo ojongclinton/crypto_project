@@ -29,7 +29,7 @@ function App() {
       <Header/>
         <div>
             <Routes>
-              {/* <Route path='/Dashboard' element={<DashBoard/>}></Route> */}
+              <Route path='/Dashboard' element={<DashBoard/>}></Route>
               <Route path='/' element={<Home/>}></Route>
               {/* <Route path='/MarketPlace' element={<MarketPlace/>}></Route>
                <Route path='/Developper' element={<Developper/>}></Route>
