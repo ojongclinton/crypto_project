@@ -147,7 +147,8 @@ export const ovAmtStyle =css({
         marginLeft:'5px'
     },
     [mq[0]]:{
-
+        margin:'0px',
+        fontSize:'4vh',
     }
 })
 export const ovNameStyle = css({
@@ -160,7 +161,7 @@ export const ovNameStyle = css({
         fontSize:'10px',
     },
     [mq[0]]:{
-        marginTop:"10px",
+        marginTop:"5px",
         fontSize:'12px'
     }
 })
