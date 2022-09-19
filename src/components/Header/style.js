@@ -61,7 +61,6 @@ export const headerBoxCss =css({
     margin:'0px',
     [mq[1,2]]:{
         width:'100%',
-        backgroundColor:'yellow',
     }
 })
 export const logoContainer = css({ //ThE Logo
@@ -118,7 +117,6 @@ export const navv=css({
     [mq[1,2]]:{
         width:'100%',
         margin:'0px',
-        backgroundColor:'orange'
     }
 })
 
