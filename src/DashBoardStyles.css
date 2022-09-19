@@ -32,6 +32,6 @@ tr:hover .btn .lala{
 }
 @media only screen and (max-width: 1200px) and (min-width:576px){
     td,th{
-        padding: 6vh 2vh 4vh 1vh;
+        padding: 3ch 4vh 2vh 0vh;
     }
 }

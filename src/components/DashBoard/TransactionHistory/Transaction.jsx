@@ -54,12 +54,12 @@ isMobile?( //IF the current device is a mobile device, return this
     </div>
 ):( //Else if the current device is a desktop ro laptop, Return this instead!
     <div css={styles.transacContainer}>
-    <h1 css={smallTitle} style={{fontWeight:600,paddingLeft:'7vh'}}>Transaction history</h1>
+    <h1 css={styles.transacTitle} >Transaction history</h1>
     <div style={{width:'fit-content'}}>
         <table >
             <thead style={{color:'#6F767E',borderBottom:'1px solid #EFEFEF'}} >
                 <th css={styles.theadStyle}>Name</th>
-                <th css={styles.theadStyle}>Email</th>
+                <th css={styles.theadEmailStyle}>Email</th>
                 <th css={styles.theadStyle}>Amount</th>
                 <th css={styles.theadStyle}>Items</th>
             </thead>
@@ -75,7 +75,7 @@ isMobile?( //IF the current device is a mobile device, return this
                                 <p css={styles.smallText}>{item.username}</p>
                             </div>
                         </td>
-                        <td style={{color:'#6F767E',verticalAlign:'top'}}>
+                        <td css={styles.userEmail}>
                             {item.email}
                         </td>
                         <td style={{verticalAlign:'top'}} className='btn'>

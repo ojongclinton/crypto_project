@@ -10,8 +10,10 @@ export const transacContainer =css({
     [mq[1,2,3]]:{
         margin:'auto',
         padding:'10px',
-        width:"fit-content",
-        marginRight:'20px'
+        width:"75%",
+        marginRight:'20px',
+        marginTop:'10px',
+        marginBottom:'2vh'
     },
     [mq[0]]:{
         border:'1px solid #DEDAFB',
@@ -79,6 +81,40 @@ export const btnStyle =css({
         padding:'10px'
     }
 })
+export const transacTitle = css({
+    fontWeight:600,
+    paddingLeft:'7vh',
+    [mq[1,2,3]]:{
+        padding:'0px',
+        paddingLeft:'1vh',
+        fontWeight:'30px',
+    }
+})
 export const theadStyle = css({
     textAlign:'left'
+})
+export const theadEmailStyle = css({
+    textAlign:'left',
+    [mq[3]]:{
+        
+    },
+    [mq[2]]:{
+        display:'none'
+    },
+    [mq[1]]:{
+        display:'none'
+    }
+})
+export const userEmail = css({
+    color:'#6F767E',
+    verticalAlign:'top',
+    [mq[3]]:{
+        
+    },
+    [mq[2]]:{
+        display:'none'
+    },
+    [mq[1]]:{
+        display:'none'
+    }
 })

@@ -19,7 +19,7 @@ const navigate = useNavigate()
       <div css={styles.feedContainer}>
         {isMobile && <h2 css={styles.title}>Feedback</h2>}
         <div css={styles.theComents}>
-        {feedBack.slice(0,2).map((fed,index)=>
+        {feedBack.slice(0,3).map((fed,index)=>
           (
             <div key={index} css={styles.userFeedback}>
               <Avatar src={bitcoin} css={styles.feedImage}/>
@@ -31,7 +31,7 @@ const navigate = useNavigate()
                 
                 <p css={styles.fedText}><span style={{color:'#9A9FA5'}}>On</span> <b>{fed.title}</b> </p>
                 <p css={styles.fedText}>{fed.comment}</p>
-                <div style={{display:'flex',justifyContent:'space-between',margin:'1.5vh auto 3vh auto'}}>
+                <div style={{display:'flex',justifyContent:'space-between',margin:'1.5vh auto 1vh auto'}}>
                   <MessageIcon css={styles.feedbackIcon}/>
                   <FavoriteBorderIcon css={styles.feedbackIcon}/>
                   <InsertLinkIcon css={styles.feedbackIcon}/>

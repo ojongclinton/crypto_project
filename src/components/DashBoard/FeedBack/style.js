@@ -2,12 +2,13 @@ import { css,keyframes } from '@emotion/react'
 import { mq } from '../../Home/GlobalStyles'
 
 export const feedContainer =css({
-    height:'10vh',
+    height:'fit-content',
     [mq[1,2,3]]:{
         padding:'0px',
         height:'fit-content',
         marginTop:'2vh',
-        width:'100%t',
+        width:'100%',
+        marginBottom:'0px'
     },
     [mq[0]]:{
         width:'90%',
@@ -22,7 +23,8 @@ export const feedContainer =css({
     }
 })
 export const theComents =css({
-    height:'50vh',
+    height:'74vh',
+    overflowY:'scroll',
     [mq[1,2,3]]:{
         height:'fit-content',
         overflowX:'hidden',

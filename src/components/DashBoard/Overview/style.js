@@ -184,7 +184,7 @@ export const resolvedBlock=css({
     [mq[1,2,3]]:{
         padding:'0px',
         margin:'0px',
-        justifyContent:'space-around',
+        justifyContent:'space-between',
     },
     [mq[0]]:{
     width:'100%',
@@ -222,11 +222,17 @@ export const smallWhiteDiv2 =css({
     padding:'0px',
     display:'flex',
     justifyContent:'space-evenly',
+    [mq[1,2,3]]:{
+        padding:'10px',
+        height:'fit-content',
+        width:'fit-content',
+        justifyContent:'space-around',
+    },  
     [mq[0]]:{
+    padding:'5px',
     margin:'0px',
-    width:'90%',
+    width:'fit-content',
     boxShadow: '0px 2.89381px 5.85841px 2px #eeeeee',
-    marginTop:'0px',
     height:'fit-content',
 }
 })
@@ -237,16 +243,23 @@ export const smallWhiteDiv3 =css({
     padding:'1vh',  //set to 1vh
     margin:'3vh 1vh 0vh 2vh',
     backgroundColor:'#ffffff',
-    borderTop:'3px solid #5a48fb',
+    borderTop:'3px solid #ACA3FC',
     padding:'0px',
     display:'flex',
     justifyContent:'space-evenly',
+    [mq[1,2,3]]:{
+        padding:'10px',
+        height:'fit-content',
+        width:'fit-content',
+        justifyContent:'space-around',
+
+    },  
     [mq[0]]:{
-        margin:'0px',
-    width:'22vh',
-    height:'fit-content',
+    padding:'5px',
+    margin:'0px',
+    width:'fit-content',
     boxShadow: '0px 2.89381px 5.85841px 2px #eeeeee',
-    marginTop:'0px'
+    height:'fit-content',
 }
 })
 
@@ -275,14 +288,13 @@ export const feedBackContainer =css({
     width:'60%',
     padding:'2vh',
     borderRadius:'10px',
-    height:'93vh',
+    height:'fit-content',
     [mq[1,2,3]]:{
-        width:'100%',
+        width:'fit-content',
         padding:'0px',
-        margin:'2vh 4vh',
-        marginLeft:'0px',
-        height:'fit-content',
-    }
+        margin:'1vh 1vh 1vh 1vh',
+        height:'fit-content'
+        }
 })
 export const dataChip =css({
     color:'#8E59FF',
@@ -326,7 +338,7 @@ export const OviconStyle =css({
     justifyContent:'left',
     width:'fit-content',
     [mq[1,2,3]]:{
-        padding:'8px'
+        padding:'8px',
     },
     [mq[0]]:{
     padding:'15px',
@@ -369,6 +381,9 @@ export const smallTitle = css({
     fontSize:'3.15vh',
     fontWeight:500,
     color:'#1A1D1F',
+    [mq[1,2,3]]:{
+       fontSize:'20px'
+    },
     [mq[0]]:{
     fontSize:'20.292px',
     color:'#04063D'
@@ -471,17 +486,16 @@ export const smallIcon =css({
     borderRadius:'1000px',
     padding:'1.5vh',
     display:'flex',
-    marginTop:'4vh',
+    marginTop:'3vh',
 [mq[1,2,3]]:{
     padding:'1vh',
-    marginTop:'20px',
-    
-
+    marginTop:'10px',
+    marginLeft:'2vh'
 },
     [mq[0]]:{
     fontSize:'smaller',
     padding:'1vh',
-    marginTop:'4vh',
+    marginTop:'1vh',
 }
 })
 
@@ -514,4 +528,16 @@ export const lineChartDiv=css({
     margin:'auto'
     }
 
+})
+export const h1Boxed = css({
+    color:'#FF6A55',
+    fontSize:'20px',
+    lineHeight:'normal',
+    margin:'2vh 0px',
+    [mq[1,2,3]]:{
+        margin:'1vh 0px'
+    },
+    [mq[0]]:{
+        fontSize:'20px'
+    }
 })
