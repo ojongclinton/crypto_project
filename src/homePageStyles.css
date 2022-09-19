@@ -293,8 +293,8 @@ input, select, textarea {
         margin-top: 0px;
     }
     .Footer{
-        width: fit-content;
+        width: 100%;
         height: fit-content;
-        margin: 10px;
+        margin: auto;
     }
   }

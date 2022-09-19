@@ -127,35 +127,34 @@ const TotalContracts = ()=>{
 const Dispu_Resolved =()=>{
   const isMobile = useMediaQuery({query:`(max-width:576px)`})
   return(
-  <div css={styles.resolvedBlock}>
+    {/*Resolved Payments*/},
+    <div css={styles.resolvedBlock}>
 
     {/*Disputed Amounts*/}
  
       <div css={styles.smallWhiteDiv2} >
         <div>
-          <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'space-around'}}>
-          <H11 css={styles.smallTitle} style={{color:'#ff6a55',padding:'0px',margin:'0px',fontWeight:600}}>
+          <div style={{width:'100%'}}>
+          <H11 css={styles.h1Boxed}>
           {user.disputedAmt}
           </H11> 
-          <p style={{margin:'10px',fontSize:isMobile?'11px':'1.7vh',color:'#ff6a55'}}>Disputed amount</p>
+          <p style={{margin:'0px',fontSize:'small',color:'#FF6A55'}}>Disputed amount</p>
           </div>
         </div>
         <span css={styles.smallIcon} style={{color:'#ff6a55',backgroundColor:'white'}}><ShowChartIcon/></span>
       </div>
-
-      {/*Resolved Payments*/}
-
       <div css={styles.smallWhiteDiv3} >
-        <div >
-          <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'space-around'}}>
-          <H11 css={styles.smallTitle} style={{color:'#5a48fb',padding:'0px',margin:'0px',fontWeight:600}}>
+        <div>
+          <div style={{width:'100%'}}>
+          <H11 css={styles.h1Boxed} style={{color:'#5A48FB'}}>
           {user.disputedAmt}
           </H11> 
-          <p style={{margin:'0px',fontSize:isMobile?'11px':'1.7vh',color:'#5a48fb'}}>Disputed amount</p>
+          <p style={{margin:'0px',fontSize:'small',color:'#5A48FB'}}>Disputed amount</p>
           </div>
         </div>
-        <span css={styles.smallIcon}><ShowChartIcon/></span>
+        <span css={styles.smallIcon} style={{color:'#5A48FB',backgroundColor:'#5A48FA1A'}}><ShowChartIcon/></span>
       </div>
+
     </div>
     )
 }
@@ -186,7 +185,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
     <Dispu_Resolved/>
   </Grid>
   <Grid item xl={6} md={12} css={styles.feedBackContainer}>
-    <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'.5vh 0px 1vh 5px'}}>FeedBack</H22>
+    <H22 css={styles.smallTitle} style={isMobile?{}:{margin:'.5vh 0px 1vh 15px'}}>FeedBack</H22>
     <FeedBack/>
   </Grid>
   </Grid>
