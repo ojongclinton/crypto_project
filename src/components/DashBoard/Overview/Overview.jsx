@@ -151,7 +151,7 @@ const Dispu_Resolved =()=>{
           </H11> 
           <p style={{margin:'0px',fontSize:'small',color:'#5A48FB'}}>Disputed amount</p>
           </div>
-        </div>
+        </div>g
         <span css={styles.smallIcon} style={{color:'#5A48FB',backgroundColor:'#5A48FA1A'}}><ShowChartIcon/></span>
       </div>
 
