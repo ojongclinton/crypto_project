@@ -95,10 +95,12 @@ height: 40.5vh;
 opacity: 0.5;
 filter: blur(200px);
 ${mq[1,2,3]}{
-  display:none;
+filter: blur(150px);
+width: 10.5vh;
+height: 10.5vh;
 }
 ${mq[0]}{
-  display:initial;
+  display:block;
 width: 30.5vh;
 height: 20.5vh;
 border-radius:100px;

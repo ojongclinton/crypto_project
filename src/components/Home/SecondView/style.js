@@ -7,14 +7,14 @@ const blurryBack2 =css`
 width: 30.5vh;
 height: 30.5vh;
 opacity: 0.5;
-filter: blur(100px);
+filter: blur(150px);
 position:absolute;
 border-radius:100px;
 ${mq[1,2,3]}{
-display:none;
-};
+    display:none;
+    }
 ${mq[0]}{
-display:initial;
+display:block;
 width: 25vh;
 height: 25vh;
 filter:blur(200px);
@@ -28,7 +28,7 @@ top: 145vh;
 z-index:-1;
 ${mq[0]}{
     left:30%;
-    top:190vh;
+    top:150vh;
 }
 `
 export const shape5=css`
@@ -37,9 +37,9 @@ background:#AA80F9;
 left: 125.26vh;
 top: 155vh;
 z-index:-1;
-${mq[0]}{
-    left:30%;
-    top:215vh;
+${mq[0,1,2,3]}{
+    left:20%;
+    top:140vh;
 }
 `
 export const shape6=css`
@@ -48,9 +48,9 @@ background:#5A48FA;
 left:110.26vh;
 top: 160vh;
 z-index:-1;
-${mq[0]}{
-    left:0%;
-    top:200vh;
+${mq[0,1,2,3]}{
+    left:40%;
+    top:140vh;
 }
 `
 export const boxStep=css({

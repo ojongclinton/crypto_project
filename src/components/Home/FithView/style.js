@@ -132,10 +132,13 @@ export const testimonials=css({
     }
 })
 export const quoteImage=css({
-    position:'relative',
+    position:'absolute',
     height:'30vh',
     color:'white',
-    left:'20vh'
+    right:'10px',
+    [mq[1,2,3]]:{
+
+    }
 })
 export const MqouteImage=css({
     position:'relative',

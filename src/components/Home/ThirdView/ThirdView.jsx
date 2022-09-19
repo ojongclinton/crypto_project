@@ -23,9 +23,9 @@ const whyChooseusReasons =[
         <div>
           <div css={styles.whyChoose}>
         <div>
-          {/* <div css={styles.shape7}></div>
+          <div css={styles.shape7}></div>
           <div css={styles.shape8}></div>
-          <div css={styles.shape9}></div> */}
+          <div css={styles.shape9}></div>
           <Chip label="We explain" css={chipStyle}/>
           <H11>Why choose us?</H11>
           <p css={[plainText,styles.whyTitle]} >We're not just an online escrow service, We're THE BEST online escrow service.</p>

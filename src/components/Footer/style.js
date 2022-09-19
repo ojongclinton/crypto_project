@@ -7,29 +7,36 @@ export const blurryBac3 = css`
 width: 80.5vh;
 height: 30.5vh;
 opacity: 0.5;
-filter: blur(120px);
+filter: blur(140px);
 position:absolute;
-z-index:-10;
+z-index:-1;
 ${mq[1,2,3]}{
-  display:none;
+  filter:blur(150px);
+  width:90%;
+  height:20vh;
 }
 ${mq[0]}{
-  width: 50.5vh;
+  display:block;
   height: 30.5vh;
-  width:90%
+  width:90%;
 }
 `
 export const shape1=css`
 ${blurryBac3};
 background:#5A48FA;
+${mq[1,2,3]}{
+  left:10px;
+}
 ${mq[0]}{
-  left:1px;
-  bottoms:0px;
+
 }
 `
 export const shape2=css`
 ${blurryBac3};
 background:#4DE6FC;
+${mq[1,2,3]}{
+  left:20px;
+}
 ${mq[0]}{
   left:1px;
 }
@@ -37,9 +44,11 @@ ${mq[0]}{
 export const shape3=css`
 ${blurryBac3};
 background:#AA80F9;
+${mq[1,2,3]}{
+  left:30px;
+}
 ${mq[0]}{
   left:1px;
-  bottoms:0px;
 }
 `
 

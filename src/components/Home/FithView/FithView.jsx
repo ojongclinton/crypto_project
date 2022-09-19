@@ -118,8 +118,8 @@ var settings = {
       </div>
       <div css={styles.testimonials}>
         <div  style={{height:'fit-content',display:'flex',justifyContent:'space-around'}}>
-        <H11>Testimonial</H11>
-            {/* {!isMobile && <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>} */}
+        <H11 style={{color:'white',padding:'auto'}}>Testimonial</H11>
+            {!isMobile && <img src={quotes} alt='quoteIMG' css={isMobile?styles.MqouteImage:styles.quoteImage}/>}
         </div>
         <Slider {...settings} css={styles.reactSlider}>
           {testimonials.map((testimony,key)=>{

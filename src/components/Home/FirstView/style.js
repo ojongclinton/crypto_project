@@ -66,6 +66,9 @@ left: 43.26vh;
 top: 20.59vh;
 z-index:-1;
 
+${mq[1,2,3]}{
+    left:10%;
+}
 ${mq[0]}{
     top:10vh;
     left:7vh;

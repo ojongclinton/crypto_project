@@ -87,7 +87,7 @@ export const links=css({
     fontWeight:'500',
     fontSize:'16',
     [mq[1,2]]:{
-        margin:'1vh'
+        margin:'4vh 3vh'
     }
 })
 export const links1=css({
