@@ -5,7 +5,7 @@ export const oneItemDiv = css({
     backgroundColor:'white',
     margin:'10px',
     width:'45vh',
-    height:'57vh',
+    height:'fit-content',
     padding:'3vh',
     borderRadius:'9.5px'
 })
