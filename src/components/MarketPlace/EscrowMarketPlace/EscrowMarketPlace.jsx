@@ -9,36 +9,44 @@ import Item from '../AnItem/Item';
 import Slider from 'react-slick';
 
 
-var settings = {
-  // customPaging: function(pagi, i) {
-  //   const style={
-  //     height:'50px',
-  //     width:'10px',
-  //     borderRadius:'100px',
-  //     border:'2px solid #82839e'
-  //   }
-  //   const activeStyle={
-  //     height:'90px',
-  //     width:'10px',
-  //     borderRadius:'100px',
-  //     backgroundColor:'white'
-  //   }
-  //   return (
-  //     <div className='slick-dot'> </div>
-  //   );
-  // },
-  dots:true,
-  infinite:true,
-  speed:1000,
-  slidesToShow:3,
-  slidesToScroll:2,
-  arrows:false,
-  autoplay:true,
-  autoplayspeed:500
-
-}
 
 export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
+  const [currentSlide,setCurrentSlide] = React.useState(0)
+  var settings = {
+    beforeChange:function(prev,next){
+      setCurrentSlide(next)
+    },
+    customPaging: function(pagi, i) {
+      const style={
+        height:'10px',
+        width:'10px',
+        borderRadius:'100px',
+        border:'2px solid #82839e',
+        marginTop:"24.6px",
+        marginBottom:'36px',
+      }
+      const activeStyle={
+        height:'10px',
+        width:'10px',
+        borderRadius:'100px',
+        backgroundColor:'#04063d',
+        marginTop:"24.6px",
+        marginBottom:'36px',
+      }
+      return (
+        <div className='slick-dot' style={pagi===currentSlide?activeStyle:style}> </div>
+      );
+    },
+    dots:true,
+    infinite:true,
+    speed:1000,
+    slidesToShow:3,
+    slidesToScroll:1,
+    arrows:false,
+    autoplay:true,
+    autoplayspeed:500
+  
+  }
   const popular_escrows = alltheItems.filter(item=>item.popular)
   console.log(popular_escrows)
     const handleCategoryChange =(e)=>{
