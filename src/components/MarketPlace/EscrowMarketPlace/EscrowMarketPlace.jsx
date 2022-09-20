@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { Stack,FormControl,MenuItem,Select,InputBase } from '@mui/material'
+import { Stack,FormControl,MenuItem,Select,InputBase, Autocomplete } from '@mui/material'
+import TextField from '@mui/material/TextField';
 import React from 'react'
 import { H11,H22 } from '../../Home/GlobalStyles'
 import * as styles from './style'
@@ -23,35 +24,49 @@ const SearchResults=({items})=>{
 }
 
 export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
+  
     const handleCategoryChange =(e)=>{
         setCategory(e.target.value)
     }
     const [searchTerm,setSearchTerm] = React.useState('')
-    const searchResults = alltheItems.map(item=>item.items.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())))
-    const allActual = searchResults.filter(result=>result.length>0).flat()
     const handleSearch=(e)=>{
       setShowSearchResults(true);
       setSearchTerm(e.target.value)
     }
     const [showSearchResults,setShowSearchResults] = React.useState(true)
   return (
+    
     <div>
         <div css={styles.sortBox}>
           <div css={styles.sortBoxLeft}>
             <H22 style={{margin:'0px',padding:'0px'}}>Esccrow marketplace</H22>
             <select name="sortBy" css={styles.selectStyle} value={category} onChange={handleCategoryChange}>
-              {categories.map(cate=>{
-                return(
-                  <option value={cate[0]}>{cate[0]}</option>
-                )
-              })}
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+              <option value="condition">Condition</option>
+              <option value="date">Date</option>
             </select>
-            <div style={{}}>
-              <div css={styles.searchDiv}>
-                <InputBase style={{backgroundColor:'white',marginLeft:'2vh',borderRadius:'10px'}} onInput={handleSearch} onBlur={()=>setShowSearchResults(false)} value={searchTerm}/>
-                <img src={Search} style={{height:'70%',margin:'auto',paddingRight:'1vh',zIndex:'10'}}/>
-              </div>
-                {showSearchResults && <SearchResults items={allActual}/>}
+            <div css={styles.searchBox}>
+              <Autocomplete 
+        freeSolo
+        disableClearable
+        renderInput={(params)=>
+        <TextField {...params}
+        variant='standard'
+        size='small'
+        placeholder='Search....'
+        css={styles.textField}
+        InputProps={{
+          disableUnderline: true,
+          ...params.InputProps,
+        }}
+        />}
+        options={alltheItems}
+        getOptionLabel={(option)=>option.name}
+        groupBy={(option)=>option.category}
+        sx={{width:200,height:20}}
+      />
+      <img src={Search} css={styles.searchicon}/>
             </div>
             
           </div>
@@ -63,6 +78,11 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
           <div style={{padding:'4vh 0vh 0vh 5vh',width:'34%'}}>
             <h1 css={styles.bestText}>The Best Platform for Escrow services</h1>
             <p css={styles.pText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, veritatis distinctio voluptas quas explicabo hic quibusdam reprehenderit aspernatur voluptatum tempora.</p>
+          </div>
+        </div>
+        <div> {/*Most popular escrows!*/}
+          <div> 
+              <p>Most popuar escrows</p>
           </div>
         </div>
     </div>

@@ -49,12 +49,27 @@ export const searchDiv=css({
     marginLeft:'2vh',
     width:'30vh'
 })
-export const searchBox =css({
-    display:'block',
+export const autocomplete =css({
     backgroundColor:'white',
-    position:'absolute',
-    top:'',
-    marginLeft:'3vh',
-    marginTop:'-1vh',
-    width:'27vh'
+    borderRadius:'40px',
+    border:'none'
+})
+export const searchBox =css({
+    backgroundColor:'white',
+    width:'fit-content',
+    padding:'5px 10px',
+    display:'flex',
+    borderRadius:'50px',
+    margin:'0px 1vh'
+})
+export const textField =css({
+    margin:'0px',
+    border:'none',
+    borderRadius:'20px',
+    marginLeft:'5px',
+    width:200
+})
+export const searchicon=css({
+    height:"20px",
+    width:'20px'
 })

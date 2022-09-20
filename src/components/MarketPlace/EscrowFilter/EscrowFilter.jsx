@@ -15,13 +15,13 @@ const Products =({item})=>{
 const EscrowFilter = ({category,setCategory,items}) => {
   let filteredList
   if(category){
-   filteredList = items.filter((item)=>item.Category.includes(category))
+   filteredList = items.filter((item)=>item.category==category)
   }
   return (
     <div>
       {filteredList?.length>0?(
         <Grid container>
-        {filteredList[0].items.map((item,index)=>{
+        {filteredList.map((item,index)=>{
           return(
             <Products item={item.name}/>
           )
@@ -33,14 +33,8 @@ const EscrowFilter = ({category,setCategory,items}) => {
           {items.map(item=>{
           return(
             <div>
-              <h3>{item.Category}</h3>
-                {item.items.map(list=>{
-                  return(
-                    <p>{list.name}</p>
-                  )
-                })
-
-                }
+              <h3>{item.name}</h3>
+                
             </div>
           )
         })}

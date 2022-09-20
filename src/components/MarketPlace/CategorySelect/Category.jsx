@@ -14,9 +14,9 @@ const Category = ({setCategory,categories,choosed}) => {
         <div css={styles.categoriesDiv}>
             {categories.map((category,index)=>{
                 return(
-                    <div key={index} onClick={()=>setCategory(category[0])} css={styles.aCategory} style={choosed===category[0]?{backgroundColor:'#623CEA'}:{}}>
-                        <img src={category[1]} />
-                        <p css={styles.nameStyle} style={choosed==category[0]?{color:'white'}:{}}>{category[0]}</p>
+                    <div key={index} onClick={()=>setCategory(category)} css={styles.aCategory} style={choosed===category?{backgroundColor:'#623CEA'}:{}}>
+                         
+                        <p css={styles.nameStyle} style={choosed==category?{color:'white'}:{}}>{category}</p>
                     </div>
                 )
             })}
