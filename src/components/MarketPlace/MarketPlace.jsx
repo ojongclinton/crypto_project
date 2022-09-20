@@ -13,37 +13,36 @@ import "../../MarketplaceStyles.css"
 function MarketPlace() {
 const items = [
     {name:'The Living Dead',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
-    {name:'Walking talking',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
-    {name:'Walk like a boss',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
+    {name:'Walking talking',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies',popular:'popular'},
+    {name:'Walk like a boss',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies' ,popular:'popular'},
     {name:'Those that have Eyes',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
-    {name:'The local Nerd',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
+    {name:'The local Nerd',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies',popular:'popular'},
     {name:'The local Nerdi',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',category:'movies'},
-    {name:'LegZus',category:'cars'},
-    {name:'Avensis',category:'cars'},
-    {name:'Toyota',category:'cars'},
-    {name:'Schneider',category:'cars'},
-    {name:'Infinity 007',category:'cars'},
-    {name:'Cinderella',category:'actress'},
-    {name:'Justin Beiber',category:'actress'},
-    {name:'Nicky Minaj',category:'actress'},
-    {name:'Cardi B',category:'actress'},
-    {name:'Beyonce',category:'actress'},
-    {name:'The Rock',category:'actor'},
-    {name:'Snoop Dogg',category:'actor'},
-    {name:'Kevin Harts',category:'actor'},
-    {name:'Damso',category:'actor'},
-    {name:'Booba',category:'actor'},
-    {name:'Messi',category:'players'},
-    {name:'Ibrahim Movic',category:'players'},
-    {name:'Sallah',category:'players'},
-    {name:'Christiano Ronaldo',category:'players'},
-    {name:'Nje Clinton',category:'players'},
+    {name:'LegZus',category:'cars',popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Avensis',category:'cars',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Toyota',category:'cars',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Schneider',category:'cars' ,popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Infinity 007',category:'cars',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Cinderella',category:'actress',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Justin Beiber',category:'actress',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Nicky Minaj',category:'actress',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Cardi B',category:'actress',popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Beyonce',category:'actress',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'The Rock',category:'actor',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Snoop Dogg',category:'actor',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Kevin Harts',category:'actor',popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Damso',category:'actor',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Booba',category:'actor',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Messi',category:'players',popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Ibrahim Movic',category:'players',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Sallah',category:'players',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Christiano Ronaldo',category:'players',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
+    {name:'Nje Clinton',category:'players',popular:'popular',user:'@EstherMorella',amount:'$$99.00',rating:'3/5',location:'England',datePosted:'17 Days',},
 
 ]
 const allCategories=[];
 items.forEach(cate=>{
   if(allCategories.includes(cate.category)){
-    console.log('already here')
   }
   else(
     allCategories.push(cate.category)
@@ -62,7 +61,7 @@ const [selectedCategory,setSelectedCategory] = React.useState('actor')
         </Grid>
         <Grid item lg={9} xs={12} sx={{mt:'2vh'}}>
           <EscrowMarketPlace categories={allCategories} category={selectedCategory} setCategory={setSelectedCategory} alltheItems={items}/> 
-          <EscrowFilter category={selectedCategory} setCategory={setSelectedCategory} items={items}/>
+          {/* <EscrowFilter category={selectedCategory} setCategory={setSelectedCategory} items={items}/> */}
         </Grid>
       </Grid>
     </div>

@@ -5,26 +5,42 @@ import React from 'react'
 import { H11,H22 } from '../../Home/GlobalStyles'
 import * as styles from './style'
 import Search from '../../../assets/SearchIcon.svg'
+import Item from '../AnItem/Item';
+import Slider from 'react-slick';
 
-const SearchResults=({items})=>{
-  return(
 
-    <div css={styles.searchBox} id='searchResults'>
-      {items.length>0?(
-          items.map(item=>(
-          <div>
-            <h4>{item.name}</h4>
-          </div>
-          ))
-      ):(
-        <h3 style={{color:'red'}}>No result found</h3>
-      )}
-    </div>
-  )
+var settings = {
+  // customPaging: function(pagi, i) {
+  //   const style={
+  //     height:'50px',
+  //     width:'10px',
+  //     borderRadius:'100px',
+  //     border:'2px solid #82839e'
+  //   }
+  //   const activeStyle={
+  //     height:'90px',
+  //     width:'10px',
+  //     borderRadius:'100px',
+  //     backgroundColor:'white'
+  //   }
+  //   return (
+  //     <div className='slick-dot'> </div>
+  //   );
+  // },
+  dots:true,
+  infinite:true,
+  speed:1000,
+  slidesToShow:3,
+  slidesToScroll:2,
+  arrows:false,
+  autoplay:true,
+  autoplayspeed:500
+
 }
 
 export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
-  
+  const popular_escrows = alltheItems.filter(item=>item.popular)
+  console.log(popular_escrows)
     const handleCategoryChange =(e)=>{
         setCategory(e.target.value)
     }
@@ -81,9 +97,16 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
           </div>
         </div>
         <div> {/*Most popular escrows!*/}
-          <div> 
-              <p>Most popuar escrows</p>
+          <div css={styles.popularText}> 
+              <p css={styles.popularP}>Most popuar escrows</p>
           </div>
+          <div css={styles.slickContainer}>
+                <Slider {...settings}>
+                  {popular_escrows.map(escrow=>{return(
+                    <Item item={escrow}/>
+                  )})}
+                </Slider>
+              </div>
         </div>
     </div>
   )

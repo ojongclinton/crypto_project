@@ -73,3 +73,19 @@ export const searchicon=css({
     height:"20px",
     width:'20px'
 })
+export const popularText =css({
+    width:'100%',
+    backgroundColor:'#04063D',
+    height:'50px',
+    margin:'3vh 0px',
+    padding:"12px 10px"
+})
+export const popularP=css({
+    margin:'0px',
+    color:'white',
+    fontSize:'18px',
+    fontWeight:'500'
+})
+export const slickContainer=css({
+    marginBottom:'100px'
+})
