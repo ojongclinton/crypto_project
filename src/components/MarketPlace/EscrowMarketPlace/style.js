@@ -80,12 +80,29 @@ export const popularText =css({
     margin:'3vh 0px',
     padding:"12px 10px"
 })
+export const popularText2 =css({
+    width:'100%',
+    backgroundColor:'white',
+    height:'50px',
+    margin:'3vh 0px',
+    padding:"12px 10px"
+})
 export const popularP=css({
     margin:'0px',
     color:'white',
     fontSize:'18px',
     fontWeight:'500'
 })
+export const popularP2=css({
+    margin:'0px',
+    color:'#04063D',
+    fontSize:'18px',
+    fontWeight:'500'
+})
 export const slickContainer=css({
-    marginBottom:'100px'
+    marginBottom:'50px'
+})
+export const allItems =css({
+    display:'grid',
+    gridTemplateColumns:'1fr 1fr 1fr'
 })

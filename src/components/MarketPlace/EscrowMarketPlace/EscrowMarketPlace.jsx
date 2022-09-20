@@ -103,10 +103,20 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
           <div css={styles.slickContainer}>
                 <Slider {...settings}>
                   {popular_escrows.map(escrow=>{return(
-                    <Item item={escrow}/>
+                    <Item item={escrow} btnColor='#FF6A55'/>
                   )})}
                 </Slider>
               </div>
+              <div css={styles.popularText2}> 
+              <p css={styles.popularP2}>Most Popular escrows</p>
+          </div>
+          <div css={styles.allItems}>
+                    {alltheItems.map((item,index)=>{
+                      return(
+                        <Item item={item} btnColor='#5A48FB' key={index}/>
+                      )
+                    })}
+          </div>
         </div>
     </div>
   )

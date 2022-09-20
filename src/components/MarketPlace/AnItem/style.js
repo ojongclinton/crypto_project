@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 
 export const oneItemDiv = css({
     backgroundColor:'white',
-    margin:'0px',
+    margin:'10px',
     width:'45vh',
     height:'57vh',
     padding:'3vh',
@@ -47,7 +47,6 @@ export const buyNow =css({
     justifyContent:'space-between'
 })
 export const btnStyle =css({
-    backgroundColor:'#5A48FB',
     textTransform:'none',
     width:'40%',
     padding:'4%'

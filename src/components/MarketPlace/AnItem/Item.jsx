@@ -8,7 +8,7 @@ import star from '../../../assets/star.svg'
 import { chipStyle, H33 } from '../../Home/GlobalStyles'
 import { Chip,Button } from '@mui/material'
 
-const Item = ({item})=>{
+const Item = ({item,btnColor})=>{
     return(
         <div css={styles.oneItemDiv}>
             <div css={styles.headerBox}> {/*Header*/}
@@ -38,7 +38,7 @@ const Item = ({item})=>{
                 </div>
                 <div css={styles.buyNow}> {/*Buy now*/}
                     <h3 css={styles.priceTag}>{item.amount}</h3>
-                    <Button variant='contained' css={styles.btnStyle}>Buy now</Button>
+                    <Button variant='contained' css={styles.btnStyle} style={{backgroundColor:btnColor}}>Buy now</Button>
                 </div>
             </div>
         </div>
