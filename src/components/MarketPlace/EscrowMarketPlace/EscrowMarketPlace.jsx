@@ -4,13 +4,16 @@ import TextField from '@mui/material/TextField';
 import React from 'react'
 import { H11,H22 } from '../../Home/GlobalStyles'
 import * as styles from './style'
+import cate1 from '../../../assets/bushmarket.svg'
+import cate2 from '../../../assets/foodmarket.svg'
+import cate3 from '../../../assets/hardwaremarket.svg'
+import cate4 from '../../../assets/techmarket.svg'
 import Search from '../../../assets/SearchIcon.svg'
 import Item from '../AnItem/Item';
 import Slider from 'react-slick';
 
-
-
-export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
+const Popular =({alltheItems})=>{
+  const popular_escrows = alltheItems.filter(item=>item.popular)
   const [currentSlide,setCurrentSlide] = React.useState(0)
   var settings = {
     beforeChange:function(prev,next){
@@ -47,8 +50,22 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
     autoplayspeed:500
   
   }
-  const popular_escrows = alltheItems.filter(item=>item.popular)
-  console.log(popular_escrows)
+  return (
+    <div css={styles.slickContainer}>
+                <Slider {...settings}>
+                  {popular_escrows.map(escrow=>{return(
+                    <Item item={escrow} btnColor='#FF6A55'/>
+                  )})}
+                </Slider>
+    </div>
+  )
+}
+
+
+export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
+  const itemByCategory = alltheItems.filter(item=>item.category === category)
+  console.log(itemByCategory)
+
     const handleCategoryChange =(e)=>{
         setCategory(e.target.value)
     }
@@ -95,7 +112,24 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
             
           </div>
           <div css={styles.sortBoxRight}>
-            Right
+           <div css={styles.mostPopularContainer}>
+                    <div css={styles.mostPopularIcon}>
+                        <img src={cate1} css={styles.popStyle} alt="location"/>
+                        <p css={styles.dataTag}>one</p>
+                    </div>
+                    <div css={styles.mostPopularIcon}>
+                        <img src={cate2} css={styles.popStyle} alt="sinceDays"/>
+                        <p css={styles.dataTag}>two</p>
+                    </div>
+                    <div css={styles.mostPopularIcon} >
+                        <img src={cate3} css={styles.popStyle} alt="rating" />
+                        <p css={styles.dataTag}>three</p>
+                    </div>
+                    <div css={styles.mostPopularIcon} >
+                        <img src={cate4} css={styles.popStyle} alt="rating" />
+                        <p css={styles.dataTag}>three</p>
+                    </div>
+                </div> 
           </div>
         </div>
         <div css={styles.bestPlatform} id='bestPlatForm'>
@@ -108,13 +142,8 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
           <div css={styles.popularText}> 
               <p css={styles.popularP}>Most popuar escrows</p>
           </div>
-          <div css={styles.slickContainer}>
-                <Slider {...settings}>
-                  {popular_escrows.map(escrow=>{return(
-                    <Item item={escrow} btnColor='#FF6A55'/>
-                  )})}
-                </Slider>
-              </div>
+              <Popular alltheItems={alltheItems}/>
+          
               <div css={styles.popularText2}> 
               <p css={styles.popularP2}>Most Popular escrows</p>
           </div>

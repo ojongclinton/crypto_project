@@ -31,8 +31,8 @@ const Item = ({item,btnColor})=>{
                         <img src={clock} alt="sinceDays"/>
                         <p css={styles.userTag}>{item.datePosted}</p>
                     </div>
-                    <div css={styles.footerIcon}>
-                        <img src={star} alt="rating"/>
+                    <div css={styles.footerIcon} >
+                        <img src={star} alt="rating" />
                         <p css={styles.userTag}>{item.rating}</p>
                     </div>
                 </div>

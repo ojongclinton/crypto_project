@@ -38,7 +38,7 @@ export const sortBoxLeft=css({
     justifyContent:'space-between'
 })
 export const sortBoxRight=css({
-    
+    width:'30%'
 })
 export const searchDiv=css({
     backgroundColor:'white',
@@ -105,4 +105,21 @@ export const slickContainer=css({
 export const allItems =css({
     display:'grid',
     gridTemplateColumns:'1fr 1fr 1fr'
+})
+export const mostPopularContainer = css({
+        display:'flex',
+        justifyContent:'space-between',
+
+})
+export const mostPopularIcon =css({
+    display:'flex'
+})
+export const dataTag =css({
+    margin:'0px',
+    padding:'0px',
+    color:'#64748B'
+})
+export const popStyle =css({
+    height:'25px',
+    margin:'0px 4px'
 })

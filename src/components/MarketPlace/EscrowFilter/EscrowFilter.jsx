@@ -7,7 +7,7 @@ import * as styles from './style'
 const Products =({item})=>{
   return(
     <Grid item  xs={4}>
-      <h3>{item}</h3>
+      <h3>yeahh</h3>
     </Grid>
   )
 }
