@@ -1,49 +1,45 @@
-            <Grid item md={12} lg={8}>     {/*Text on Left Grid*/}
-                <div css={styles.shape1}>shape1</div>
-                <div css={styles.shape2}>shape2</div>
-                <div css={styles.shape3}>shape3</div>
-              <div>
-                <div css={styles.thegradientText}> <span css={styles.never}>Never</span> <span>buy or sell without using OnlineP2P</span></div>
+<div>
+      <Search alltheItems={alltheItems}/>
+        <div css={styles.bestPlatform} id='bestPlatForm'>
+          <div style={{padding:'4vh 0vh 0vh 5vh',width:'34%'}}>
+            <h1 css={styles.bestText}>The Best Platform for Escrow services</h1>
+            <p css={styles.pText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, veritatis distinctio voluptas quas explicabo hic quibusdam reprehenderit aspernatur voluptatum tempora.</p>
+          </div>
+        </div>
+        <div> {/*Most popular escrows!*/}
+          <div css={styles.popularText}> 
+              <p css={styles.popularP}>Most popuar escrows</p>
+          </div>
+              <Popular alltheItems={alltheItems}/> {/*Most popular escrows*/}
+              <div> {/*Escrows by category*/}
+              <div css={styles.popularText}> 
+              <p css={styles.popularP}>{category}</p>
+          </div>
+          <div css={styles.allItems}>
+            {category?(
+              filterByCategory.map((item,index)=>{
+                return(
+                  <Item item={item} btnColor='#5A48FB' key={index}/>
+                )
+              })
+            ):(<div style={{margin:'auto'}}>
+              <h1 style={{margin:'0px'}}>Choose a category</h1>
+            </div>)}
+          </div>
               </div>
-          </Grid>
-
-
-
-                    <div css={styles.shape4}></div>
-          <div css={styles.shape5}></div>
-          <div css={styles.shape6}></div>
-
-
-
-          <Slider {...settings}>
-                {
-                  process.map(item=>{
-                    return(
-                      <div>
-                        <img src={boxstep} css={styles.boxStep}/>
-                        <p>OKAAAAA</p>
-                      </div>
-                    )
-                  })
-                }
-              </Slider>
-
-<html>
-  <head>
-    <title>The title of the document</title>
-    <style>
-      div {
-        padding: 10px;
-        border: 1px solid rgba(255, 0, 0);
-        border-top: 2px solid rgb(246, 176, 177);
-        border-top: 2px solid rgba(255, 0, 0, .2);
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Example</h2>
-    <div>Set a border opacity with CSS</div>
-  </body>
-</html>
+          <div> {/*All the escrows*/}
+          <div css={styles.popularText2}> 
+              <p css={styles.popularP2}>Top escrows</p>
+          </div>
+          <div css={styles.allItems}>
+            
+                    {alltheItems.map((item,index)=>{
+                      return(
+                        <Item item={item} btnColor='#5A48FB' key={index}/>
+                      )
+                    })}
+          </div>
+          </div>
+              
+        </div>
+    </div>

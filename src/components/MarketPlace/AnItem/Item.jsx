@@ -7,8 +7,11 @@ import location from '../../../assets/location.svg'
 import star from '../../../assets/star.svg'
 import { chipStyle, H33 } from '../../Home/GlobalStyles'
 import { Chip,Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+
 
 const Item = ({item,btnColor})=>{
+const navigate = useNavigate();
     return(
         <div css={styles.oneItemDiv}>
             <div css={styles.headerBox}> {/*Header*/}
@@ -38,7 +41,8 @@ const Item = ({item,btnColor})=>{
                 </div>
                 <div css={styles.buyNow}> {/*Buy now*/}
                     <h3 css={styles.priceTag}>{item.amount}</h3>
-                    <Button variant='contained' css={styles.btnStyle} style={{backgroundColor:btnColor}}>Buy now</Button>
+                    <Button variant='contained' css={styles.btnStyle} style={{backgroundColor:btnColor}} 
+                    onClick={()=>navigate(`/MarketPlace/${item.id}`)}>Buy now</Button>
                 </div>
             </div>
         </div>

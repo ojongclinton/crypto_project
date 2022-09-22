@@ -2,11 +2,10 @@
 import { css } from '@emotion/react'
 
 export const selectStyle = css({
-    color:'black',
     border:'none',
-    borderRadius:'10px',
+    borderRadius:'50px',
     marginLeft:'10px',
-    padding:'5px',
+    padding:'0px 0px 0px 0px',
 })
 export const bestPlatform=css({
 backgroundColor:'#623cea',
@@ -38,7 +37,7 @@ export const sortBoxLeft=css({
     justifyContent:'space-between'
 })
 export const sortBoxRight=css({
-    width:'30%'
+    width:'43%'
 })
 export const searchDiv=css({
     backgroundColor:'white',
@@ -117,7 +116,9 @@ export const mostPopularIcon =css({
 export const dataTag =css({
     margin:'0px',
     padding:'0px',
-    color:'#64748B'
+    color:'#64748B',
+    fontSize:'11px',
+    margin:'auto 0px'
 })
 export const popStyle =css({
     height:'25px',
