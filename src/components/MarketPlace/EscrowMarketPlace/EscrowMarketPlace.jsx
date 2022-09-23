@@ -88,7 +88,6 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
     const [showSearchResults,setShowSearchResults] = React.useState(true)
   return (
     <div>
-      <Search alltheItems={alltheItems}/>
         <div css={styles.bestPlatform} id='bestPlatForm'>
           <div style={{padding:'4vh 0vh 0vh 5vh',width:'34%'}}>
             <h1 css={styles.bestText}>The Best Platform for Escrow services</h1>

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import * as styles from './style'
 import React from 'react'
-import imagePlaceHolder from '../../../assets/imgplaceholder.jpg'
+import imagePlaceHolder from '../../../assets/imagePlaceholder.jpg'
 import clock from '../../../assets/clock.svg'
 import location from '../../../assets/location.svg'
 import star from '../../../assets/star.svg'
