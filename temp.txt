@@ -43,3 +43,13 @@
               
         </div>
     </div>
+
+
+Tell him this 
+The Ram of your current PC is not enough to handle the system requirement of the applications you would be using
+Teacher said to a machine of at least 4gb DDR4 is preferable or 8gb DDR3... yours in currently 4gb ddr3 and that is very low for ardino
+CPU speed and video memeory are also very low
+
+Tell him too that cisco packet tracer runs very slow un your machine till the extent you needed to uninstall it...Because your machine freezes when you open the applications
+and that you need the cisco packet tracer for computer network classes..
+Some keys on the keyboard dont work too... 

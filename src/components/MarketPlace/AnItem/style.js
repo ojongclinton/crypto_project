@@ -13,7 +13,7 @@ export const bigHeader =css({
     fontSize:'18px',
     fontWeight:600,
     color:'#1A202c',
-    margin:'0px'
+    margin:'0px',
 })
 export const userTag =css({
     margin:'0px',
@@ -65,7 +65,9 @@ export const priceTag = css({
 export const bigImage =css({
     height:'100%',
     width:'100%',
-    borderRadius:'10px '
+    borderRadius:'10px ',
+    marginBottom:'10px'
+
 })
 export const itemDetails =css({
     margin:'22px 0px'
@@ -91,7 +93,7 @@ export const Rating =css({
     justifyContent:'space-between',
 })
 export const description =css({
-    margin:'13 px 0px',
+    margin:'5px 0px',
     color:'#596780',
     lineHeight:'180%',
     fontSize:'20px',
@@ -132,14 +134,92 @@ export const otherimgs =css({
 export const otherimgstyle =css({
     width:'100%',
     height:'100%',
-    borderRadius:'3.7px',
+    borderRadius:'10px',
     margin:'0px 0px',
-    overflow:'hidden',
-
 })
+
 export const oneOtherDiv =css({
     height:'22vh',
+    padding:'8px',
+    borderRadius:'10px',
+    margin:'0px'
+    // backgroundColor:'red'
+})
+export const oneActiveDiv =css({
+    height:'22vh',
+    padding:'8px',
+    borderRadius:'10px',
     border:'2px solid #3563E9',
-    padding:'7px',
+    margin:'0px'
+})
+export const reviewsBox =css({
+    display:'inline-flex',
+    backgroundColor:'#3563E9',
+    color:'white',
+    fontWeight:700,
+    fontSize:'14px',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:'4px',
+    width:'44px',
+    height:'28px',
+    padding:'0px 25px'
+})
+export const commentContainer = css({
+    margin:'32px 40px',
+    width:'95%',
+    borderRadius:'10px',
+})
+export const bigcommentContainer = css({
+    marginTop:'4vh',
+    backgroundColor:'#ffffff',
+    padding:'40px',
+    width:'95%',
     borderRadius:'10px'
+})
+export const singleComment = css({
+
+    height:'fit-content',
+    marginBottom:'4vh'
+})
+export const commentHead =css({
+    display:'flex',
+    justifyContent:'space-between',
+})
+export const commentBody =css({
+    fontWeight:400,
+    lineHeight:'200%',
+    fontSize:'14px',
+    margin:'0px',
+    color:'#596780',
+    fontFamily:'Plus Jakarta Sans'
+})
+export const commentName =css({
+    fontFamily:'Plus Jakarta Sans',
+    fontWeight:700,
+    fontSize:'20px',
+    lineHeight:'150%',
+    margin:'8px 0px'
+})
+export const commentTitle=css({
+    fontWeight:500,
+    fontSize:'14px',
+    lineHeight:'150%',
+    color:'#90A3BF',
+    margin:'10px 0px'
+
+})
+export const commentDate=css({
+    fontWeight:500,
+    fontSize:'14px',
+    lineHeight:'150%',
+    color:'#90A3BF',
+    margin:'0px',
+    textAlign:'right',
+    margin:'8px 4px'
+})
+export const btn2Style =css({
+    margin:'0px 40% 0px 45%',
+    textTransform:'none'
 })

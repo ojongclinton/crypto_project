@@ -8,9 +8,13 @@ import cate2 from '../../../assets/foodmarket.svg'
 import cate3 from '../../../assets/hardwaremarket.svg'
 import cate4 from '../../../assets/techmarket.svg'
 import searchIcon from '../../../assets/SearchIcon.svg'
+import { useNavigate } from 'react-router-dom'
 
 export const Search =({alltheItems})=>{
-    console.log(alltheItems)
+  const navigate = useNavigate();
+  const handleSelect = (e,value)=>{
+    navigate(`/MarketPlace/${value.id}`)
+  }
     return(
         <div css={styles.sortBox}>
           <div css={styles.sortBoxLeft}>
@@ -26,6 +30,8 @@ export const Search =({alltheItems})=>{
               <Autocomplete 
         freeSolo
         disableClearable
+        onChange={handleSelect}
+        // onInput={(e)=>console.log(e.target.value)} // Implement Search functionality
         renderInput={(params)=>
         <TextField {...params}
         variant='standard'

@@ -119,6 +119,16 @@ export const items = [
     type:'Sport'
   },
 ]
+
+export const comments = [
+  {id:1,name:'Alex Stanton', comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5},
+  {id:2,name:'Skylar Dias',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5},
+  {id:3,name:'Ojong Clinton',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5},
+  {id:4,name:'Angafor precious',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5},
+  {id:5,name:'Mofor Bradley',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5},
+  {id:6,name:'Angafor Konrad',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5}
+]
+
 export const allCategories=[];
 items.forEach(cate=>{
   if(allCategories.includes(cate.category)){
