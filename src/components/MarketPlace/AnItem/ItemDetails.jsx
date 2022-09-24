@@ -89,7 +89,7 @@ const hadleImageChange =(e)=>{
       </Grid> 
 
       <div css={styles.bigcommentContainer}>
-      <p style={{margin:'0px'}}>Reviews <div css={styles.reviewsBox}>{comments.length}</div></p>
+      <p css={styles.revText}>Reviews <div css={styles.reviewsBox}>{comments.length}</div></p>
             <div css={styles.commentContainer}>
               
               <div>

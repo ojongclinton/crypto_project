@@ -223,3 +223,8 @@ export const btn2Style =css({
     margin:'0px 40% 0px 45%',
     textTransform:'none'
 })
+export const revText =css({
+    fontFamily:'Plus Jakarta Sans',
+    fontWeight:600,
+    fontSize:'20px'
+})
