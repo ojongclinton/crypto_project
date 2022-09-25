@@ -12,6 +12,8 @@ import "../../MarketplaceStyles.css"
 import { Outlet,Route,Routes } from 'react-router-dom'
 import { Search } from './EscrowMarketPlace/Search'
 import ItemDetails from './AnItem/ItemDetails'
+import ViewCategory from './AnItem/Viewcategory'
+import AllCategories from './AnItem/AllCategories'
 
 export const items = [
   {
@@ -129,6 +131,10 @@ export const comments = [
   {id:6,name:'Angafor Konrad',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5}
 ]
 
+window.addEventListener('DOMContentLoaded',()=>{
+  console.log('ready!!')
+})
+
 export const allCategories=[];
 items.forEach(cate=>{
   if(allCategories.includes(cate.category)){
@@ -155,6 +161,8 @@ const [selectedCategory,setSelectedCategory] = React.useState('')
          <Routes>
             <Route path='/' element={<EscrowMarketPlace categories={allCategories} category={selectedCategory} setCategory={setSelectedCategory} alltheItems={items}/>}/>
             <Route path=':itemId' element={<ItemDetails/>}/>
+            <Route path='/categories/:category' element={<ViewCategory/>}/>
+            <Route path='/categories' element={<AllCategories />}/>
          </Routes>
         </Grid>
       </Grid>

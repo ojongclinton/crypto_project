@@ -11,6 +11,9 @@ import searchIcon from '../../../assets/SearchIcon.svg'
 import { useNavigate } from 'react-router-dom'
 
 export const Search =({alltheItems})=>{
+  const handleClick=()=>{
+    console.log('OKEEEEEEEE na')
+  }
   const navigate = useNavigate();
   const handleSelect = (e,value)=>{
     navigate(`/MarketPlace/${value.id}`)
@@ -54,19 +57,19 @@ export const Search =({alltheItems})=>{
           </div>
           <div css={styles.sortBoxRight}>
            <div css={styles.mostPopularContainer}>
-                    <div css={styles.mostPopularIcon}>
+                    <div css={styles.mostPopularIcon} onClick={handleClick}>
                         <img src={cate1} css={styles.popStyle} alt="location"/>
                         <p css={styles.dataTag}>Top sales</p>
                     </div>
-                    <div css={styles.mostPopularIcon}>
+                    <div css={styles.mostPopularIcon} onClick={handleClick}>
                         <img src={cate2} css={styles.popStyle} alt="sinceDays"/>
                         <p css={styles.dataTag}>consumables</p>
                     </div>
-                    <div css={styles.mostPopularIcon} >
+                    <div css={styles.mostPopularIcon} onClick={handleClick} >
                         <img src={cate3} css={styles.popStyle} alt="rating" />
                         <p css={styles.dataTag}>Favourites</p>
                     </div>
-                    <div css={styles.mostPopularIcon} >
+                    <div css={styles.mostPopularIcon} onClick={handleClick} >
                         <img src={cate4} css={styles.popStyle} alt="rating" />
                         <p css={styles.dataTag}>Hardware Market</p>
                     </div>

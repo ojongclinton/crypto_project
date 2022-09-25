@@ -4,7 +4,6 @@ import { css } from '@emotion/react'
 export const oneItemDiv = css({
     backgroundColor:'white',
     margin:'10px',
-    width:'45vh',
     height:'fit-content',
     padding:'3vh',
     borderRadius:'9.5px'
@@ -227,4 +226,7 @@ export const revText =css({
     fontFamily:'Plus Jakarta Sans',
     fontWeight:600,
     fontSize:'20px'
+})
+export const allCateContainer=css({
+    backgroundColor:'yellow'
 })

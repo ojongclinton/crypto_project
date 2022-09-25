@@ -1,15 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { Stack,FormControl,MenuItem,Select,InputBase, Autocomplete } from '@mui/material'
-import TextField from '@mui/material/TextField';
 import React from 'react'
-import { H11,H22 } from '../../Home/GlobalStyles'
 import * as styles from './style'
 import Item from '../AnItem/Item';
 import Slider from 'react-slick';
-import { Search } from './Search';
-import { Outlet,Routes,Route,BrowserRouter } from 'react-router-dom';
-import ItemDetails from '../AnItem/ItemDetails';
-
 
 const Popular =({alltheItems})=>{
   const popular_escrows = alltheItems.filter(item=>item.popular)

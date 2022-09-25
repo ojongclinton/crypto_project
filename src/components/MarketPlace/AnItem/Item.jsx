@@ -49,4 +49,12 @@ const navigate = useNavigate();
     )
 }
 
+export const CateItem = ({cate})=>{
+    return(
+        <div>
+            <h1>{cate}</h1>
+        </div>
+    )
+}
+
 export default Item
