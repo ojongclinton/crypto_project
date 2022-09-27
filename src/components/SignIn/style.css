@@ -1,0 +1,112 @@
+.login-wrap .container {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 100px 15px;
+}
+
+
+
+h2 span {
+  color: #5A48FA
+}
+
+.checkwrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkwrap a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #5A48FA;
+
+}
+
+.checkwrap .check-cont {
+  margin-bottom: 0
+}
+
+.login-wrap a {
+  text-decoration: none;
+}
+
+.login-wrap input[type="submit"] {
+  width: 100%;
+  margin-top: 40px
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 10px
+}
+
+.forget-pass {
+  margin-top: 30px;
+}
+
+.forget-pass a {
+  padding-left: 5px;
+  color: #5A48FB;
+}
+
+.login-wrap a:hover {
+  text-decoration: underline
+}
+
+.login-wrap {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.checkwrap {
+  margin-top: 10px;
+}
+
+.login-wrap form {
+  max-width: 511px;
+  margin: 20px auto 0;
+}
+
+
+/*--signup--*/
+
+.signup-wrap {
+  background: #fff;
+}
+
+.signup-wrap .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 15px;
+}
+
+.signup-wrap form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.signup-wrap .signup-form {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.signup-form .signup input {
+  display: inline-block
+}
+
+.signup-form .signup {
+  text-align: center
+}
+
+@media (max-width:600px) {
+  .checkwrap a {
+    font-size: 13px;
+  }
+}
