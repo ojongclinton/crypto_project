@@ -51,8 +51,8 @@ const navigate = useNavigate();
 
 export const CateItem = ({cate})=>{
     return(
-        <div>
-            <h1>{cate}</h1>
+        <div css={styles.aCategory}>
+            <h1 style={{textAlign:'center'}}>{cate}</h1>
         </div>
     )
 }

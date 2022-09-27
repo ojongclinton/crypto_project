@@ -2,7 +2,7 @@
 import Typography from '@mui/material/Typography'
 import {CssBaseline,Button,Box, Accordion,AccordionSummary,AccordionDetails, Avatar,Rating  } from '@mui/material';
 import { useMediaQuery } from 'react-responsive'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import React from 'react'
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import * as styles from './style'
@@ -17,8 +17,8 @@ import { UserActions } from '../DashBoard/UserActions/User';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import NoteIcon from '@mui/icons-material/Note';
 
-
 const LaptopDisplay = ()=>{
+const navigate = useNavigate()
   return(
     <div css={styles.headerBoxCss}>
       <div className='logo_name' css={styles.logo}>
@@ -45,7 +45,7 @@ const LaptopDisplay = ()=>{
         <img src={Language} css={styles.headerIcon} alt='iconSVG'/>
         <img src={HeaderDown} css={styles.headerIcon} alt='iconSVG'/>
         <PlainLink href='/signIn' >Sign In</PlainLink>
-        <Button variant='outlined'>Sign up</Button>
+        <Button variant='outlined' onClick={()=>navigate('/signUp')}>Sign up</Button>
       </div>
     </div>
   )

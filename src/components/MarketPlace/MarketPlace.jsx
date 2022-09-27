@@ -1,12 +1,12 @@
 import { CssBaseline, Grid } from '@mui/material'
 import React from 'react'
 import Category from './CategorySelect/Category'
-// import EscrowFilter from './EscrowFilter/EscrowFilter'
-// import personIcon from '../../assets/person.svg'
-// import peopleIcon from '../../assets/people.svg'
-// import bannerIcon from '../../assets/banner.svg'
-// import settingicon from '../../assets/settings.svg'
-// import chatIcon from '../../assets/chat.svg'
+import EscrowFilter from './EscrowFilter/EscrowFilter'
+import personIcon from '../../assets/person.svg'
+import peopleIcon from '../../assets/people.svg'
+import bannerIcon from '../../assets/banner.svg'
+import settingicon from '../../assets/settings.svg'
+import chatIcon from '../../assets/chat.svg'
 import { EscrowMarketPlace } from './EscrowMarketPlace/EscrowMarketPlace'
 import "../../MarketplaceStyles.css"
 import { Outlet,Route,Routes } from 'react-router-dom'
@@ -161,7 +161,7 @@ const [selectedCategory,setSelectedCategory] = React.useState('')
          <Routes>
             <Route path='/' element={<EscrowMarketPlace categories={allCategories} category={selectedCategory} setCategory={setSelectedCategory} alltheItems={items}/>}/>
             <Route path=':itemId' element={<ItemDetails/>}/>
-            <Route path='/categories/:category' element={<ViewCategory/>}/>
+            <Route path='/categories/:category' element={<ViewCategory items={items}/>}/>
             <Route path='/categories' element={<AllCategories />}/>
          </Routes>
         </Grid>

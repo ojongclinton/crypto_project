@@ -228,5 +228,13 @@ export const revText =css({
     fontSize:'20px'
 })
 export const allCateContainer=css({
-    backgroundColor:'yellow'
+    margin:'20px'
+})
+export const aCategory =css({
+    backgroundColor:'#ffffff',
+    height:'10vw'
+})
+export const allItems =css({
+    display:'grid',
+    gridTemplateColumns:'1fr 1fr 1fr'
 })

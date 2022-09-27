@@ -1,66 +1,65 @@
 /** @jsxImportSource @emotion/react */
-import { Button } from '@mui/material'
-import React,{useState} from 'react'
+import React ,{ useCallback , useEffect } from 'react';
+import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
 import * as styles from './styles'
-import login from '../../assets/login.svg'
-import signup from '../../assets/register.svg'
-import './stylll.css'
 
-const SignInDiv = ({setSignInShow,setSignUpShow}) => {
-const handleClick = ()=>{
-    setSignInShow(prev=>!prev)
-    setSignUpShow(prev=>!prev)
-}
-  return (
-    <div css={styles.signInDiv} className="signUp">
-        <div >
-            <h1>Sign IN form here</h1>
-        </div>
-        <div style={{color:'white'}}>
-        <h1>New here?</h1>
-            <p>Create an account and have full acces to our services.</p>
-            <Button variant='contained' onClick={handleClick}>Sign Up</Button>
-            <img src={login} css={styles.svgImage}/>
-        </div>
-        
-    </div>
-  )
-}
+export const SignIn= () => {
+const navigate = useNavigate()
+    const {
+        register: register4,
+        formState: { errors: errors4 },
+        handleSubmit: handleSubmit4, 
+        reset:reset,
+        isSubmitSuccessful
+
+      } = useForm({
+        mode: "onBlur",
+      });
+
+      const onLogin = (data) => {
+        console.log(JSON.stringify(data.tel));
+        alert(`thank you for your message`);
+      };
 
 
-const SignUpDiv = ({setSignInShow,setSignUpShow}) => {
-const handleClick = ()=>{
-    setSignUpShow(prev=>!prev)
-    setSignInShow(prev=>!prev)
-}
-  return (
-    <div css={styles.signUpDiv} className="signUp">
-        <div style={{color:'white'}}>
-        <h1>One of us already?</h1>
-            <p>Connect to your account with email and password</p>
-            <Button variant='contained' onClick={handleClick}>Sign In</Button>
-            <img src={signup} css={styles.svgImage1}/>
-        </div>
-        <div>
-            <h1>Sign up form here</h1>
-            
-        </div>
-    </div>
-  )
-}
-
-export const SignIn=()=>{
-const [showSignUp,setShowSignUp] = useState(true) 
-const [showSignIn,setShowSignIN] = useState(false) 
+      const resetAsyncForm = useCallback(async () => {
+        const result = await fetch('./api/formValues.json'); // result: { firstName: 'test', lastName: 'test2' }
+        reset(result); // asynchronously reset your form values
+      }, [reset]);
+      
+      useEffect(() => {
+        resetAsyncForm()
+      }, [isSubmitSuccessful])
 
     return(
-        <div >
-            <div css={showSignUp? styles.backgroundUp:styles.backgroundIn} className="backBall">
-
-            </div>
-            {showSignIn && <SignInDiv setSignInShow={setShowSignIN} setSignUpShow={setShowSignUp}/>}
-            {showSignUp && <SignUpDiv setSignUpShow={setShowSignUp} setSignInShow={setShowSignIN} />}
-        </div>
+        <>
+          <div css={styles.loginWrap}>
+            <div css={styles.loginWrapContainer}>
+              <h2 css={[styles.center_text,styles.h2Heading]}>Se connecter à <span css={styles.h2Span}>OnlineP2P</span></h2>
+               <p css={[styles.center_text,styles.pNotFadedText]}>Welcome back! Please enter your details.</p>
+               <form key={4} onSubmit={handleSubmit4(onLogin)}>
+                <label css={styles.labelStyles} >Email</label>
+                <input css={styles.inputStyles} type="email" {...register4("email", {  required: true, pattern: /^\S+@\S+$/i })} placeholder="Name" />
+                {errors4.email && <span css={styles.error}>* write the email with correct pattern</span>}
+                <label css={styles.labelStyles} >Mot de passe</label>
+                <input css={styles.inputStyles} type="password" {...register4("password", { required: true })} placeholder="Name" />
+                {errors4.password && <span css={styles.error}>* Enter your Password</span>}
+                <div css={styles.checkwrap}>
+                    <div css={styles.checkwrap_check_cont}>
+                        <label class="check">
+                        <input type="checkbox" {...register4("Safe Browsing", {})} />
+                        <span className="checkmark"></span>
+                        </label>
+                        <p css={styles.pNotFadedText} style={{margin:'0px 10px'}}>Se souvenir de moi</p>
+                    </div>
+                    <a href='/' css={styles.checkwrap_a}>Mot de passe oublié?</a>
+                </div>
+                <input type="submit" value="Se Connecter" css={[styles.login_wrap_inputSubmit,styles.inputSubmit]}/>
+                <p className='center-text forget-pass' css={[styles.forget_pass,styles.center_text]}>Don’t have an account?<a css={styles.forget_pass_a} onClick={()=>navigate('/signUp')}>Sign Up</a></p>
+              </form>
+          </div>
+          </div>
+        </>
     )
 }
-

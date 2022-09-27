@@ -21,7 +21,7 @@ export const Search =({alltheItems})=>{
     return(
         <div css={styles.sortBox}>
           <div css={styles.sortBoxLeft}>
-            <H22 style={{margin:'0px',padding:'0px'}}>Esccrow marketplace</H22>
+            <H22>Esccrow marketplace</H22>
             <select name="sortBy" css={styles.selectStyle}>
               <option disabled selected value="" >filter..</option>
               <option value="price">Price</option>

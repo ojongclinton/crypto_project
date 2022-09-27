@@ -11,6 +11,7 @@ import NotFound from './components/NotFound/NotFound';
 import {Routes,Route} from 'react-router-dom'
 import { DashBoard } from './components/DashBoard/DashBoard';
 import { SignIn } from './components/SignIn/SignIn';
+import SignUp from './components/SignIn/SignUp';
 
 
 
@@ -37,9 +38,10 @@ function App() {
               {/* <Route path='/MarketPlace/:itemId' element={<ItemDetails/>} /> */}
               
                {/* <Route path='/Developper' element={<Developper/>}></Route>
-              <Route path='/Help' element={<Help/>}></Route>
+              <Route path='/Help' element={<Help/>}></Route>*/}
               <Route path='/signIn' element={<SignIn/>}></Route>
-               */}
+              <Route path='/signUp' element={<SignUp/>}></Route>
+               
             </Routes>
         </div>
        <Footer/>
