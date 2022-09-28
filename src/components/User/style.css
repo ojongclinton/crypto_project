@@ -1,0 +1,247 @@
+.react-tabs__tab-panel.react-tabs__tab-panel--selected {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+form.privacy  {
+	max-width: 302px;
+	margin-top: 20px
+}
+
+.react-tabs {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1164px;
+  background: #FFFFFF;
+  border-radius: 9.75853px;
+  min-height: 100vh;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 254px;
+  margin: 0;
+  padding: 0;
+  background: #FCFCFE;
+  border-radius: 9.75853px 0px 0px 9.75853px;
+  padding-top: 90px;
+}
+
+.react-tabs__tab {
+  list-style: none;
+  padding: 12px 6px;
+  cursor: pointer;
+  color: #64748B;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.react-tabs__tab svg {
+  margin-right: 15px;
+  width: 21px;
+  height: 21px;
+}
+
+.react-tabs__tab--selected {
+  color: #5A48FA;
+  outline: none;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+  padding: 35px 50px;
+}
+
+.mobile-tab-cont {
+  width: calc(100% - 254px);
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+
+.panel-content {
+  text-align: center;
+}
+
+
+.wp-tabs-section {
+  padding: 28px 15px 45px;
+}
+
+.authentic-form {
+  margin-top: 40px;
+}
+
+.privContent {
+  margin-top: 65px
+}
+
+
+.security-box form{
+  margin-top: 20px;
+}
+
+
+.security-box form {
+  max-width: 100%
+}
+
+ .check-cont p span {
+  display: block;
+  color: #64748B;
+  margin-top: 6px
+}
+
+.privContent h4 {
+  margin-top: 20px
+}
+
+.privacy-box p {
+  margin-top: 8px
+}
+
+.help-box h3 {
+  text-transform: uppercase
+}
+
+.help-box .faq-links {
+  margin-top: 20px;
+}
+
+.help-box .faq-links a {
+  margin-top: 10px;
+  display: block;
+  text-decoration: none;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.6619px;
+  line-height: 160%;
+  letter-spacing: 0.0975853px;
+  color: #64748B;
+}
+
+
+.help-box .faq-links a:hover {
+  color: #04063D
+}
+
+.mobile-tab {
+  display: none;
+}
+
+
+
+/*---profile-style--*/
+.prof-img {
+  width: 97px;
+  height: 97px;
+  border-radius: 50%;
+  background: #eee;
+  position: relative
+}
+
+.profile-wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 24px
+}
+
+.prof-img .edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.prof-cont {
+  padding-left: 20px;
+}
+ 
+ .profile-form {
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 30px
+ }
+ 
+
+ @media (max-width:900px) {
+  .col-33.col {
+    width: calc(50% - 20px);
+  }
+ }
+
+
+@media (max-width:767px) {
+
+  .col-33.col {
+    width: calc(33.33% - 20px);
+  }
+
+  .mobile-tab {
+    display: flex;
+    background: #FCFCFE;
+  }
+
+  .mobile-tab-cont .mobile-tab:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .react-tabs__tab-list {
+    display: none;
+  }
+
+
+  .react-tabs {
+    flex-direction: column;
+  }
+
+  .mobile-tab-cont {
+    width: 100%;
+
+  }
+
+  .react-tabs__tab svg {
+    margin-right: 12px;
+  }
+
+  .react-tabs__tab-panel {
+    padding: 30px
+  }
+}
+
+
+@media (max-width:600px) {
+
+  .col-33.col, .col-50.col {
+    width: 100%;
+  }
+
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  display: block;
+}
