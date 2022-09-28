@@ -115,7 +115,7 @@ margin-bottom:10px;
 `
 
 export const pFadedText=css`
-
+color:#04063D;
 `
 export const pNotFadedText=css`
 font-style: normal;

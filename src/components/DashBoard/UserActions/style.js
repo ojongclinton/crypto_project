@@ -75,6 +75,9 @@ export const foloContainer = css({
     display:'grid',
     gridTemplateColumns:'4vh auto auto ',
     padding:'1vh 0vh 2vh 2vh',
+    // '&:hover':{
+    //     backgroundColor:'red'
+    // },
     [mq[1,2,3]]:{
         margin:'0px',
         gridTemplateColumns:'20px auto auto',
@@ -116,7 +119,13 @@ export const plainText =css({
 export const foloContainer2 =css({
     display:'grid',
     gridTemplateColumns:'8vh auto  ',
-    padding:'2vh 0vh 0vh 2vh',
+    margin:'2vh',
+    padding:'2vh 0vh',
+    cursor:"pointer",
+    '&:hover':{
+        backgroundColor:'#e6e5f8',
+        borderRadius:'10px',
+    },
     [mq[1,2,3]]:{
         padding:'20px 10px',
         gridTemplateColumns:'30px auto',

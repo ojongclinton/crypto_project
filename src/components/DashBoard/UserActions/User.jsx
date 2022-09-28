@@ -4,10 +4,6 @@ import * as styles from './style'
 import { user } from '../Overview/StaticData';
 import { Avatar,Rating,Button,Chip } from '@mui/material';
 import NoteIcon from '@mui/icons-material/Note';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
-import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import { H33 } from '../../Home/GlobalStyles';
@@ -17,8 +13,10 @@ import peopleIcon from '../../../assets/people.svg'
 import bannerIcon from '../../../assets/banner.svg'
 import settingicon from '../../../assets/settings.svg'
 import chatIcon from '../../../assets/chat.svg'
+import { useNavigate } from 'react-router-dom';
 
 export const UserInfo =()=>{
+
     return(
       <div css={styles.userDataDiv} > {/*Th Div containing the logged in user Information*/}
               <Avatar src={bitcoin} css={styles.userPic}/>
@@ -34,6 +32,7 @@ export const UserInfo =()=>{
   }
   
 export const UserActions =()=>{
+  const navigate = useNavigate();
     return(
       <div css={styles.userActionsContainer}> {/*The div about the followers, following, settings,etc*/}
                 <div css={styles.foloContainer}>
@@ -56,7 +55,7 @@ export const UserActions =()=>{
                   <p css={styles.plainText}>Messages</p>
                   <Chip label={user.escrowSaved} css={styles.userChip}/>
                 </div>
-                <div css={styles.foloContainer2}>
+                <div css={styles.foloContainer2} onClick={()=>navigate('/user/settings')}>
                 <img src={settingicon} css={styles.iconStyle} />
                   <p css={styles.plainText} style={{textAlign:'left',width:'fit-content'}}>Settings</p>
                 </div>
