@@ -7,6 +7,7 @@ background: transparent;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 13.6619px;
+    font-family: 'Poppins';
 	line-height: 100%;
 	color: #B4B6CC;
 	padding: 16px 20px;
@@ -35,6 +36,7 @@ border: 2px solid #5A48FA;
 outline: none;
 font-weight: 600;
 font-size: 15.6137px;
+font-family: 'Poppins';
 line-height: 23px;
 text-align: center;
 letter-spacing: 0.0975853px;
@@ -52,6 +54,7 @@ export const labelStyles =css`
 font-style: normal;
 font-weight: 400;
 font-size: 13.6619px;
+font-family: 'Poppins';
 line-height: 160%;
 letter-spacing: 0.0975853px;
 color: #5E6191;
@@ -82,7 +85,8 @@ margin: 0 10px 10px;
 export const styledH3 = css({
     fontWeight:600,
     fontSize:'23px',
-    color:'#282D6C'
+    color:'#282D6C',
+    fontFamily:'Poppins'
 })
 export const pFadedText=css`
 color:#04063D;
@@ -91,7 +95,7 @@ export const pNotFadedText=css`
 font-style: normal;
 font-weight: 400;
 font-size: 13.6619px;
-
+font-family: 'Poppins';
 letter-spacing: 0.0975853px;
 color: #5E6191;
 margin-bottom: 7px;
@@ -100,5 +104,6 @@ display: block
 export const styledH4 =css({
     fontWeight:400,
     fontSize:'13.66px',
-    color:'#04063D'
+    color:'#04063D',
+    fontFamily:'Poppins'
 })

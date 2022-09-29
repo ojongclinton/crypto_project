@@ -17,7 +17,7 @@ const handleCate =(category)=>{
   return (
     <div css={styles.categoryContainer}>
         <div css={styles.categoriesDiv} >
-        <p css={styles.nameStyle} onClick={()=>{navigate('/Marketplace/categories')}}>All Categories</p>
+        {/* <p css={styles.nameStyle} onClick={()=>{navigate('/Marketplace/categories')}}>All Categories</p> */}
             {categories.map((category,index)=>{
                 return(
                     <div key={index} onClick={()=>handleCate(category)} css={styles.aCategory} style={choosed===category?{backgroundColor:'#623CEA'}:{}}>

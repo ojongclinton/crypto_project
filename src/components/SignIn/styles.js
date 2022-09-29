@@ -25,6 +25,7 @@ gap: 10px;
 export const checkwrap_a = css`
 font-weight: 600;
 font-size: 16px;
+font-family: 'Poppins';
 line-height: 120%;
 display: flex;
 align-items: center;
@@ -109,6 +110,7 @@ export const h2Heading = css`
 font-style: normal;
 font-weight: 700;
 font-size: 48px;
+font-family: 'Poppins';
 line-height: 120%;
 color: #264653;
 margin-bottom:10px;
@@ -121,7 +123,7 @@ export const pNotFadedText=css`
 font-style: normal;
 font-weight: 400;
 font-size: 13.6619px;
-
+font-family: 'Poppins';
 letter-spacing: 0.0975853px;
 color: #5E6191;
 margin-bottom: 7px;
@@ -132,6 +134,7 @@ export const labelStyles =css`
 font-style: normal;
 font-weight: 400;
 font-size: 13.6619px;
+font-family: 'Poppins';
 line-height: 160%;
 letter-spacing: 0.0975853px;
 color: #5E6191;
@@ -153,6 +156,7 @@ border: 2px solid #5A48FA;
 outline: none;
 font-weight: 600;
 font-size: 15.6137px;
+font-family: 'Poppins';
 line-height: 23px;
 text-align: center;
 letter-spacing: 0.0975853px;
@@ -168,6 +172,7 @@ export const inputStyles = css`
 background: transparent;
 	border: 0.975853px solid #EAEAF0;
 	border-radius: 7.80683px;
+	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 13.6619px;

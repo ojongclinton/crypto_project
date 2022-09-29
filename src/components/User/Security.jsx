@@ -96,7 +96,7 @@ export const Security =()=>{
               </div>
 
               <div className='help-box privContent'>
-                <H22 css={styles.styledH3}>get help</H22>
+                <H22 css={styles.styledH3}>Get help</H22>
                 <h4 css={styles.styledH4}>Learn more about security </h4>
                 <div className='faq-links'>
                   <a href="/"> If you think your account was hacked </a>

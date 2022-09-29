@@ -53,7 +53,7 @@ export const Search =({alltheItems})=>{
       />
       <img src={searchIcon} css={styles.searchicon}/>
             </div>
-            
+                 
           </div>
           <div css={styles.sortBoxRight}>
            <div css={styles.mostPopularContainer}>
