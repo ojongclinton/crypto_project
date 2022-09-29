@@ -212,3 +212,22 @@ export const actionButton =css({
 export const icoBtn =css({
     margin:'0px 10px'
 })
+export const allCategories=css({
+    margin:'10px 0px',
+    padding:'0px'
+})
+export const seeAllcontainer =css({
+    height:'fit-content',
+    margin:'0px 0px 0px 27%',
+    display:'flex'
+})
+export const gridIcon =css({
+    color:'#04063d',
+    margin:'0px 5px'
+})
+export const someText3 =css({
+    fontSize:'15px',
+    fontWeight:600,
+    color:'#1A1D1F',
+    margin:'0px'
+})

@@ -2,7 +2,7 @@
 import Typography from '@mui/material/Typography'
 import {CssBaseline,Button,Box, Accordion,AccordionSummary,AccordionDetails, Avatar,Rating  } from '@mui/material';
 import { useMediaQuery } from 'react-responsive'
-import {NavLink, useNavigate} from 'react-router-dom'
+import {NavLink, useLocation, useNavigate} from 'react-router-dom'
 import React from 'react'
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import * as styles from './style'
@@ -12,7 +12,7 @@ import Language from '../../assets/Language.svg'
 import Search from '../../assets/SearchIcon.svg'
 import Menu from '../../assets/Menu.svg'
 import HeaderDown from '../../assets/HeaderArrowDown.svg'
-import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { UserActions } from '../DashBoard/UserActions/User';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import NoteIcon from '@mui/icons-material/Note';
@@ -52,7 +52,10 @@ const navigate = useNavigate()
 }
 
 const MobileDisplay=()=>{
-  const [showNav,setShowNav] = React.useState(false)
+  const location = useLocation()
+  const isMarketPlace = location.pathname === '/Marketplace' //Check if user is in the marketPlace route so it can add the view all categories buttom amongst other buttons
+
+  const [showNav,setShowNav] = React.useState(true)
   const isSignIn = true
   const handleNav = ()=>{
     setShowNav(!showNav)
@@ -90,7 +93,7 @@ const MobileDisplay=()=>{
                     
                   </div>
                 </AccordionSummary>
-                <AccordionDetails style={{paddingLeft:'2vh'}}>
+                <AccordionDetails >
                   <UserActions/>
                 </AccordionDetails>
               </Accordion>
@@ -99,6 +102,27 @@ const MobileDisplay=()=>{
                 <DashboardCustomizeIcon css={styles.icoBtn}/>Create new escrow</Button>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#04063D'}}>
                 <NoteIcon css={styles.icoBtn}/> Generate a report</Button>
+                {true && 
+                <div css={styles.allCategories}>
+                <Accordion elevation={0} disableGutters css={styles.UserMenu}>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <div css={styles.seeAllcontainer}>
+                      <GridViewRoundedIcon css={styles.gridIcon}/>
+                      <p css={styles.someText3}>See all categories</p>
+                    
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <p>ONE</p>
+                    <p>TWO</p>
+                    <p>THREE</p>
+                    <p>FOUR</p>
+                    <p>FIVE</p>
+                    <p>SIX</p>
+                  </AccordionDetails>
+                </Accordion>
+                </div>
+                }
               </div>
             </div>
           ):(
@@ -108,7 +132,7 @@ const MobileDisplay=()=>{
           )}
           <div>
             <NavLink to='/' css={styles.links} onClick={navClickHandler}>Home</NavLink>
-            <NavLink to='/' css={styles.links}  onClick={navClickHandler}>Marketplace</NavLink>
+            <NavLink to='/Marketplace' css={styles.links}  onClick={navClickHandler}>Marketplace</NavLink>
             <NavLink to='/Dashboard' css={styles.links} onClick={navClickHandler}>Dashboard</NavLink>
             <Accordion css={styles.accordionStyle} elevation={0} disableGutters={true}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} style={{margin:'0px',padding:'0px'}}>
