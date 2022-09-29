@@ -102,7 +102,7 @@ const MobileDisplay=()=>{
                 <DashboardCustomizeIcon css={styles.icoBtn}/>Create new escrow</Button>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#04063D'}}>
                 <NoteIcon css={styles.icoBtn}/> Generate a report</Button>
-                {true && 
+                {isMarketPlace && 
                 <div css={styles.allCategories}>
                 <Accordion elevation={0} disableGutters css={styles.UserMenu}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
