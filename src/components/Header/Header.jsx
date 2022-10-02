@@ -55,7 +55,7 @@ const MobileDisplay=()=>{
   const location = useLocation()
   const isMarketPlace = location.pathname === '/Marketplace' //Check if user is in the marketPlace route so it can add the view all categories buttom amongst other buttons
 
-  const [showNav,setShowNav] = React.useState(true)
+  const [showNav,setShowNav] = React.useState(false)
   const isSignIn = true
   const handleNav = ()=>{
     setShowNav(!showNav)
@@ -102,7 +102,7 @@ const MobileDisplay=()=>{
                 <DashboardCustomizeIcon css={styles.icoBtn}/>Create new escrow</Button>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#04063D'}}>
                 <NoteIcon css={styles.icoBtn}/> Generate a report</Button>
-                {isMarketPlace && 
+                {true && 
                 <div css={styles.allCategories}>
                 <Accordion elevation={0} disableGutters css={styles.UserMenu}>
                   <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -165,7 +165,6 @@ return(
       <img src={Menu} style={{height:'4vh'}} alt='iconSVG'/>
     </div>
     <div css={styles.leftMenu}>
-      <img src={Search} style={{height:'3vh'}} alt='iconSVG'/>
       <img src={Language} style={{height:'3vh'}} alt='iconSVG'/>
       <img src={HeaderDown} style={{height:'3vh'}} alt='iconSVG'/>
     </div>

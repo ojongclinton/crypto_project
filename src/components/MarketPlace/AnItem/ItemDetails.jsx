@@ -8,13 +8,16 @@ import imagePlaceHolder from '../../../assets/imagePlaceholder.jpg'
 import imagePlaceHolder1 from '../../../assets/imagePlaceholder1.jpg'
 import imagePlaceHolder2 from '../../../assets/imagePlaceholder2.jpg'
 import SwapHorizontalCircleRoundedIcon from '@mui/icons-material/SwapHorizontalCircleRounded';
+import { useMediaQuery } from 'react-responsive'
+
 
 
 const pics = [imagePlaceHolder,imagePlaceHolder1,imagePlaceHolder2]
 
 
 function ItemDetails() {
-  const [showComments,setShowComments] = React.useState(2);
+const isMobile = useMediaQuery({query:`(max-width:576px)`})
+const [showComments,setShowComments] = React.useState(2);
 const showMoreComments = ()=>{
   setShowComments(comments.length)
 }
@@ -54,7 +57,11 @@ const hadleImageChange =(e)=>{
               <div>
                   <h1 css={styles.itemName}>{theItem.name}</h1>
                   <div css={styles.flexDiv}>
-                    <Rating value={3} readOnly/>
+                    <Rating
+                     value={3} 
+                     readOnly 
+                     size={isMobile?"small":"medium"}
+                     />
                     <p css={styles.ratingTag}>440+ Reviewers</p>
                   </div>
               </div>
@@ -75,12 +82,15 @@ const hadleImageChange =(e)=>{
                   <p css={styles.typeTag}>{theItem.category}</p>
                 </div>
               </div>
-              <div css={styles.flexDiv} style={{width:'80%'}}> {/*Price and Contract*/}
+              <div css={styles.flexDiv} style={isMobile?{width:'100%'}:{width:'80%'}}> {/*Price and Contract*/}
                 <div>
                   <h2 css={styles.itemprice}>{theItem.amount}</h2>
                 </div>
                 <div css={styles.flexDiv}>
-                  <div css={styles.exchange}> <SwapHorizontalCircleRoundedIcon style={{color:'    #666666',margin:'11px',marginTop:'14px'}}/> </div>
+                  <div css={styles.exchange}> 
+                  <SwapHorizontalCircleRoundedIcon 
+                  style={{color:'#666666',margin:'11px',marginTop:'14px'}}/>
+                   </div>
                   <Button variant='contained' fullWidth style={{margin:'0px 10px',textTransform:'none',backgroundColor:'#3563E9'}}>Contract</Button>
                 </div>
               </div>
@@ -88,36 +98,7 @@ const hadleImageChange =(e)=>{
         </Grid>
       </Grid> 
 
-      <div css={styles.bigcommentContainer}>
-      <p css={styles.revText}>Reviews <div css={styles.reviewsBox}>{comments.length}</div></p>
-            <div css={styles.commentContainer}>
-              
-              <div>
-                {comments.slice(0,showComments).map((comment,index)=>{
-                  return(
-                    <div css={styles.singleComment} key={index}>
-                      <div css={styles.commentHead}> {/*Comment Header*/}
-                        <div> {/*Comment header Left Side*/}
-                          <p css={styles.commentName}>{comment.name}</p>
-                          <p css={styles.commentTitle}>{comment.title}</p>
-                        </div>
-                        <div>{/*Comment header Right side*/}
-                          <p css={styles.commentDate}>{comment.date}</p>
-                          <Rating readOnly value={3.5} precision={0.5} />
-                        </div>
-                      </div>
-                      <p css={styles.commentBody}>
-                      {comment.comment}
-                      </p>
-                    </div>
-                  )
-                })
-
-                }
-              </div>
-              <Button  disabled={showComments==comments.length} onClick={showMoreComments} css={styles.btn2Style}>Show More</Button>
-            </div>
-            </div>
+      
     </div>
   )
 }

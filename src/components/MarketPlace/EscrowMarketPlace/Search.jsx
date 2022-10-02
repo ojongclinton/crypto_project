@@ -9,8 +9,12 @@ import cate3 from '../../../assets/hardwaremarket.svg'
 import cate4 from '../../../assets/techmarket.svg'
 import searchIcon from '../../../assets/SearchIcon.svg'
 import { useNavigate } from 'react-router-dom'
+import TuneRoundedIcon from '@mui/icons-material/TuneRounded';
+import { useMediaQuery } from 'react-responsive'
+
 
 export const Search =({alltheItems})=>{
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const handleClick=()=>{
     console.log('OKEEEEEEEE na')
   }
@@ -21,6 +25,7 @@ export const Search =({alltheItems})=>{
     return(
         <div css={styles.sortBox}>
           <div css={styles.sortBoxLeft}>
+            <div css={styles.smallSortbOX}>
             <H22>Esccrow marketplace</H22>
             <select name="sortBy" css={styles.selectStyle}>
               <option disabled selected value="" >filter..</option>
@@ -29,6 +34,7 @@ export const Search =({alltheItems})=>{
               <option value="condition">Condition</option>
               <option value="date">Date</option>
             </select>
+            </div>
             <div css={styles.searchBox}>
               <Autocomplete 
         freeSolo
@@ -52,8 +58,9 @@ export const Search =({alltheItems})=>{
         sx={{width:200,height:20}}
       />
       <img src={searchIcon} css={styles.searchicon}/>
+      
             </div>
-                 
+            {isMobile && <div css={styles.filterMobileBox}><TuneRoundedIcon/></div>}
           </div>
           <div css={styles.sortBoxRight}>
            <div css={styles.mostPopularContainer}>

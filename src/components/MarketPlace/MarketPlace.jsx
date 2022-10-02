@@ -14,6 +14,7 @@ import { Search } from './EscrowMarketPlace/Search'
 import ItemDetails from './AnItem/ItemDetails'
 import ViewCategory from './AnItem/Viewcategory'
 import AllCategories from './AnItem/AllCategories'
+import { useMediaQuery } from 'react-responsive'
 
 export const items = [
   {
@@ -147,23 +148,23 @@ function MarketPlace() {
 
 
 const [selectedCategory,setSelectedCategory] = React.useState('')
-
+const isMobile = useMediaQuery({query:`(max-width:576px)`})
 
   return (
-    <div style={{backgroundColor:'#eeeeee'}}>
+    <div style={{backgroundColor:isMobile?'white':'#eeeeee'}}>
       <CssBaseline/>
       <Grid container>
-        <Grid item lg={2.5} xs={12}>
+        <Grid item lg={2.5} xs={12} className='gridCate'> {/*Hide category on mobile view since it would be in the nav-Menu*/}
           <Category setCategory={setSelectedCategory} categories={allCategories} choosed={selectedCategory}/>
         </Grid>
         <Grid item lg={9} xs={12} sx={{mt:'2vh'}}>
         <Search alltheItems={items}/>
-         <Routes>
+          <Routes>
             <Route path='/' element={<EscrowMarketPlace categories={allCategories} category={selectedCategory} setCategory={setSelectedCategory} alltheItems={items}/>}/>
             <Route path=':itemId' element={<ItemDetails/>}/>
-            <Route path='/categories/:category' element={<ViewCategory items={items}/>}/>
-            <Route path='/categories' element={<AllCategories />}/>
-         </Routes>
+            {/*<Route path='/categories/:category' element={<ViewCategory items={items}/>}/>
+            <Route path='/categories' element={<AllCategories />}/>*/}
+         </Routes> 
         </Grid>
       </Grid>
     </div>

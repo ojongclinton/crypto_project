@@ -8,28 +8,13 @@ li{
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: 100%;
-    
 }
-#searchResults{
-    animation-name: searchDown;
-    animation-duration: 0.3s;
-    height: 40%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    transition: all 1s;
+@media only screen and (max-width: 576px) {
+.gridCate{
+    display: none;
 }
-#searchResults li{
-    padding: 1.5vh 2vh 2vh 2vh;
-    border-bottom: 1px solid blue;
+#bestPlatForm{
+    background-size: 100%;
+    background-size: cover;
 }
-@keyframes searchDown {
-    0%{
-        height: 0%;
-    }
-    100%{
-       height: 40%;
-    }
-}
-.yeahh{
-    border:2px solid red;
 }

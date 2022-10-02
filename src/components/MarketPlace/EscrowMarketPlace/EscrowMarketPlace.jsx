@@ -3,8 +3,12 @@ import React from 'react'
 import * as styles from './style'
 import Item from '../AnItem/Item';
 import Slider from 'react-slick';
+import { useMediaQuery } from 'react-responsive'
+import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 
 const Popular =({alltheItems})=>{
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const popular_escrows = alltheItems.filter(item=>item.popular)
   const [currentSlide,setCurrentSlide] = React.useState(0)
   var settings = {
@@ -35,7 +39,7 @@ const Popular =({alltheItems})=>{
     dots:true,
     infinite:true,
     speed:1000,
-    slidesToShow:3,
+    slidesToShow:isMobile?1:3,
     slidesToScroll:1,
     arrows:false,
     autoplay:true,
@@ -44,7 +48,7 @@ const Popular =({alltheItems})=>{
   }
   return (
     <div css={styles.slickContainer}>
-                <Slider {...settings}>
+                <Slider {...settings} >
                   {popular_escrows.map(escrow=>{return(
                     <Item item={escrow} btnColor='#FF6A55'/>
                   )})}
@@ -55,6 +59,7 @@ const Popular =({alltheItems})=>{
 
 
 export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems}) => {
+  const isMobile = useMediaQuery({query:`(max-width:576px)`})
   const popular_escrows = alltheItems.filter(item=>item.popular)
   const popular_categories =[]
   const filterByCategory = alltheItems.filter(item=> item.category === category)
@@ -70,19 +75,10 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
   // const itemByCategory = alltheItems.filter(item=>item.category === category)
   // console.log(itemByCategory)
 
-    const handleCategoryChange =(e)=>{
-        setCategory(e.target.value)
-    }
-    const [searchTerm,setSearchTerm] = React.useState('')
-    const handleSearch=(e)=>{
-      setShowSearchResults(true);
-      setSearchTerm(e.target.value)
-    }
-    const [showSearchResults,setShowSearchResults] = React.useState(true)
   return (
-    <div>
+    <div css={styles.escrowMarketContainer}>
         <div css={styles.bestPlatform} id='bestPlatForm'>
-          <div style={{padding:'4vh 0vh 0vh 5vh',width:'34%'}}>
+          <div css={styles.textContainer}>
             <h1 css={styles.bestText}>The Best Platform for Escrow services</h1>
             <p css={styles.pText}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, veritatis distinctio voluptas quas explicabo hic quibusdam reprehenderit aspernatur voluptatum tempora.</p>
           </div>
@@ -90,11 +86,12 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
         <div> {/*Most popular escrows!*/}
           <div css={styles.popularText}> 
               <p css={styles.popularP}>Most popuar escrows</p>
+              {isMobile && <Link to='/'>View All</Link>}
           </div>
               <Popular alltheItems={alltheItems}/> {/*Most popular escrows*/}
-              <div> {/*Escrows by category*/}
+              {/*<div> Escrows by category
               <div css={styles.popularText}> 
-              <p css={styles.popularP}>{category}</p>
+              <p css={styles.popularP}>{category}Right Here</p>
           </div>
           <div css={styles.allItems}>
             {category?(
@@ -107,19 +104,21 @@ export const EscrowMarketPlace = ({categories,category,setCategory,alltheItems})
               <h1 style={{margin:'0px'}}>Choose a category</h1>
             </div>)}
           </div>
-              </div>
+              </div>*/}
           <div> {/*All the escrows*/}
           <div css={styles.popularText2}> 
               <p css={styles.popularP2}>Top escrows</p>
           </div>
-          <div css={styles.allItems}>
+           <Grid container>
             
                     {alltheItems.map((item,index)=>{
                       return(
-                        <Item item={item} btnColor='#5A48FB' key={index}/>
+                        <Grid item xl={4} sm={12}>
+                          <Item item={item} btnColor='#5A48FB' key={index}/>
+                        </Grid>
                       )
                     })}
-          </div>
+          </Grid>
           </div>
               
         </div>
