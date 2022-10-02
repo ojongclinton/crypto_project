@@ -98,7 +98,36 @@ const hadleImageChange =(e)=>{
         </Grid>
       </Grid> 
 
-      
+      <div css={styles.bigcommentContainer}>
+      <p css={styles.revText}>Reviews <div css={styles.reviewsBox}>{comments.length}</div></p>
+            <div css={styles.commentContainer}>
+              
+              <div>
+                {comments.slice(0,showComments).map((comment,index)=>{
+                  return(
+                    <div css={styles.singleComment} key={index}>
+                      <div css={styles.commentHead}> {/*Comment Header*/}
+                        <div> {/*Comment header Left Side*/}
+                          <p css={styles.commentName}>{comment.name}</p>
+                          <p css={styles.commentTitle}>{comment.title}</p>
+                        </div>
+                        <div>{/*Comment header Right side*/}
+                          <p css={styles.commentDate}>{comment.date}</p>
+                          <Rating readOnly value={3.5} precision={0.5} size={isMobile?"small":"medium"} />
+                        </div>
+                      </div>
+                      <p css={styles.commentBody}>
+                      {comment.comment}
+                      </p>
+                    </div>
+                  )
+                })
+
+                }
+              </div>
+              <Button  disabled={showComments==comments.length} onClick={showMoreComments} css={styles.btn2Style}>Show More</Button>
+            </div>
+            </div>
     </div>
   )
 }

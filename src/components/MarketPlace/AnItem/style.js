@@ -126,8 +126,10 @@ export const bigImage =css({
 
 })
 export const itemDetails =css({
-    margin:'22px 0px',
+    margin:'20px 0px',
     backgroundColor:'#eeeeee',
+    marginBottom:'2vh',
+    paddingBottom:'2vh'
     
 })
 export const itemTextDetails =css({
@@ -136,7 +138,7 @@ export const itemTextDetails =css({
     padding:'24px',
     [mq[0]]:{
         padding:'16px',
-        margin:'0px 10px'
+        margin:'0px 10px',
     }
 })
 export const itemName =css({
@@ -228,7 +230,7 @@ export const oneOtherDiv =css({
     borderRadius:'10px',
     margin:'0px',
     [mq[0]]:{
-        height:'8vh',
+        height:'9vh',
         padding:'5px'
     },
     '&:hover':{
@@ -243,7 +245,7 @@ export const oneActiveDiv =css({
     border:'2px solid #3563E9',
     margin:'0px',
     [mq[0]]:{
-        height:'8vh',
+        height:'9vh',
         padding:'5px'
     },
 })
@@ -265,13 +267,21 @@ export const commentContainer = css({
     margin:'32px 40px',
     width:'95%',
     borderRadius:'10px',
+    [mq[0]]:{
+        margin:'10px'
+    }
 })
 export const bigcommentContainer = css({
     marginTop:'4vh',
     backgroundColor:'#ffffff',
     padding:'40px',
     width:'95%',
-    borderRadius:'10px'
+    borderRadius:'10px',
+    [mq[0]]:{
+        margin:'auto',
+        marginTop:'32px',
+        padding:'16px',
+    }
 })
 export const singleComment = css({
 
@@ -288,7 +298,10 @@ export const commentBody =css({
     fontSize:'14px',
     margin:'0px',
     color:'#596780',
-    fontFamily:'Plus Jakarta Sans'
+    fontFamily:'Plus Jakarta Sans',
+    [mq[0]]:{
+        fontSize:'12px'
+    }
 })
 export const commentName =css({
     fontFamily:'Plus Jakarta Sans',
@@ -316,7 +329,10 @@ export const commentDate=css({
 })
 export const btn2Style =css({
     margin:'0px 40% 0px 45%',
-    textTransform:'none'
+    textTransform:'none',
+    [mq[0]]:{
+        margin:'0px 35%'
+    }
 })
 export const revText =css({
     fontFamily:'Plus Jakarta Sans',
