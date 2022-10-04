@@ -27,7 +27,7 @@ const handleCate =(category)=>{
             })}
         </div>
         <div style={{display:'flex',justifyContent:'center'}}>
-            <Button variant='contained' css={styles.btnStyle}><DashboardCustomizeIcon style={{marginRight:'1vh'}}/> Create New escrow</Button>
+        <Button variant='contained' css={styles.btnStyle} onClick={()=>navigate('Create-contract')}><DashboardCustomizeIcon style={{marginRight:'1vh'}}/> Create New escrow</Button>
         </div>
     </div>
   )

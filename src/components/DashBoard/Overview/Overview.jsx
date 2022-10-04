@@ -14,7 +14,7 @@ import TransactionsHistory from '../TransactionHistory/Transaction';
 import { useMediaQuery } from 'react-responsive'
 import { FeedBack } from '../FeedBack/Feedback';
 import { LocationStats } from '../LocationStats/LocationStats';
-import { UserActions,UserInfo } from '../UserActions/User';
+import { UserData } from '../UserActions/User';
 
 {/*Lots of data transmission would be going on here....all user data from last week,the current week last month,and the current month are supposed to be compared so the various icons for increase and decrease are diaplayed accordingly...Static data would be used for now since a backend is not yet set up*/}
 
@@ -203,13 +203,6 @@ export const Overview=()=>{
   return (
     <div className='Overview'>
       <CssBaseline/>
-       <Grid container spacing={0}>
-        <Grid item xl={3} lg={3} md={3}> 
-        <div style={{position:'sticky',top:"10px",marginBottom:'10px'}}>
-         {!isMobile && [<UserInfo />, <UserActions />]}
-          </div>
-        </Grid>
-        <Grid item xl={9} lg={9} md={9}>
           <H22 style={isMobile?{fontFamily:'Inter',marginTop:'8vh',fontSize:'20px',marginLeft:'14px'}:{}}>Overview</H22>
           <OverviewRow1 />
           <OverviewRow2 />
@@ -217,8 +210,6 @@ export const Overview=()=>{
              <TransactionsHistory />
               {isMobile && <FeedBack/>}
              {isMobile && <LocationStats/>}
-        </Grid>
-       </Grid>
     </div>
   )
 }

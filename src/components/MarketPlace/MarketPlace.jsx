@@ -1,12 +1,6 @@
 import { CssBaseline, Grid } from '@mui/material'
 import React from 'react'
 import Category from './CategorySelect/Category'
-import EscrowFilter from './EscrowFilter/EscrowFilter'
-import personIcon from '../../assets/person.svg'
-import peopleIcon from '../../assets/people.svg'
-import bannerIcon from '../../assets/banner.svg'
-import settingicon from '../../assets/settings.svg'
-import chatIcon from '../../assets/chat.svg'
 import { EscrowMarketPlace } from './EscrowMarketPlace/EscrowMarketPlace'
 import "../../MarketplaceStyles.css"
 import { Outlet,Route,Routes } from 'react-router-dom'
@@ -132,9 +126,6 @@ export const comments = [
   {id:6,name:'Angafor Konrad',comment:'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',title:'CEO at Bukalapak',date:'22 July 2022',rating:3.5}
 ]
 
-window.addEventListener('DOMContentLoaded',()=>{
-  console.log('ready!!')
-})
 
 export const allCategories=[];
 items.forEach(cate=>{
@@ -145,8 +136,6 @@ items.forEach(cate=>{
   )
 })
 function MarketPlace() {
-
-
 const [selectedCategory,setSelectedCategory] = React.useState('')
 const isMobile = useMediaQuery({query:`(max-width:576px)`})
 
@@ -161,6 +150,7 @@ const isMobile = useMediaQuery({query:`(max-width:576px)`})
         <Search alltheItems={items}/>
           <Routes>
             <Route path='/' element={<EscrowMarketPlace categories={allCategories} category={selectedCategory} setCategory={setSelectedCategory} alltheItems={items}/>}/>
+            
             <Route path=':itemId' element={<ItemDetails/>}/>
             {/*<Route path='/categories/:category' element={<ViewCategory items={items}/>}/>
             <Route path='/categories' element={<AllCategories />}/>*/}
