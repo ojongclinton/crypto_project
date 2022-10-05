@@ -218,3 +218,16 @@ export const iconsContainer = css({
         justifyContent:'space-around'
     }
 })
+export const upsideArrow = css `
+border-bottom: 15px solid white;
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: top;
+  width: 0;
+  transform: rotate(180deg);
+  position:relative;
+  bottom:-5vh;
+  `

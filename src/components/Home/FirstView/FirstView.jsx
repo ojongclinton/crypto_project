@@ -48,9 +48,9 @@ return(
 
     <Grid item xl={6} md={6} lg>
       <form css={styles.formDiv} onSubmit={handleFormSubmit}>
-        {/* <div>   
+        <div>   
           <img src={bitcoin} alt='bitcoinimage' className='coinImgAnimT' css={styles.bitcoinImage} id='coinImg' onAnim ationEnd={console.log('ended')}/>
-        </div>          */}
+        </div>         
         <Item elevation={1} css={styles.formCss} >
 
           {/*Separates 'Im selling input from domain, nane input'*/}

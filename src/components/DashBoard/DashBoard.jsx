@@ -8,6 +8,7 @@ import { Route,Routes } from 'react-router-dom'
 import { CssBaseline, Grid } from '@mui/material'
 import { useMediaQuery } from 'react-responsive'
 import { UserData } from './UserActions/User'
+import { SellContract } from './Contract/Sell_contract'
 
 export const DashBoard=()=>{
   const isMobile = useMediaQuery({query:`(max-width:576px)`})
@@ -26,7 +27,7 @@ export const DashBoard=()=>{
         <Grid item xl={9} lg={9} md={9} >
         <Routes>
           <Route path='/' element={<Overview/>}/>
-          <Route path='/Create-contract' element={<h1>Yoooooo</h1>}/>
+          <Route path='/Create-contract' element={<SellContract contract_type='service'/>}/>
         </Routes>
         </Grid>
           </Grid>

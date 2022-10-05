@@ -21,13 +21,13 @@ function App() {
     <div>
       
       {/*Emotion was the prefered styling use... The Global component here is to define global styles...such as the font family for the whole website as you can see here*/}
-      <Global
+      {/* <Global
       styles={css`
         * {
           font-family:'Roboto'
         }
       `}
-    />
+    /> */}
       <Header/>
         <div>
             <Routes>

@@ -128,6 +128,8 @@ var settings = {
                 <div css={styles.testiDiv}>
                   <H33 style={{margin:'1vh'}}>{testimony.title}</H33>
                   <p css={plainText} style={{fontSize:'14px',lineHeight:isMobile?'25px':''}}>{testimony.comment}</p>
+                  <div css={styles.upsideArrow}></div>
+                  
                 </div>
                 <div css={styles.userInfocont}>
                     <Avatar src={bitcoin} alt={testimony.name} sx={{ width: 50, height: 50,m:1}}/>
