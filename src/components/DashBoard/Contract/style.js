@@ -63,7 +63,8 @@ export const img_upload =css({
 export const blurryP =css({
     margin:'5px',
     color:'#5E6191',
-    lineHeight:'normal'
+    lineHeight:'normal',
+    fontFamily:'Poppins'
 })
 export const small50inputStyle = css({
     border:'1px solid #EAEAF0',
@@ -76,4 +77,7 @@ export const textArea =css({
     width:'100%',
     border:'1px solid #EAEAF0',
     borderRadius:'7px',
+})
+export const addMilstone =css({
+    marginTop:'5vh'
 })

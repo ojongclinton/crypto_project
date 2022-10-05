@@ -4,6 +4,8 @@ import React from 'react'
 import * as styles from './style'
 import imagePlaceHolder from '../../../assets/imagePlaceholder.jpg'
 import { Grid } from '@mui/material'
+import { LibraryAddOutlined } from '@mui/icons-material'
+
 
 const SellProduct =()=>{
     return(
@@ -97,14 +99,52 @@ const SellService =()=>{
                     </Grid> 
                     </Grid>
                 </Grid>
-                <div> {/*Add milestone block*/}
-                <Grid container spacing={0}>
-                    <Grid item xl={12} md={12} sm={12}>
-
-                    </Grid>
-                </Grid>
+                <div css={styles.addMilstone}> {/*Add milestone block*/}
+                <div>
+                    <label htmlFor="MileName">Milestone name</label>
+                    <input type="text" id='MileName' css={styles.Big50inputStyle}/>
                 </div>
-                
+                <div>
+                    <label htmlFor="MileDesc">Milestone name</label>
+                    <textarea name="MileDesc" id="MileDesc" rows={6} css={styles.textArea}></textarea>
+                </div>
+                <div>
+                <label htmlFor="MileObj">Objectives of the milestone</label>
+                    <input type="text" id='MileObj' css={styles.Big50inputStyle}/>
+                </div>
+                <Grid container spacing={2}>
+                    <Grid item xl={3} md={4} sm={12}>
+                        <p css={styles.blurryP}>Duration</p>
+                        <input type="number" css={styles.Big50inputStyle}/>
+                    </Grid>
+                    <Grid item xl={3} md={4} sm={12}>
+                        <p css={styles.blurryP}><i>:</i></p>
+                    <select css={styles.selectStyle}>
+                            <option value="days">Days</option>
+                            <option value="Months">Months</option>
+                            <option value="Years">Years</option>
+                            <option value="Unspecified">Unspecified</option>
+                        </select>
+                    </Grid>
+                    <Grid item xl={4} md={4} sm={12}>
+                    <p css={styles.blurryP}>Cost of the Milestone</p>
+                    <input type="number" css={styles.Big50inputStyle}/>
+                    </Grid>
+                    <Grid item xl={2} md={4} sm={12}>
+                    <p css={styles.blurryP}><i>:</i></p>
+                    <select css={styles.selectStyle}>
+                    <option value="USD">USD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="FRS">FRS</option>
+                                <option value="PUD">PUD</option>
+                        </select>
+                    </Grid>
+                    <div style={{marginLeft:'auto',display:"flex",marginTop:'5vh'}}>
+                    <p css={styles.blurryP}>Add Milestone</p> <span><LibraryAddOutlined style={{color:'#64748B'}} /></span>
+                    </div>
+                    {/* */}
+                </Grid>
+                </div> 
             </div>
         </div>
     )
