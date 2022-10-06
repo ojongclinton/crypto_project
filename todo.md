@@ -5,6 +5,7 @@
 [x] Do Dashboard mobile display
 [x] Modify the lineheights, spaceing and fonts of Homepage according to figma displays
 [] Modify onlineP2P header style
-[] Do the marketplace mobile displays
-[] Do the product page mobile displays
+[x] Do the marketplace mobile displays
+[x] Do the product page mobile displays
 [] Do the View all feedback mobile display
+[] make createEscrow switch between sell product and sell service use just one component but switching just the type

@@ -34,10 +34,6 @@ const navigate = useNavigate()
           <NavLink to='/MarketPlace' className={({isActive})=>isActive?"activeNavLink":"navLink"}>MarketPlace</NavLink>
           <NavLink to='/Developper' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Developper</NavLink>
           <NavLink to='/Help' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Help </NavLink>
-          {/* <div style={{display:'inline',width:'fit-content',margin:'0px'}}>
-          <NavLink to='/Help' className={({isActive})=>isActive?"activeNavLink":"navLink"}>Help </NavLink> <KeyboardArrowDownIcon css={styles.hdropDown}/>
-          </div>  */}
-          
         </Box>
       </div>
       <div className='navvv' css={styles.navv}>
@@ -52,6 +48,7 @@ const navigate = useNavigate()
 }
 
 const MobileDisplay=()=>{
+  const navigate = useNavigate()
   const location = useLocation()
   const isMarketPlace = location.pathname === '/Marketplace' //Check if user is in the marketPlace route so it can add the view all categories buttom amongst other buttons
 
@@ -98,8 +95,8 @@ const MobileDisplay=()=>{
                 </AccordionDetails>
               </Accordion>
               <div>
-              <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#5A48FA'}}>
-                <DashboardCustomizeIcon css={styles.icoBtn}/>Create new escrow</Button>
+              <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#5A48FA'}} onClick={()=>{setShowNav(false); navigate('Dashboard/Create-contract')}}>
+                <DashboardCustomizeIcon css={styles.icoBtn} />Create new escrow</Button>
               <Button variant='contained' css={styles.actionButton} fullWidth style={{backgroundColor:'#04063D'}}>
                 <NoteIcon css={styles.icoBtn}/> Generate a report</Button>
                 {true && 
